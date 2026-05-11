@@ -1,19 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class MiniGameManager : MonoBehaviour
+using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
+using System;
+public class GameManager : MonoBehaviour
 {
     int day = 1;
     int[] time = new int[2] { 11, 55 };
-    List<Icecream> client_Ice = null;
+    List<IceCream> client_Ice = null;
     int margin = 0;
     int money = 1000;
     bool gameStart = false;
+
+    IceCream currentOrder;
 
     GameObject obj_Day = null;
     GameObject obj_Num = null;
@@ -140,138 +141,9 @@ public class MiniGameManager : MonoBehaviour
 
     private void Chat()
     {
+        currentOrder = OrderGenerator.GenerateOrder();
 
-        string han_type = "", han_mat1 = "", han_mat2 = "", han_mat3 = "", han_to1 = "", han_to2 = "";
-        // Random 변수 선언
-        System.Random rnd = new System.Random();
-        // 타입은 1 ~ 2 까지
-        int type = rnd.Next(0, 2);
-
-        // 아이스크림 리스트 선언
-        client_Ice = new List<Icecream>();
-
-        // 타입 1은 바, 2는 콘
-        if (type == 0)
-        {
-            client_Ice.Add(new Icecream());
-            han_type = "바";
-        }
-        else if (type == 1)
-        {
-            client_Ice.Add(new Icecream_Cone());
-            han_type = "콘";
-        }
-        client_Ice[0].type = (E_Icecream_Type)type;
-
-        // 맛1은 1 ~ 3 까지
-        int taste1 = rnd.Next(0, 3);
-        // 맛을 리스트로 선언 후 추가
-        client_Ice[0].taste = new List<E_Icecream_Taste> { (E_Icecream_Taste)taste1 };
-        han_mat1 = ((E_Icecream_Taste)taste1).ToString();
-
-        // 콘은 50% 확률로 2번째 맛도 정함.
-        if (type == 1)
-        {
-            int _2 = rnd.Next(1, 3);
-            if (_2 == 2)
-            {
-                int taste2 = rnd.Next(0, 3);
-                client_Ice[0].taste.Add((E_Icecream_Taste)taste2);
-                han_mat2 = ((E_Icecream_Taste)taste2).ToString();
-
-                // 50% 확률로 3번째 맛도 정함.
-                int _3 = rnd.Next(1, 3);
-                if (_3 == 2)
-                {
-                    int taste3 = rnd.Next(0, 3);
-                    client_Ice[0].taste.Add((E_Icecream_Taste)taste3);
-                    han_mat3 = ((E_Icecream_Taste)taste3).ToString();
-                }
-            }
-        }
-
-        int _t_1 = rnd.Next(1, 3);
-        // 50% 확률로 토핑도 올림.
-        if (_t_1 == 1)
-        {
-            client_Ice[0].topping = new HashSet<E_Icecream_Topping> { 0 };
-        }
-        else if (_t_1 == 2)
-        {
-            int topping1 = rnd.Next(1, 3);
-            client_Ice[0].topping = new HashSet<E_Icecream_Topping> { (E_Icecream_Topping)topping1 };
-            han_to1 = ((E_Icecream_Topping)topping1).ToString();
-
-            int _t_2 = rnd.Next(1, 3);
-            if (_t_2 == 2)
-            {
-                E_Icecream_Topping[] excludes = { 0, (E_Icecream_Topping)topping1 }; // 제외할 목록
-
-                var availableItems = Enum.GetValues(typeof(E_Icecream_Topping))
-                                         .Cast<E_Icecream_Topping>()
-                                         .Where(i => !excludes.Contains(i))
-                                         .ToList();
-
-                E_Icecream_Topping result = availableItems[new System.Random().Next(availableItems.Count)];
-
-                client_Ice[0].topping.Add(result);
-                han_to2 = result.ToString();
-            }
-        }
-
-        if (type == 1)
-        {
-
-            // 콘은 50% 확률로 2번째 콘도 쌓음.
-            int _2 = rnd.Next(1, 3);
-            if (_2 == 1)
-            {
-                ((Icecream_Cone)client_Ice[0]).cone = 1;
-            }
-            else if (_2 == 2)
-            {
-                ((Icecream_Cone)client_Ice[0]).cone = 2;
-            }
-
-            //콘은 50% 확률로 시럽도 추가함.
-            int _s = rnd.Next(1, 3);
-            if (_s == 1)
-            {
-                ((Icecream_Cone)client_Ice[0]).syrup_Taste = 0;
-            }
-            if (_s == 2)
-            {
-                int _s_2 = rnd.Next(1, 3);
-                ((Icecream_Cone)client_Ice[0]).syrup_Taste = (E_Syrup_Taste)_s_2;
-            }
-        }
-
-
-
-        if (type == 0)
-        {
-            // 바
-            if (!han_to1.Equals(""))
-            {
-                text_chat.text = $"아이스크림 {han_type}로 맛은 {han_mat1} (으)로 주시고, 토핑은 {han_to1}{(!han_to2.Equals("") ? ", " + han_to2 : "")} (으)로 주세요.";
-            }
-            else
-            {
-                text_chat.text = $"아이스크림 {han_type}로 맛은 {han_mat1} (으)로 주시고, 토핑은 안 주셔도 돼요.";
-            }
-        }
-        else if (type == 1)
-        {
-            // 콘
-            if (!han_to1.Equals(""))
-            {
-                text_chat.text = $"아이스크림 {han_type}으로 맛은 1층부터 {han_mat1}{(!han_mat2.Equals("") ? ", " + han_mat2 : "")}{(!han_mat3.Equals("") ? ", " + han_mat3 : "")} 순으로 주시고, 토핑은 {han_to1}{(!han_to2.Equals("") ? ", " + han_to2 : "")} (으)로 주세요. 아, 그리고 콘은 {((Icecream_Cone)client_Ice[0]).cone}개로 주시고, 시럽은 {((Icecream_Cone)client_Ice[0]).syrup_Taste.ToString()} (으)로 할게요.";
-            }
-            else
-            {
-                text_chat.text = $"아이스크림 {han_type}으로 맛은 1층부터 {han_mat1}{(!han_mat2.Equals("") ? ", " + han_mat2 : "")}{(!han_mat3.Equals("") ? ", " + han_mat3 : "")} 순으로 주시고, 토핑은 안 주셔도 돼요. 아, 그리고 콘은 {((Icecream_Cone)client_Ice[0]).cone}개로 주시고, 시럽은 {((Icecream_Cone)client_Ice[0]).syrup_Taste.ToString()} (으)로 할게요.";
-            }
-        }
+        text_chat.text = OrderDialog.GenerateText(currentOrder);
 
         chat.SetActive(true);
     }
@@ -308,7 +180,7 @@ public class MiniGameManager : MonoBehaviour
         dest_Pos = new Vector3(dest_Pos.x, dest_Pos.y - 0.5f, 0);
         elapsed = 0f;
 
-        while (elapsed < (duration / 2 ))
+        while (elapsed < (duration / 2))
         {
             elapsed += Time.deltaTime;
             client_transform.position = Vector3.Lerp(start_Pos, dest_Pos, elapsed / (duration / 2));

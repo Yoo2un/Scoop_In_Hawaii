@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4f13664d9a971e84988675723e417346
+guid: 94035255d31badc40afbac7d1a2963a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5046401641614186914
-    second: Chat-_0
+      213: -938128264193077325
+    second: cone_machine-_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chat-_0
+      name: cone_machine-_0
       rect:
         serializedVersion: 2
-        x: 223
-        y: 88
-        width: 231
-        height: 172
+        x: 248
+        y: 36
+        width: 185
+        height: 281
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 57, y: 51, z: 47, w: 27}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5663a5a17497f9b0800000000000000
-      internalID: -5046401641614186914
+      spriteID: 3bf840b60591bf2f0800000000000000
+      internalID: -938128264193077325
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d9b49663891f0ff4d999ba4c33addac5
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Chat-_0: -5046401641614186914
+      cone_machine-_0: -938128264193077325
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
