@@ -121,10 +121,10 @@ public class GameManager : MonoBehaviour
     void VisitClient()
     {
         StartCoroutine(StartWalk(0f));
-        StartCoroutine(StartWalk(3f));
-        StartCoroutine(StartWalk(6f));
-        StartCoroutine(StartViewFront(9f));
-        StartCoroutine(StartChat(10f));
+        StartCoroutine(StartWalk(1f));
+        StartCoroutine(StartWalk(2f));
+        StartCoroutine(StartViewFront(3f));
+        StartCoroutine(StartChat(4.5f));
     }
 
     public IEnumerator StartViewFront(float delay)
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator StartWalk(float delay)
     {
         yield return new WaitForSeconds(delay);
-        ClientWalk(2f);
+        ClientWalk(1f);
     }
 
     public void ClientWalk(float duration)
@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator ClientWalkProcess(float duration)
     {
         Vector3 start_Pos = client_transform.position;
-        Vector3 dest_Pos = new Vector3(client_transform.position.x + 3, client_transform.position.y + 0.5f, 0);
+        Vector3 dest_Pos = new Vector3(client_transform.position.x + 3, client_transform.position.y, 0);
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -184,6 +184,36 @@ public class GameManager : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             client_transform.position = Vector3.Lerp(start_Pos, dest_Pos, elapsed / (duration / 2));
+            yield return null;
+        }
+
+        client_transform.position = dest_Pos;
+
+    }
+
+    public void LeaveWalk(float duration)
+    {
+        if (walkCoroutine != null) StopCoroutine(walkCoroutine);
+
+        walkCoroutine = StartCoroutine(ClientLeaveProcess(duration));
+    }
+
+    private IEnumerator ClientLeaveProcess(float duration)
+    {
+        chat.SetActive(false);
+
+        Vector3 start_Pos = client_transform.position;
+
+        Vector3 dest_Pos = new Vector3(client_transform.position.x - 10, client_transform.position.y, 0);
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            client_transform.position = Vector3.Lerp(start_Pos, dest_Pos, elapsed / duration);
+
             yield return null;
         }
 

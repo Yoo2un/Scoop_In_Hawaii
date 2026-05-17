@@ -3,6 +3,12 @@ using UnityEngine;
 public class IceCreamMaking : MonoBehaviour
 {
     public IceCream currentIceCream;
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
 
     [VisibleEnum(typeof(IceCreamType))]
     public void SelectType(int type)
@@ -158,5 +164,7 @@ public class IceCreamMaking : MonoBehaviour
         }
 
         Debug.Log(result);
+
+        gameManager.LeaveWalk(3f);
     }
 }
