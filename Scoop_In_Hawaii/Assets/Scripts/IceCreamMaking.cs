@@ -29,6 +29,25 @@ public class IceCreamMaking : MonoBehaviour
             return;
         }
 
+        // 토핑이 이미 올라가있는지 검사
+        if(currentIceCream.Toppings.Count > 0)
+        {
+            Debug.Log("이미 토핑이 올라가서 맛을 추가할 수 없습니다");
+            return;
+        }
+
+        // 시럽이 이미 올라가있는지 검사
+        if(currentIceCream.Type == IceCreamType.Cone)
+        {
+            Cone cone = (Cone)currentIceCream;
+
+            if (cone.syrup  != Syrup.None)
+            {
+                Debug.Log("이미 시럽이 올라가서 맛을 추가할 수 없습니다");
+                return;
+            }
+        }
+
         Flavor flavor = (Flavor)flavorIndex;
 
         // 현재 타입에서 사용 가능한 맛인지 검사
@@ -94,6 +113,12 @@ public class IceCreamMaking : MonoBehaviour
 
         Cone cone = (Cone)currentIceCream;
 
+        if(cone.syrup != Syrup.None)
+        {
+            Debug.Log("이미 시럽이 존재합니다");
+;           return;
+        }
+
         cone.syrup = (Syrup)syrupIndex;
 
         Debug.Log(cone.syrup + " 시럽 추가");
@@ -158,5 +183,7 @@ public class IceCreamMaking : MonoBehaviour
         }
 
         Debug.Log(result);
+
+        ResetIceCream(); // 제작 후 초기화
     }
 }
