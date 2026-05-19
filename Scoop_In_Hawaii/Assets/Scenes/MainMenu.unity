@@ -314,7 +314,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ed0a06d44d4494e958fdd3560e16cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  Machine_Panel: {fileID: 0}
+  clientList:
+  - clientName: A
+    sideSprite: {fileID: 2651377931920932437, guid: 603dc3722ecba8d4d8fd6b73b43f1aef, type: 3}
+    frontSprite: {fileID: -7516575146871756489, guid: f3ae42faa493fe1418d28a5cf99038e4, type: 3}
+  - clientName: B
+    sideSprite: {fileID: -4669476257333590241, guid: 5b7db8e6d48417d40b250393f3d52eb1, type: 3}
+    frontSprite: {fileID: -5248298948834303939, guid: 75e173327b426da42b33b63f369618dd, type: 3}
 --- !u!1 &1226016959
 GameObject:
   m_ObjectHideFlags: 0
