@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
 
 public class IceCreamMaking : MonoBehaviour
 {
     public IceCream currentIceCream;
+    public TMP_Text moneyText;
+    private int money = 0;
 
     [VisibleEnum(typeof(IceCreamType))]
     public void SelectType(int type)
@@ -158,5 +161,7 @@ public class IceCreamMaking : MonoBehaviour
         }
 
         Debug.Log(result);
+        money += 50;
+        moneyText.text = money.ToString();
     }
 }

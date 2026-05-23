@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb565121b73dea947a7c33884c80af86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceCreamMaking
+  moneyText: {fileID: 1881007737}
 --- !u!4 &255306862
 Transform:
   m_ObjectHideFlags: 0

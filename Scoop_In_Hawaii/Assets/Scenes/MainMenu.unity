@@ -314,7 +314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ed0a06d44d4494e958fdd3560e16cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  Machine_Panel: {fileID: 0}
 --- !u!1 &1226016959
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +581,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 650197098}
         m_TargetAssemblyTypeName: NewGame, Assembly-CSharp
-        m_MethodName: NewGameScene
+        m_MethodName: NewGameClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
