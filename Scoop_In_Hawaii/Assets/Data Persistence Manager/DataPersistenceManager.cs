@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 //싱글톤 클래스
 //인스턴스를 단 1개만 생성해서 어디서든 접근 가능한 생성 디자인 패턴
@@ -6,6 +9,7 @@ public class DataPersistenceManager : MonoBehaviour
 {
 
    private GameData gameData;
+   private List<IDataPersistence> dataPersistenceObjects;
    
    public static DataPersistenceManager instance { get; private set; }
 
@@ -16,7 +20,28 @@ public class DataPersistenceManager : MonoBehaviour
             Debug.LogError("Found more than one Data Persistence Manager in the scene.");
             instance = this;
         }
+        DontDestroyOnLoad(this.gameObject);
     }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+
+        Debug.Log("Found Data Persistence Objects: " + dataPersistenceObjects.Count);
+
+        LoadGame();
+    }
+
 
     public void NewGame()
     {
@@ -35,12 +60,34 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         //로드된 데이터를 필요한 다른 모든 스크립트로 전달하는 경우(?)
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
+            dataPersistenceObj.LoadData(gameData);
+        }
+        
+        Debug.Log("Loaded Money = " + gameData.money);
     }
 
     public void SaveGame()
     {
         //다른 스크립트에서 데이터를 업데이트할 수 있도록 데이터 전달하기
-
+        foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+        {
+            Debug.Log("Saving from: " + dataPersistenceObj);
+            dataPersistenceObj.SaveData(ref gameData);
+        }
+        Debug.Log("Saved Money = " + gameData.money);
         //파일 데이터 핸들러를 사용하여 해당 데이터를 파일에 저장하기
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveGame();
+    }
+
+    private List<IDataPersistence> FindAllDataPersistenceObjects()
+    {
+        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsByType<MonoBehaviour>().OfType<IDataPersistence>();
+        return new List<IDataPersistence>(dataPersistenceObjects);
     }
 }
