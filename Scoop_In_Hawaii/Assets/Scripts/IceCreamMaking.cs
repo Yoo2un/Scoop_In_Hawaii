@@ -10,6 +10,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     public void LoadData(GameData data)
     {
         this.money = data.money;
+        moneyText.text = money.ToString();
     }
 
     public void SaveData(ref GameData data)
