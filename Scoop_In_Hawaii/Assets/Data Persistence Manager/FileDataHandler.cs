@@ -11,12 +11,16 @@ public class FileDataHandler
     // 저장 파일 이름
     private string dataFileName = "";
 
+    private bool useEncryption = false;
+    private readonly string encryptionCodeWord = "word";
+
     // 생성자
     // 저장 위치와 파일 이름을 받아서 변수에 저장
-    public FileDataHandler(string dataDirPath, string dataFileName)
+    public FileDataHandler(string dataDirPath, string dataFileName, bool useEncryption)
     {
         this.dataDirPath = dataDirPath;
         this.dataFileName = dataFileName;
+        this.useEncryption = useEncryption;
     }
 
     // =========================
@@ -51,6 +55,11 @@ public class FileDataHandler
                     }
                 }
 
+                if(useEncryption)
+                {
+                    dataToLoad = EncryptDecrypt(dataToLoad);
+                }
+
                 // JSON 문자열 -> GameData 객체로 변환
                 loadedData = JsonUtility.FromJson<GameData>(dataToLoad);
             }
@@ -83,6 +92,11 @@ public class FileDataHandler
             // true = 보기 좋게 줄바꿈 포함
             string dataToStore = JsonUtility.ToJson(data, true);
 
+            if(useEncryption)
+            {
+                dataToStore = EncryptDecrypt(dataToStore);
+            }
+
             // 파일 생성 모드로 열기
             // 기존 파일 있으면 덮어쓰기
             using (FileStream stream = new FileStream(fullPath, FileMode.Create))
@@ -101,5 +115,16 @@ public class FileDataHandler
             Debug.LogError("Error occured when trying to save data to file: "
                 + fullPath + "\n" + e);
         }
+    }
+
+    private string EncryptDecrypt(string data)
+    {
+        string modifiedData = "";
+        for(int i = 0; i < data.Length; i++)
+        {
+            modifiedData += (char)(data[i] ^ encryptionCodeWord[i % encryptionCodeWord.Length]);
+        }
+
+        return modifiedData;
     }
 }
