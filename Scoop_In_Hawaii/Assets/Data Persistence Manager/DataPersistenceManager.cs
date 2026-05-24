@@ -8,6 +8,10 @@ using UnityEngine.SceneManagement;
 public class DataPersistenceManager : MonoBehaviour
 {
 
+   [Header("File Storage Config")]
+   [SerializeField] private string fileName;
+
+   private FileDataHandler dataHandler;
    private GameData gameData;
    private List<IDataPersistence> dataPersistenceObjects;
    
@@ -36,8 +40,7 @@ public class DataPersistenceManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-
-        Debug.Log("Found Data Persistence Objects: " + dataPersistenceObjects.Count);
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
 
         LoadGame();
     }
@@ -51,6 +54,7 @@ public class DataPersistenceManager : MonoBehaviour
     public void LoadGame()
     {
         //저장된 데이터 불러오기(로드할 데이터가 있는 경우)
+        this.gameData = dataHandler.Load();
 
         //로드할 데이터가 없는 경우
         if(this.gameData == null)
@@ -65,7 +69,6 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObj.LoadData(gameData);
         }
         
-        Debug.Log("Loaded Money = " + gameData.money);
     }
 
     public void SaveGame()
@@ -76,8 +79,9 @@ public class DataPersistenceManager : MonoBehaviour
             Debug.Log("Saving from: " + dataPersistenceObj);
             dataPersistenceObj.SaveData(ref gameData);
         }
-        Debug.Log("Saved Money = " + gameData.money);
+
         //파일 데이터 핸들러를 사용하여 해당 데이터를 파일에 저장하기
+        dataHandler.Save(gameData);
     }
 
     private void OnApplicationQuit()
