@@ -7,6 +7,13 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     public TMP_Text moneyText;
     private int money = 0;
 
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
+    }
+
     public void LoadData(GameData data)
     {
         this.money = data.money;
@@ -16,17 +23,6 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     public void SaveData(ref GameData data)
     {
         data.money = this.money;
-    }
-using UnityEngine;
-
-public class IceCreamMaking : MonoBehaviour
-{
-    public IceCream currentIceCream;
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     [VisibleEnum(typeof(IceCreamType))]
@@ -66,9 +62,9 @@ public class IceCreamMaking : MonoBehaviour
         {
             Cone cone = (Cone)currentIceCream;
 
-            if (cone.syrup  != Syrup.None)
+            if (cone.syrup != Syrup.None)
             {
-                Debug.Log("�̹� �÷��� �ö󰡼� ���� �߰��� �� �����ϴ�");
+                Debug.Log("이미 시럽이 존재합니다");
                 return;
             }
         }
@@ -208,14 +204,11 @@ public class IceCreamMaking : MonoBehaviour
         }
 
         Debug.Log(result);
+
         money += 50;
         moneyText.text = money.ToString();
 
-        ResetIceCream(); // ���� �� �ʱ�ȭ
-            result += $"�÷� : {cone.syrup}";
-        }
-
-        Debug.Log(result);
+        ResetIceCream(); // 완료 후 초기화
 
         gameManager.LeaveWalk(3f);
     }
