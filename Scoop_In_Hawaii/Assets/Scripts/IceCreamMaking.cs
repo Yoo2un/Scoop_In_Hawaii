@@ -1,22 +1,8 @@
-using TMPro;
 using UnityEngine;
 
-public class IceCreamMaking : MonoBehaviour, IDataPersistence
+public class IceCreamMaking : MonoBehaviour
 {
     public IceCream currentIceCream;
-    public TMP_Text moneyText;
-    private int money = 0;
-
-    public void LoadData(GameData data)
-    {
-        this.money = data.money;
-        moneyText.text = money.ToString();
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.money = this.money;
-    }
     private GameManager gameManager;
 
     private void Start()
@@ -27,17 +13,17 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     [VisibleEnum(typeof(IceCreamType))]
     public void SelectType(int type)
     {
-        if (type == 0) //ï¿½ï¿½ï¿½Ì¸ï¿½
+        if (type == 0) //ÄÜÀÌ¸é
         {
             currentIceCream = new Cone();
         }
-        else //ï¿½ï¿½ï¿½Ì¸ï¿½
+        else //¹ÙÀÌ¸é
         {
             currentIceCream = new IceCream();
         }
         currentIceCream.Type = (IceCreamType)type;
 
-        Debug.Log(currentIceCream.Type + "ï¿½ß°ï¿½");
+        Debug.Log(currentIceCream.Type + "Ãß°¡");
     }
 
 
@@ -49,36 +35,17 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
             return;
         }
 
-        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½Ã¶ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
-        if(currentIceCream.Toppings.Count > 0)
-        {
-            Debug.Log("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¶ó°¡¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½");
-            return;
-        }
-
-        // ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½Ã¶ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
-        if(currentIceCream.Type == IceCreamType.Cone)
-        {
-            Cone cone = (Cone)currentIceCream;
-
-            if (cone.syrup  != Syrup.None)
-            {
-                Debug.Log("ï¿½Ì¹ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½Ã¶ó°¡¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½");
-                return;
-            }
-        }
-
         Flavor flavor = (Flavor)flavorIndex;
 
-        // ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ô¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
+        // ÇöÀç Å¸ÀÔ¿¡¼­ »ç¿ë °¡´ÉÇÑ ¸ÀÀÎÁö °Ë»ç
         if (!IceCreamData.TypeFlavors[currentIceCream.Type].Contains(flavor))
         {
-            Debug.Log("ï¿½ï¿½ Å¸ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½");
+            Debug.Log("ÀÌ Å¸ÀÔ¿¡¼­´Â »ç¿ëÇÒ ¼ö ¾ø´Â ¸À");
 
             return;
         }
 
-        // ï¿½ï¿½
+        // ÄÜ
         if (currentIceCream.Type == IceCreamType.Cone)
         {
             if (currentIceCream.Flavors.Count >= 3)
@@ -88,17 +55,17 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
             currentIceCream.Flavors.Add(flavor);
 
-            Debug.Log(flavor + "ï¿½ï¿½ ï¿½ß°ï¿½");
+            Debug.Log(flavor + "¸À Ãß°¡");
         }
 
-        // ï¿½ï¿½
+        // ¹Ù
         else if (currentIceCream.Type == IceCreamType.Bar)
         {
             currentIceCream.Flavors.Clear();
 
             currentIceCream.Flavors.Add(flavor);
 
-            Debug.Log(flavor + "ï¿½ï¿½ ï¿½ß°ï¿½");
+            Debug.Log(flavor + "¸À Ãß°¡");
         }
     }
 
@@ -114,7 +81,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
         currentIceCream.Toppings.Add(topping);
 
-        Debug.Log(topping + " ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½");
+        Debug.Log(topping + " ÅäÇÎ Ãß°¡");
     }
 
     [VisibleEnum(typeof(Syrup))]
@@ -125,7 +92,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
             return;
         }
 
-        // ï¿½Ü¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+        // ÄÜ¸¸ °¡´É
         if (currentIceCream.Type != IceCreamType.Cone)
         {
             return;
@@ -133,41 +100,35 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
         Cone cone = (Cone)currentIceCream;
 
-        if(cone.syrup != Syrup.None)
-        {
-            Debug.Log("ï¿½Ì¹ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½");
-;           return;
-        }
-
         cone.syrup = (Syrup)syrupIndex;
 
-        Debug.Log(cone.syrup + " ï¿½Ã·ï¿½ ï¿½ß°ï¿½");
+        Debug.Log(cone.syrup + " ½Ã·´ Ãß°¡");
     }
 
-    // ï¿½Ê±ï¿½È­
+    // ÃÊ±âÈ­
     public void ResetIceCream()
     {
         currentIceCream = null;
 
-        Debug.Log("ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ ï¿½Ê±ï¿½È­");
+        Debug.Log("¾ÆÀÌ½ºÅ©¸² ÃÊ±âÈ­");
     }
 
     public void CompleteIceCream()
     {
         if (currentIceCream == null)
         {
-            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+            Debug.Log("Á¦ÀÛ ÁßÀÎ ¾ÆÀÌ½ºÅ©¸² ¾øÀ½");
 
             return;
         }
 
         string result = "";
 
-        // Å¸ï¿½ï¿½
-        result += $"Å¸ï¿½ï¿½ : {currentIceCream.Type}\n";
+        // Å¸ÀÔ
+        result += $"Å¸ÀÔ : {currentIceCream.Type}\n";
 
-        // ï¿½ï¿½
-        result += "ï¿½ï¿½ : ";
+        // ¸À
+        result += "¸À : ";
 
         if (currentIceCream.Flavors.Count > 0)
         {
@@ -175,13 +136,13 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         }
         else
         {
-            result += "ï¿½ï¿½ï¿½ï¿½";
+            result += "¾øÀ½";
         }
 
         result += "\n";
 
-        // ï¿½ï¿½ï¿½ï¿½
-        result += "ï¿½ï¿½ï¿½ï¿½ : ";
+        // ÅäÇÎ
+        result += "ÅäÇÎ : ";
 
         if (currentIceCream.Toppings.Count > 0)
         {
@@ -189,24 +150,20 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         }
         else
         {
-            result += "ï¿½ï¿½ï¿½ï¿½";
+            result += "¾øÀ½";
         }
 
         result += "\n";
 
-        // ï¿½Ã·ï¿½ (ï¿½Ü¸ï¿½)
+        // ½Ã·´ (ÄÜ¸¸)
         if (currentIceCream.Type == IceCreamType.Cone)
         {
             Cone cone = (Cone)currentIceCream;
 
-            result += $"ï¿½Ã·ï¿½ : {cone.syrup}";
+            result += $"½Ã·´ : {cone.syrup}";
         }
 
         Debug.Log(result);
-        money += 50;
-        moneyText.text = money.ToString();
-
-        ResetIceCream(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ê±ï¿½È­
 
         gameManager.LeaveWalk(3f);
     }
