@@ -16,6 +16,11 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     public void SaveData(ref GameData data)
     {
         data.money = this.money;
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     [VisibleEnum(typeof(IceCreamType))]
@@ -201,5 +206,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         moneyText.text = money.ToString();
 
         ResetIceCream(); // ���� �� �ʱ�ȭ
+
+        gameManager.LeaveWalk(3f);
     }
 }

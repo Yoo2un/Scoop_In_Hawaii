@@ -14,6 +14,22 @@ public class GameManager : MonoBehaviour
     int money = 1000;
     bool gameStart = false;
 
+    //손님 방문 상태 - 다음 손님 방문할 때 사용
+    bool isClientVisiting = false;
+
+    //손님 시작 위치 저장
+    Vector3 clientStartPos;
+
+    //손님 리스트
+    [SerializeField]
+    private List<Client> clientList;
+
+    //현재 손님
+    private Client currentClient;
+
+    //손님 이미지용
+    SpriteRenderer clientSpriteRenderer;
+
     IceCream currentOrder;
 
     GameObject obj_Day = null;
@@ -100,6 +116,8 @@ public class GameManager : MonoBehaviour
         client = GameObject.Find("Client");
         client_transform = client.GetComponent<Transform>();
         client_view_front = client.GetComponent<View_Front>();
+        clientSpriteRenderer = client.GetComponent<SpriteRenderer>();
+        clientStartPos = client_transform.position;
 
         chat = GameObject.Find("UI_Chat");
         text_chat = GameObject.Find("Text_Chat").GetComponent<TextMeshProUGUI>();
@@ -115,22 +133,38 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartShrink(5.0f));
         StartCoroutine(StartTextPosReset(5.0f));
         StartCoroutine(TimePasses());
+
         Invoke("VisitClient", 5.0f);
     }
 
     void VisitClient()
     {
+        //손님 있으면 다음 손님 못 오게
+        if (isClientVisiting)
+        {
+            return;
+        }
+
+        isClientVisiting = true;
+
+        Client randomClient = clientList[UnityEngine.Random.Range(0, clientList.Count)];
+        currentClient = randomClient;
+        clientSpriteRenderer.sprite = currentClient.sideSprite;
+
         StartCoroutine(StartWalk(0f));
-        StartCoroutine(StartWalk(3f));
-        StartCoroutine(StartWalk(6f));
-        StartCoroutine(StartViewFront(9f));
-        StartCoroutine(StartChat(10f));
+        StartCoroutine(StartWalk(1f));
+        StartCoroutine(StartWalk(2f));
+        StartCoroutine(StartViewFront(3f));
+        StartCoroutine(StartChat(4.5f));
     }
 
     public IEnumerator StartViewFront(float delay)
     {
         yield return new WaitForSeconds(delay);
-        client_view_front.Active_View_Front();
+
+        clientSpriteRenderer.sprite = currentClient.frontSprite;
+
+        //client_view_front.Active_View_Front();
     }
 
     public IEnumerator StartChat(float delay)
@@ -151,7 +185,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator StartWalk(float delay)
     {
         yield return new WaitForSeconds(delay);
-        ClientWalk(2f);
+        ClientWalk(1f);
     }
 
     public void ClientWalk(float duration)
@@ -164,7 +198,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator ClientWalkProcess(float duration)
     {
         Vector3 start_Pos = client_transform.position;
-        Vector3 dest_Pos = new Vector3(client_transform.position.x + 3, client_transform.position.y + 0.5f, 0);
+        Vector3 dest_Pos = new Vector3(client_transform.position.x + 3, client_transform.position.y, 0);
         float elapsed = 0f;
 
         while (elapsed < duration)
@@ -189,6 +223,50 @@ public class GameManager : MonoBehaviour
 
         client_transform.position = dest_Pos;
 
+    }
+
+    public void LeaveWalk(float duration)
+    {
+        if (walkCoroutine != null) StopCoroutine(walkCoroutine);
+
+        walkCoroutine = StartCoroutine(ClientLeaveProcess(duration));
+    }
+
+    private IEnumerator ClientLeaveProcess(float duration)
+    {
+        chat.SetActive(false);
+
+        Vector3 start_Pos = client_transform.position;
+
+        Vector3 dest_Pos = new Vector3(client_transform.position.x - 10, client_transform.position.y, 0);
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            client_transform.position = Vector3.Lerp(start_Pos, dest_Pos, elapsed / duration);
+
+            yield return null;
+        }
+
+        client_transform.position = dest_Pos;
+
+        //다음 랜덤 손님 가능
+        isClientVisiting = false;
+
+        //랜덤 대기 시간
+        float randomDelay = UnityEngine.Random.Range(5f, 12f);
+
+        Debug.Log($"다음 손님까지 {randomDelay:F1}초");
+
+        yield return new WaitForSeconds(randomDelay);
+
+        //손님 위치 초기화
+        client_transform.position = clientStartPos;
+
+        VisitClient();
     }
 
     void Awake()
