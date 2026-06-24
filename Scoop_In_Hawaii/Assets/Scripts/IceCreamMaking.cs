@@ -17,6 +17,11 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     {
         data.money = this.money;
     }
+using UnityEngine;
+
+public class IceCreamMaking : MonoBehaviour
+{
+    public IceCream currentIceCream;
     private GameManager gameManager;
 
     private void Start()
@@ -207,6 +212,10 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         moneyText.text = money.ToString();
 
         ResetIceCream(); // ���� �� �ʱ�ȭ
+            result += $"�÷� : {cone.syrup}";
+        }
+
+        Debug.Log(result);
 
         gameManager.LeaveWalk(3f);
     }

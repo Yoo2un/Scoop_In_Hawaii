@@ -321,6 +321,7 @@ MonoBehaviour:
   - clientName: B
     sideSprite: {fileID: -4669476257333590241, guid: 5b7db8e6d48417d40b250393f3d52eb1, type: 3}
     frontSprite: {fileID: -5248298948834303939, guid: 75e173327b426da42b33b63f369618dd, type: 3}
+  Machine_Panel: {fileID: 0}
 --- !u!1 &1226016959
 GameObject:
   m_ObjectHideFlags: 0

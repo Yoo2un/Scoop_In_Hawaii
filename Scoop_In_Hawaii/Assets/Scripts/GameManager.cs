@@ -14,20 +14,20 @@ public class GameManager : MonoBehaviour
     int money = 1000;
     bool gameStart = false;
 
-    //¼Õ´Ô ¹æ¹® »óÅÂ - ´ÙÀ½ ¼Õ´Ô ¹æ¹®ÇÒ ¶§ »ç¿ë
+    //ï¿½Õ´ï¿½ ï¿½æ¹® ï¿½ï¿½ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
     bool isClientVisiting = false;
 
-    //¼Õ´Ô ½ÃÀÛ À§Ä¡ ÀúÀå
+    //ï¿½Õ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
     Vector3 clientStartPos;
 
-    //¼Õ´Ô ¸®½ºÆ®
+    //ï¿½Õ´ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
     [SerializeField]
     private List<Client> clientList;
 
-    //ÇöÀç ¼Õ´Ô
+    //ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´ï¿½
     private Client currentClient;
 
-    //¼Õ´Ô ÀÌ¹ÌÁö¿ë
+    //ï¿½Õ´ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½
     SpriteRenderer clientSpriteRenderer;
 
     IceCream currentOrder;
@@ -133,13 +133,12 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartShrink(5.0f));
         StartCoroutine(StartTextPosReset(5.0f));
         StartCoroutine(TimePasses());
-
         Invoke("VisitClient", 5.0f);
     }
 
     void VisitClient()
     {
-        //¼Õ´Ô ÀÖÀ¸¸é ´ÙÀ½ ¼Õ´Ô ¸ø ¿À°Ô
+        //ï¿½Õ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (isClientVisiting)
         {
             return;
@@ -253,17 +252,17 @@ public class GameManager : MonoBehaviour
 
         client_transform.position = dest_Pos;
 
-        //´ÙÀ½ ·£´ý ¼Õ´Ô °¡´É
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´ï¿½ ï¿½ï¿½ï¿½ï¿½
         isClientVisiting = false;
 
-        //·£´ý ´ë±â ½Ã°£
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
         float randomDelay = UnityEngine.Random.Range(5f, 12f);
 
-        Debug.Log($"´ÙÀ½ ¼Õ´Ô±îÁö {randomDelay:F1}ÃÊ");
+        Debug.Log($"ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ô±ï¿½ï¿½ï¿½ {randomDelay:F1}ï¿½ï¿½");
 
         yield return new WaitForSeconds(randomDelay);
 
-        //¼Õ´Ô À§Ä¡ ÃÊ±âÈ­
+        //ï¿½Õ´ï¿½ ï¿½ï¿½Ä¡ ï¿½Ê±ï¿½È­
         client_transform.position = clientStartPos;
 
         VisitClient();
