@@ -1,8 +1,22 @@
+using TMPro;
 using UnityEngine;
 
-public class IceCreamMaking : MonoBehaviour
+public class IceCreamMaking : MonoBehaviour, IDataPersistence
 {
     public IceCream currentIceCream;
+    public TMP_Text moneyText;
+    private int money = 0;
+
+    public void LoadData(GameData data)
+    {
+        this.money = data.money;
+        moneyText.text = money.ToString();
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.money = this.money;
+    }
 
     [VisibleEnum(typeof(IceCreamType))]
     public void SelectType(int type)
@@ -158,5 +172,7 @@ public class IceCreamMaking : MonoBehaviour
         }
 
         Debug.Log(result);
+        money += 50;
+        moneyText.text = money.ToString();
     }
 }

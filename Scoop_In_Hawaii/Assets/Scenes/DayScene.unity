@@ -664,6 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb565121b73dea947a7c33884c80af86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceCreamMaking
+  moneyText: {fileID: 1881007737}
 --- !u!4 &255306862
 Transform:
   m_ObjectHideFlags: 0
@@ -5691,7 +5692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4,321
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
