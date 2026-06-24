@@ -16,6 +16,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     public void SaveData(ref GameData data)
     {
         data.money = this.money;
+    }
     private GameManager gameManager;
 
     private void Start()
