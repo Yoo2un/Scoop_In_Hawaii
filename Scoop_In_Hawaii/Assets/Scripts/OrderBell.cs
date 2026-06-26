@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System.Linq;
 
 public class OrderBell : MonoBehaviour
 {
@@ -7,12 +8,17 @@ public class OrderBell : MonoBehaviour
     Transform tempPoint;
 
     GameObject currentSpawnedImage;
+    
+    private GameManager gameManager;
+    private IceCreamMaking iceCreamMaking;
 
     float moveSpeed = 800f;
 
     private void Start()
     {
         GameObject pointObj = GameObject.Find("temp_Point");
+        gameManager = FindAnyObjectByType<GameManager>();
+        iceCreamMaking = FindAnyObjectByType<IceCreamMaking>();
 
         if (pointObj != null)
         {
@@ -48,23 +54,57 @@ public class OrderBell : MonoBehaviour
         {
             Debug.LogWarning("아이스크림이 존재하지 않습니다.");
         }
+
+        if(gameManager.currentOrder.Equals(iceCreamMaking.currentIceCream))
+        {
+            Debug.Log("완벽한 제작!");
+        }
+        else
+        {
+            if (gameManager.currentOrder.Type != iceCreamMaking.currentIceCream.Type)
+            {
+                Debug.Log("종류가 다릅니다.");
+            }
+
+            if (!gameManager.currentOrder.Flavors.SequenceEqual(iceCreamMaking.currentIceCream.Flavors))
+            {
+                Debug.Log("맛이 다릅니다.");
+            }
+
+            if (!gameManager.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings))
+            {
+                Debug.Log("토핑이 다릅니다.");
+            }
+
+            if (gameManager.currentOrder is Cone orderCone &&
+               iceCreamMaking.currentIceCream is Cone madeCone)
+            {
+                if (orderCone.syrup != madeCone.syrup)
+                {
+                    Debug.Log("시럽이 다릅니다.");
+                }
+            }
+        }
     }
     private IEnumerator MoveIceCream()
     {
-        Vector3 startPos = tempPoint.position;
-        Vector3 targetPos = startPos + new Vector3(0, 1f, 0);
+        RectTransform rt = currentSpawnedImage.GetComponent<RectTransform>();
 
-        float duration = 1.0f;
+        Vector2 startPos = rt.anchoredPosition;
+        Vector2 targetPos = startPos + new Vector2(0, 200);
+
+        float duration = 1f;
         float timer = 0f;
 
         while (timer < duration)
         {
-            tempPoint.position = Vector3.Lerp(startPos, targetPos, timer / duration);
+            rt.anchoredPosition = Vector2.Lerp(startPos, targetPos, timer / duration);
             timer += Time.deltaTime;
             yield return null;
         }
 
-        tempPoint.position = targetPos;
+        rt.anchoredPosition = targetPos;
+
         Debug.Log("이동 완료");
     }
 

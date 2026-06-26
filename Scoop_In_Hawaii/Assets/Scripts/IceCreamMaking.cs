@@ -53,7 +53,6 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         // ������ �̹� �ö��ִ��� �˻�
         if(currentIceCream.Toppings.Count > 0)
         {
-            Debug.Log("�̹� ������ �ö󰡼� ���� �߰��� �� �����ϴ�");
             return;
         }
 
@@ -74,8 +73,6 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         // ���� Ÿ�Կ��� ��� ������ ������ �˻�
         if (!IceCreamData.TypeFlavors[currentIceCream.Type].Contains(flavor))
         {
-            Debug.Log("�� Ÿ�Կ����� ����� �� ���� ��");
-
             return;
         }
 
@@ -89,7 +86,6 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
             currentIceCream.Flavors.Add(flavor);
 
-            Debug.Log(flavor + "�� �߰�");
         }
 
         // ��
@@ -99,7 +95,6 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
             currentIceCream.Flavors.Add(flavor);
 
-            Debug.Log(flavor + "�� �߰�");
         }
     }
 
@@ -115,7 +110,6 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
         currentIceCream.Toppings.Add(topping);
 
-        Debug.Log(topping + " ���� �߰�");
     }
 
     [VisibleEnum(typeof(Syrup))]
@@ -136,74 +130,68 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
         if(cone.syrup != Syrup.None)
         {
-            Debug.Log("�̹� �÷��� �����մϴ�");
 ;           return;
         }
 
         cone.syrup = (Syrup)syrupIndex;
 
-        Debug.Log(cone.syrup + " �÷� �߰�");
     }
 
     // �ʱ�ȭ
     public void ResetIceCream()
     {
         currentIceCream = null;
-
-        Debug.Log("���̽�ũ�� �ʱ�ȭ");
     }
 
     public void CompleteIceCream()
     {
         if (currentIceCream == null)
         {
-            Debug.Log("���� ���� ���̽�ũ�� ����");
-
             return;
         }
 
-        string result = "";
+        //string result = "";
 
-        // Ÿ��
-        result += $"Ÿ�� : {currentIceCream.Type}\n";
+        //// Ÿ��
+        //result += $"Ÿ�� : {currentIceCream.Type}\n";
 
-        // ��
-        result += "�� : ";
+        //// ��
+        //result += "�� : ";
 
-        if (currentIceCream.Flavors.Count > 0)
-        {
-            result += string.Join(", ", currentIceCream.Flavors);
-        }
-        else
-        {
-            result += "����";
-        }
+        //if (currentIceCream.Flavors.Count > 0)
+        //{
+        //    result += string.Join(", ", currentIceCream.Flavors);
+        //}
+        //else
+        //{
+        //    result += "����";
+        //}
 
-        result += "\n";
+        //result += "\n";
 
-        // ����
-        result += "���� : ";
+        //// ����
+        //result += "���� : ";
 
-        if (currentIceCream.Toppings.Count > 0)
-        {
-            result += string.Join(", ", currentIceCream.Toppings);
-        }
-        else
-        {
-            result += "����";
-        }
+        //if (currentIceCream.Toppings.Count > 0)
+        //{
+        //    result += string.Join(", ", currentIceCream.Toppings);
+        //}
+        //else
+        //{
+        //    result += "����";
+        //}
 
-        result += "\n";
+        //result += "\n";
 
-        // �÷� (�ܸ�)
-        if (currentIceCream.Type == IceCreamType.Cone)
-        {
-            Cone cone = (Cone)currentIceCream;
+        //// �÷� (�ܸ�)
+        //if (currentIceCream.Type == IceCreamType.Cone)
+        //{
+        //    Cone cone = (Cone)currentIceCream;
 
-            result += $"�÷� : {cone.syrup}";
-        }
+        //    result += $"�÷� : {cone.syrup}";
+        //}
 
-        Debug.Log(result);
+        //Debug.Log(result);
 
         money += 50;
         moneyText.text = money.ToString();

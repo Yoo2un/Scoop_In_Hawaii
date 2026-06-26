@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     //�մ� �̹�����
     SpriteRenderer clientSpriteRenderer;
 
-    IceCream currentOrder;
+    public IceCream currentOrder;
 
     GameObject obj_Day = null;
     GameObject obj_Num = null;
@@ -256,9 +256,9 @@ public class GameManager : MonoBehaviour
         isClientVisiting = false;
 
         //���� ��� �ð�
-        float randomDelay = UnityEngine.Random.Range(5f, 12f);
+        float randomDelay = UnityEngine.Random.Range(2f, 5f);
 
-        Debug.Log($"���� �մԱ��� {randomDelay:F1}��");
+        Debug.Log($"{randomDelay:F1}초 후 손님 등장");
 
         yield return new WaitForSeconds(randomDelay);
 
