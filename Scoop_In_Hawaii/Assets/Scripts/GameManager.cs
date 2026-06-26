@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     bool gameStart = false;
 
     //�մ� �湮 ���� - ���� �մ� �湮�� �� ���
-    bool isClientVisiting = false;
+    public bool isClientVisiting = false;
 
     //�մ� ���� ��ġ ����
     Vector3 clientStartPos;
@@ -256,7 +256,7 @@ public class GameManager : MonoBehaviour
         isClientVisiting = false;
 
         //���� ��� �ð�
-        float randomDelay = UnityEngine.Random.Range(2f, 5f);
+        float randomDelay = UnityEngine.Random.Range(120f, 180f);
 
         Debug.Log($"{randomDelay:F1}초 후 손님 등장");
 

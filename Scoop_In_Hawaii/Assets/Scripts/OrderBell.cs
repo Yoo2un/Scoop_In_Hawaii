@@ -12,7 +12,7 @@ public class OrderBell : MonoBehaviour
     private GameManager gameManager;
     private IceCreamMaking iceCreamMaking;
 
-    float moveSpeed = 800f;
+    //float moveSpeed = 800f;
 
     private void Start()
     {
@@ -52,28 +52,28 @@ public class OrderBell : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("아이스크림이 존재하지 않습니다.");
+            //Debug.LogWarning("아이스크림이 존재하지 않습니다.");
         }
 
         if(gameManager.currentOrder.Equals(iceCreamMaking.currentIceCream))
         {
-            Debug.Log("완벽한 제작!");
+            //Debug.Log("완벽한 제작!");
         }
         else
         {
             if (gameManager.currentOrder.Type != iceCreamMaking.currentIceCream.Type)
             {
-                Debug.Log("종류가 다릅니다.");
+                //Debug.Log("종류가 다릅니다.");
             }
 
             if (!gameManager.currentOrder.Flavors.SequenceEqual(iceCreamMaking.currentIceCream.Flavors))
             {
-                Debug.Log("맛이 다릅니다.");
+                //Debug.Log("맛이 다릅니다.");
             }
 
             if (!gameManager.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings))
             {
-                Debug.Log("토핑이 다릅니다.");
+                //Debug.Log("토핑이 다릅니다.");
             }
 
             if (gameManager.currentOrder is Cone orderCone &&
@@ -81,7 +81,7 @@ public class OrderBell : MonoBehaviour
             {
                 if (orderCone.syrup != madeCone.syrup)
                 {
-                    Debug.Log("시럽이 다릅니다.");
+                    //Debug.Log("시럽이 다릅니다.");
                 }
             }
         }
