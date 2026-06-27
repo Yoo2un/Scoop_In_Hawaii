@@ -12,6 +12,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
+        GameManager.Instance.setMoney(money);
     }
 
     public void LoadData(GameData data)
@@ -206,6 +207,11 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         Debug.Log(result);
 
         money += 50;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.profit += 50;
+        }
+        GameManager.Instance.setMoney(money);
         moneyText.text = money.ToString();
 
         ResetIceCream(); // 완료 후 초기화
