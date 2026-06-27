@@ -29,24 +29,24 @@ public class OrderBell : MonoBehaviour
             if (rt != null) rt.anchoredPosition = Vector2.zero;
             else currentSpawnedImage.transform.localPosition = Vector3.zero;
 
-            Debug.Log("ÀÓ½Ã·Î ÀÌ¹ÌÁö »ı¼º");
+            Debug.Log("ì„ì‹œë¡œ ì´ë¯¸ì§€ ìƒì„±");
         }
         else
         {
-            Debug.Log("ÀÌ¹Ì »ı¼ºµÊ");
+            Debug.Log("ì´ë¯¸ ìƒì„±ë¨");
         }
     }
 
     public void ServeIceCream()
     {
-        // »ı¼ºµÈ ¾ÆÀÌ½ºÅ©¸²ÀÌ ÀÖ°í, ¸ñÇ¥ ÁöÁ¡ÀÌ ¿¬°áµÇ¾î ÀÖÀ» ¶§¸¸ ½ÇÇà
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½, ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (currentSpawnedImage != null)
         {
             StartCoroutine(MoveIceCream());
         }
         else
         {
-            Debug.LogWarning("¾ÆÀÌ½ºÅ©¸²ÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+            Debug.LogWarning("ì•„ì´ìŠ¤í¬ë¦¼ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
         }
     }
     private IEnumerator MoveIceCream()
@@ -65,7 +65,7 @@ public class OrderBell : MonoBehaviour
         }
 
         tempPoint.position = targetPos;
-        Debug.Log("ÀÌµ¿ ¿Ï·á");
+        Debug.Log("ì´ë™ ì™„ë£Œ");
     }
 
 }

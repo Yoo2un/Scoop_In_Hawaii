@@ -28,17 +28,17 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
     [VisibleEnum(typeof(IceCreamType))]
     public void SelectType(int type)
     {
-        if (type == 0) //���̸�
+        if (type == 0) //콘이면
         {
             currentIceCream = new Cone();
         }
-        else //���̸�
+        else //바이면
         {
             currentIceCream = new IceCream();
         }
         currentIceCream.Type = (IceCreamType)type;
 
-        Debug.Log(currentIceCream.Type + "�߰�");
+        Debug.Log(currentIceCream.Type + "추가");
     }
 
 
@@ -53,7 +53,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         // ������ �̹� �ö��ִ��� �˻�
         if(currentIceCream.Toppings.Count > 0)
         {
-            Debug.Log("�̹� ������ �ö󰡼� ���� �߰��� �� �����ϴ�");
+            Debug.Log("");
             return;
         }
 
@@ -71,15 +71,15 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
         Flavor flavor = (Flavor)flavorIndex;
 
-        // ���� Ÿ�Կ��� ��� ������ ������ �˻�
+        // 현재 타입에서 사용 가능한 맛인지 검사
         if (!IceCreamData.TypeFlavors[currentIceCream.Type].Contains(flavor))
         {
-            Debug.Log("�� Ÿ�Կ����� ����� �� ���� ��");
+            Debug.Log("이 타입에서는 사용할 수 없는 맛");
 
             return;
         }
 
-        // ��
+        // 콘
         if (currentIceCream.Type == IceCreamType.Cone)
         {
             if (currentIceCream.Flavors.Count >= 3)
@@ -89,17 +89,17 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
             currentIceCream.Flavors.Add(flavor);
 
-            Debug.Log(flavor + "�� �߰�");
+            Debug.Log(flavor + "맛 추가");
         }
 
-        // ��
+        // 바
         else if (currentIceCream.Type == IceCreamType.Bar)
         {
             currentIceCream.Flavors.Clear();
 
             currentIceCream.Flavors.Add(flavor);
 
-            Debug.Log(flavor + "�� �߰�");
+            Debug.Log(flavor + "맛 추가");
         }
     }
 
@@ -115,7 +115,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
         currentIceCream.Toppings.Add(topping);
 
-        Debug.Log(topping + " ���� �߰�");
+        Debug.Log(topping + " 토핑 추가");
     }
 
     [VisibleEnum(typeof(Syrup))]
@@ -126,7 +126,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
             return;
         }
 
-        // �ܸ� ����
+        // 콘만 가능
         if (currentIceCream.Type != IceCreamType.Cone)
         {
             return;
@@ -136,39 +136,39 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
         if(cone.syrup != Syrup.None)
         {
-            Debug.Log("�̹� �÷��� �����մϴ�");
+            Debug.Log("시럽이 이미 있습니다.");
 ;           return;
         }
 
         cone.syrup = (Syrup)syrupIndex;
 
-        Debug.Log(cone.syrup + " �÷� �߰�");
+        Debug.Log(cone.syrup + " 시럽 추가");
     }
 
-    // �ʱ�ȭ
+    // 초기화
     public void ResetIceCream()
     {
         currentIceCream = null;
 
-        Debug.Log("���̽�ũ�� �ʱ�ȭ");
+        Debug.Log("아이스크림 초기화");
     }
 
     public void CompleteIceCream()
     {
         if (currentIceCream == null)
         {
-            Debug.Log("���� ���� ���̽�ũ�� ����");
+            Debug.Log("제작 중인 아이스크림 없음");
 
             return;
         }
 
         string result = "";
 
-        // Ÿ��
-        result += $"Ÿ�� : {currentIceCream.Type}\n";
+        // 타입
+        result += $"타입 : {currentIceCream.Type}\n";
 
-        // ��
-        result += "�� : ";
+        // 맛
+        result += "맛 : ";
 
         if (currentIceCream.Flavors.Count > 0)
         {
@@ -176,13 +176,13 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         }
         else
         {
-            result += "����";
+            result += "없음";
         }
 
         result += "\n";
 
-        // ����
-        result += "���� : ";
+        // 토핑
+        result += "토핑 : ";
 
         if (currentIceCream.Toppings.Count > 0)
         {
@@ -190,17 +190,17 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
         }
         else
         {
-            result += "����";
+            result += "없음";
         }
 
         result += "\n";
 
-        // �÷� (�ܸ�)
+        // 시럽 (콘만)
         if (currentIceCream.Type == IceCreamType.Cone)
         {
             Cone cone = (Cone)currentIceCream;
 
-            result += $"�÷� : {cone.syrup}";
+            result += $"시럽 : {cone.syrup}";
         }
 
         Debug.Log(result);

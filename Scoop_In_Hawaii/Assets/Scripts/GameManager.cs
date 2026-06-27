@@ -258,7 +258,7 @@ public class GameManager : MonoBehaviour
         //���� ��� �ð�
         float randomDelay = UnityEngine.Random.Range(5f, 12f);
 
-        Debug.Log($"���� �մԱ��� {randomDelay:F1}��");
+        Debug.Log($"다음 손님까지 {randomDelay:F1}초");
 
         yield return new WaitForSeconds(randomDelay);
 
