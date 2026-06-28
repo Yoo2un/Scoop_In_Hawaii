@@ -32,6 +32,8 @@ public class MachineUIManager : MonoBehaviour
 
     public void CloseAll()
     {
-       machinePanel.SetActive(false);
+        conePanel.SetActive(false);
+        barPanel.SetActive(false);
+        machinePanel.SetActive(false);
     }
 }

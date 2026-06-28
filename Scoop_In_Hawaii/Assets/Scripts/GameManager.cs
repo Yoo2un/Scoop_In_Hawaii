@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public DayState dayState;
     public int day = 1;
     public int profit = 0;
+    public int material_cost = 0; // 재료비
 
     int[] time = new int[2] { 11, 55 };
     List<IceCream> client_Ice = null;
