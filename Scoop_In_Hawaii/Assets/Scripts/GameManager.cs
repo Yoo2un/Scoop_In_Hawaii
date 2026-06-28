@@ -53,10 +53,12 @@ public class GameManager : MonoBehaviour
     private Coroutine posCoroutine;
     private Coroutine walkCoroutine;
 
+    private MachineModifier machineModifier;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        machineModifier = FindAnyObjectByType<MachineModifier>();
     }
 
     // Update is called once per frame
@@ -256,7 +258,7 @@ public class GameManager : MonoBehaviour
         isClientVisiting = false;
 
         //���� ��� �ð�
-        float randomDelay = UnityEngine.Random.Range(120f, 180f);
+        float randomDelay = UnityEngine.Random.Range(5f, 10f);
 
         Debug.Log($"{randomDelay:F1}초 후 손님 등장");
 

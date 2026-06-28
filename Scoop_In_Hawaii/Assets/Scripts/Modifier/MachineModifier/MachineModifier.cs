@@ -36,7 +36,7 @@ public class MachineModifier : MonoBehaviour
         while (true)
         {
             // 테스트용 5초 (실제 게임에서는 120초)
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1f);
 
             // 손님이 있으면 이번 고장 판정은 건너뜀
             if (gameManager.isClientVisiting)
@@ -44,7 +44,7 @@ public class MachineModifier : MonoBehaviour
                 Debug.Log("손님이 있어서 판정을 건너뜁니다.");
                 continue;
             }
-
+           
             float randomValue = Random.value;
 
             Debug.Log($"고장 확률 : {breakChance}");
@@ -112,5 +112,25 @@ public class MachineModifier : MonoBehaviour
     public void SelfRepair()
     {
         machineUIManager.OpenRepairMiniGame();
+    }
+
+    public void RepairComplete()
+    {
+        if (coneBroken)
+        {
+            coneBroken = false;
+            StopCoroutine(BlinkMachine(coneMachine));
+            coneMachine.color = Color.white;
+        }
+        else if (barBroken)
+        {
+            barBroken = false;
+            StopCoroutine(BlinkMachine(barMachine));
+            barMachine.color = Color.white;
+        }
+
+        warningIcon.gameObject.SetActive(false);
+
+        Debug.Log("수리 완료!");
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e0b192fafd7ffb3488d186265f85c6af
+guid: 223a17c8d5f77e9418082aec7f869d20
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5218880293226528631
-    second: SuccessZone_0
+      213: 5405287079181089463
+    second: SuccessZoneArc_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SuccessZone_0
+      name: SuccessZoneArc_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 174
-        height: 161
+        x: 249
+        y: 678
+        width: 263
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 77fbd03d9ff2d6840800000000000000
-      internalID: 5218880293226528631
+      spriteID: 7baf897c5ff630b40800000000000000
+      internalID: 5405287079181089463
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SuccessZone_0: 5218880293226528631
+      SuccessZoneArc_0: 5405287079181089463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
