@@ -9,9 +9,23 @@ public class MachineUIManager : MonoBehaviour
     public GameObject machinePanel;
 
     public TMP_Text titleText;
+    [SerializeField] private GameObject RepairPanel;
+    [SerializeField] private GameObject RepairMiniGamePanel;
+    MachineModifier machineModifier;
+
+    private void Start()
+    {
+        machineModifier = FindAnyObjectByType<MachineModifier>();
+    }
 
     public void OpenConeMachine()
     {
+        if (machineModifier.ConeBroken)
+        {
+            RepairPanel.SetActive(true);
+            return;
+        }
+
         CloseAll();
 
         machinePanel.SetActive(true);
@@ -22,6 +36,12 @@ public class MachineUIManager : MonoBehaviour
 
     public void OpenBarMachine()
     {
+        if (machineModifier.BarBroken)
+        {
+            RepairPanel.SetActive(true);
+            return;
+        }
+
         CloseAll();
 
         machinePanel.SetActive(true);
@@ -30,10 +50,17 @@ public class MachineUIManager : MonoBehaviour
         titleText.text = "바 아이스크림 제작";
     }
 
+    public void OpenRepairMiniGame()
+    {
+        RepairPanel.SetActive(false);
+        RepairMiniGamePanel.SetActive(true);
+    }
+
     public void CloseAll()
     {
         conePanel.SetActive(false);
         barPanel.SetActive(false);
         machinePanel.SetActive(false);
     }
+
 }

@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     bool gameStart = false;
 
     //�մ� �湮 ���� - ���� �մ� �湮�� �� ���
-    bool isClientVisiting = false;
+    public bool isClientVisiting = false;
 
     //�մ� ���� ��ġ ����
     Vector3 clientStartPos;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     //�մ� �̹�����
     SpriteRenderer clientSpriteRenderer;
 
-    IceCream currentOrder;
+    public IceCream currentOrder;
 
     GameObject obj_Day = null;
     GameObject obj_Num = null;
@@ -64,6 +64,24 @@ public class GameManager : MonoBehaviour
     private Coroutine posCoroutine;
     private Coroutine walkCoroutine;
     private Coroutine timePassesCoroutine;
+
+    private MachineModifier machineModifier;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        machineModifier = FindAnyObjectByType<MachineModifier>();
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if (!scene.name.Equals("DayScene"))
+        {
+            return;
+        }
+    }
 
     IEnumerator TimePasses()
     {
@@ -334,7 +352,7 @@ public class GameManager : MonoBehaviour
         isClientVisiting = false;
 
         //���� ��� �ð�
-        float randomDelay = UnityEngine.Random.Range(5f, 12f);
+        float randomDelay = UnityEngine.Random.Range(5f, 10f);
 
         Debug.Log($"다음 손님까지 {randomDelay:F1}초");
 

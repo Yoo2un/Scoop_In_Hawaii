@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System.Linq;
 
 public class OrderBell : MonoBehaviour
 {
@@ -7,12 +8,17 @@ public class OrderBell : MonoBehaviour
     Transform tempPoint;
 
     GameObject currentSpawnedImage;
+    
+    private GameManager gameManager;
+    private IceCreamMaking iceCreamMaking;
 
-    float moveSpeed = 800f;
+    //float moveSpeed = 800f;
 
     private void Start()
     {
         GameObject pointObj = GameObject.Find("temp_Point");
+        gameManager = FindAnyObjectByType<GameManager>();
+        iceCreamMaking = FindAnyObjectByType<IceCreamMaking>();
 
         if (pointObj != null)
         {
@@ -47,19 +53,53 @@ public class OrderBell : MonoBehaviour
         else
         {
             Debug.LogWarning("아이스크림이 존재하지 않습니다.");
+            //Debug.LogWarning("���̽�ũ���� �������� �ʽ��ϴ�.");
+        }
+
+        if(gameManager.currentOrder.Equals(iceCreamMaking.currentIceCream))
+        {
+            //Debug.Log("�Ϻ��� ����!");
+        }
+        else
+        {
+            if (gameManager.currentOrder.Type != iceCreamMaking.currentIceCream.Type)
+            {
+                //Debug.Log("������ �ٸ��ϴ�.");
+            }
+
+            if (!gameManager.currentOrder.Flavors.SequenceEqual(iceCreamMaking.currentIceCream.Flavors))
+            {
+                //Debug.Log("���� �ٸ��ϴ�.");
+            }
+
+            if (!gameManager.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings))
+            {
+                //Debug.Log("������ �ٸ��ϴ�.");
+            }
+
+            if (gameManager.currentOrder is Cone orderCone &&
+               iceCreamMaking.currentIceCream is Cone madeCone)
+            {
+                if (orderCone.syrup != madeCone.syrup)
+                {
+                    //Debug.Log("�÷��� �ٸ��ϴ�.");
+                }
+            }
         }
     }
     private IEnumerator MoveIceCream()
     {
-        Vector3 startPos = tempPoint.position;
-        Vector3 targetPos = startPos + new Vector3(0, 1f, 0);
+        RectTransform rt = currentSpawnedImage.GetComponent<RectTransform>();
 
-        float duration = 1.0f;
+        Vector2 startPos = rt.anchoredPosition;
+        Vector2 targetPos = startPos + new Vector2(0, 200);
+
+        float duration = 1f;
         float timer = 0f;
 
         while (timer < duration)
         {
-            tempPoint.position = Vector3.Lerp(startPos, targetPos, timer / duration);
+            rt.anchoredPosition = Vector2.Lerp(startPos, targetPos, timer / duration);
             timer += Time.deltaTime;
             yield return null;
         }

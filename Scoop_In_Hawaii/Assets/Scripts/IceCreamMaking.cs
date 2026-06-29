@@ -186,7 +186,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
             result += "없음";
         }
 
-        result += "\n";
+        //result += "\n";
 
         // 토핑
         result += "토핑 : ";
@@ -200,7 +200,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
             result += "없음";
         }
 
-        result += "\n";
+        //result += "\n";
 
         // 시럽 (콘만)
         if (currentIceCream.Type == IceCreamType.Cone)
@@ -210,7 +210,7 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
             result += $"시럽 : {cone.syrup}";
         }
 
-        Debug.Log(result);
+        //Debug.Log(result);
 
         money += 50;
         if (GameManager.Instance != null)
