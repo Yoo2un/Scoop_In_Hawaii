@@ -38,7 +38,7 @@ public class RepairMiniGame : MonoBehaviour
     private void RandomSuccessZone()
     {
         float angle = Random.Range(0f, 360f);
-        successZonePivot.localRotation = Quaternion.Euler(0, 0, angle);
+        successZonePivot.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     private void CheckSuccess()
@@ -66,12 +66,12 @@ public class RepairMiniGame : MonoBehaviour
 
         successText.text = successCount + "/" + maxSuccess;
 
-        Debug.Log("¼º°ø!");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½!");
 
         if (successCount >= maxSuccess)
         {
-            Debug.Log("¼ö¸® ¿Ï·á!");
-            // TODO : ¹Ì´Ï°ÔÀÓ Á¾·á
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½!");
+            // TODO : ï¿½Ì´Ï°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
@@ -85,11 +85,11 @@ public class RepairMiniGame : MonoBehaviour
 
         heartImages[life].sprite = brokenHeartSprite;
 
-        Debug.Log("½ÇÆÐ!");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½!");
 
         if (life <= 0)
         {
-            Debug.Log("¼ö¸® ½ÇÆÐ!");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
         }
     }
 
