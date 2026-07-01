@@ -121,12 +121,29 @@ public class GameManager : MonoBehaviour
             chat.SetActive(false);
 
             dayCtrlBtn = GameObject.Find("DayCtrlBtn");
-            dayCtrlBtn.GetComponent<Image>().color = new Color(126f, 255f, 109f, 1f);
+            dayCtrlBtn.GetComponent<Image>().color = new Color32(126, 255, 109, 255);
             dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "장사 시작";
             Button _btn = dayCtrlBtn.GetComponent<Button>();
             _btn.onClick.RemoveAllListeners();
             _btn.onClick.AddListener(DayStart);
-            
+
+            if (timePassesCoroutine != null)
+            {
+                StopCoroutine(timePassesCoroutine);
+            }
+            timePassesCoroutine = StartCoroutine(TimePasses());
+
+            obj_Day.SetActive(false);
+            obj_Num.SetActive(false);
+            text_Day = obj_Day.GetComponent<TextMeshProUGUI>();
+            day_RectTransform = obj_Day.GetComponent<RectTransform>();
+            num_RectTransform = obj_Num.GetComponent<RectTransform>();
+
+            Invoke("Text_Day_Function", 2.0f);
+            Invoke("Text_Num_Function", 3.0f);
+
+            StartCoroutine(StartShrink(5.0f));
+            StartCoroutine(StartTextPosReset(5.0f));
         }
         else if (scene.name.Equals("Result"))
         {
@@ -139,19 +156,13 @@ public class GameManager : MonoBehaviour
         if (dayState == DayState.Morning) {
             Button _btn = dayCtrlBtn.GetComponent<Button>();
             _btn.onClick.RemoveAllListeners();
-            _btn.onClick.AddListener(DayEnd);
+            _btn.onClick.AddListener(CloseBusiness);
             dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "장사 종료";
-            dayCtrlBtn.GetComponent<Image>().color = new Color(212f, 47f, 41f, 1f);
+            dayCtrlBtn.GetComponent<Image>().color = new Color32(212, 47, 41, 255);
 
             profit = 0;
             dayState = DayState.Open;
             Debug.Log("장사 시작");
-
-            obj_Day.SetActive(false);
-            obj_Num.SetActive(false);
-            text_Day = obj_Day.GetComponent<TextMeshProUGUI>();
-            day_RectTransform = obj_Day.GetComponent<RectTransform>();
-            num_RectTransform = obj_Num.GetComponent<RectTransform>();
 
             client = GameObject.Find("Client");
             client_transform = client.GetComponent<Transform>();
@@ -160,29 +171,40 @@ public class GameManager : MonoBehaviour
             clientStartPos = client_transform.position;
             isClientVisiting = false;
 
-            time[0] = 11;
-            time[1] = 55;
-
             gameStart = true;
-            Invoke("Text_Day_Function", 2.0f);
-            Invoke("Text_Num_Function", 3.0f);
-
-            StartCoroutine(StartShrink(5.0f));
-            StartCoroutine(StartTextPosReset(5.0f));
-
-            if (timePassesCoroutine != null)
-            {
-                StopCoroutine(timePassesCoroutine);
-            }
-            timePassesCoroutine = StartCoroutine(TimePasses());
 
             Invoke("VisitClient", 5.0f);
         }
     }
 
+    public void CloseBusiness()
+    {
+        if (dayState == DayState.Morning || 
+            dayState == DayState.Open)
+        {
+            dayState = DayState.Closed;
+
+            CancelInvoke();
+            if (timePassesCoroutine != null)
+            {
+                StopCoroutine(timePassesCoroutine);
+                timePassesCoroutine = null;
+            }
+            StopAllCoroutines();
+
+            Debug.Log("장사 종료");
+
+            Button _btn = dayCtrlBtn.GetComponent<Button>();
+            _btn.onClick.RemoveAllListeners();
+            _btn.onClick.AddListener(DayEnd);
+            dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "하루 종료";
+            dayCtrlBtn.GetComponent<Image>().color = new Color32(248, 224, 36, 255);
+        }
+    }
+
     public void DayEnd()
     {
-        if (dayState == DayState.Open)
+        if (dayState == DayState.Closed)
         {
             dayState = DayState.Result;
 
@@ -194,7 +216,7 @@ public class GameManager : MonoBehaviour
             }
             StopAllCoroutines();
 
-            Debug.Log("장사 종료");
+            Debug.Log("하루 종료");
             SceneManager.LoadScene("Result");
         }
     }

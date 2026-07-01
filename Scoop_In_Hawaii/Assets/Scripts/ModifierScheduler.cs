@@ -24,8 +24,9 @@ public class ModifierScheduler : MonoBehaviour
 
     private void Update()
     {
-        // 장사 중(Open)일 때만 타이머 가동
-        if (GameManager.Instance == null || GameManager.Instance.dayState != DayState.Open)
+        if (GameManager.Instance == null || 
+            (GameManager.Instance.dayState != DayState.Open && 
+            GameManager.Instance.dayState != DayState.Morning))
             return;
 
         // 1. 전체 장사 시간 타이머 (4분 제한)
@@ -34,7 +35,7 @@ public class ModifierScheduler : MonoBehaviour
         {
             currentDayTimer = 0f;
             Debug.Log("4분이 경과하여 장사를 강제 종료합니다.");
-            GameManager.Instance.DayEnd();
+            GameManager.Instance.CloseBusiness();
             return;
         }
 
