@@ -2,31 +2,11 @@ using TMPro;
 using UnityEngine;
 using System.Collections;
 
-public class IceCreamMaking : MonoBehaviour, IDataPersistence
+public class IceCreamMaking : MonoBehaviour
 {
     public IceCream currentIceCream;
-    public TMP_Text moneyText;
-    private int money = 0;
 
-    private GameManager gameManager;
     private bool BarProcessing = false;
-
-    private void Start()
-    {
-        gameManager = FindAnyObjectByType<GameManager>();
-        GameManager.Instance.setMoney(money);
-    }
-
-    public void LoadData(GameData data)
-    {
-        this.money = data.money;
-        moneyText.text = money.ToString();
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.money = this.money;
-    }
 
     [VisibleEnum(typeof(IceCreamType))]
     public void SelectType(int type)
@@ -239,16 +219,14 @@ public class IceCreamMaking : MonoBehaviour, IDataPersistence
 
         //Debug.Log(result);
 
-        money += 50;
+        GameManager.Instance.addMoney(50);
         if (GameManager.Instance != null)
         {
             GameManager.Instance.profit += 50;
         }
-        GameManager.Instance.setMoney(money);
-        moneyText.text = money.ToString();
 
         ResetIceCream(); // 완료 후 초기화
 
-        gameManager.LeaveWalk(3f);
+        GameManager.Instance.LeaveWalk(3f);
     }
 }

@@ -72,7 +72,11 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.LoadData(gameData);
         }
-        
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.setMoney(this.gameData.money);
+        }
     }
 
     public void SaveGame()

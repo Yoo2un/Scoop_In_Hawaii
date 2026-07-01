@@ -5,7 +5,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager Instance { get; private set; }
 
@@ -67,7 +67,21 @@ public class GameManager : MonoBehaviour
 
     private MachineModifier machineModifier;
 
+    public TMP_Text moneyText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public void LoadData(GameData data)
+    {
+        this.money = data.money;
+        moneyText.text = money.ToString();
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.money = this.money;
+        moneyText.text = money.ToString();
+    }
+
     void Start()
     {
         machineModifier = FindAnyObjectByType<MachineModifier>();
@@ -115,6 +129,7 @@ public class GameManager : MonoBehaviour
     {
         if (scene.name.Equals("DayScene"))
         {
+            moneyText = GameObject.Find("Money_Text").GetComponent<TextMeshProUGUI>();
             dayState = DayState.Morning;
             Debug.Log($"하루 시작(현재 {day}일차 아침)");
 
@@ -213,6 +228,7 @@ public class GameManager : MonoBehaviour
             StopAllCoroutines();
 
             Debug.Log("장사 종료");
+            DataPersistenceManager.instance.SaveGame();
             SceneManager.LoadScene("Result");
         }
     }
@@ -466,5 +482,18 @@ public class GameManager : MonoBehaviour
     public void setMoney(int money)
     {
         this.money = money;
+        moneyText.text = this.money.ToString();
+    }
+
+    public void addMoney(int money)
+    {
+        this.money += money;
+        moneyText.text = this.money.ToString();
+    }
+
+    public void subtractMoney(int money)
+    {
+        this.money -= money;
+        moneyText.text = this.money.ToString();
     }
 }

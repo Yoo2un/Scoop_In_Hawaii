@@ -5,7 +5,7 @@ public class GameData
 {
     public int money;
 
-    //»ý¼ºÀÚ 0À¸·Î ¬žÈ­
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­
     public GameData()
     {
         this.money = 0;
