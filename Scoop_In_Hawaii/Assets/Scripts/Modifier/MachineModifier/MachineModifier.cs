@@ -36,7 +36,7 @@ public class MachineModifier : MonoBehaviour
         while (true)
         {
             // 테스트용 5초 (실제 게임에서는 120초)
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(10f);
 
             // 손님이 있으면 이번 고장 판정은 건너뜀
             if (gameManager.isClientVisiting)
