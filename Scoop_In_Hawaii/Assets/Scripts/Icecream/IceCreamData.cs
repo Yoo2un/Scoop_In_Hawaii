@@ -13,23 +13,23 @@ public static class IceCreamData
     public static Dictionary<Flavor, string> FlavorNames =
     new Dictionary<Flavor, string>()
     {
-        { Flavor.Vanilla, "¹Ù´Ò¶ó" },
-        { Flavor.Chocolate, "ÃÊÄÚ" },
-        { Flavor.Soda, "¼Ò´Ù" },
-        { Flavor.Mango, "¸Á°í" }
+        { Flavor.Vanilla, "ë°”ë‹ë¼" },
+        { Flavor.Chocolate, "ì´ˆì½”" },
+        { Flavor.Soda, "ì†Œë‹¤" },
+        { Flavor.Mango, "ë§ê³ " }
     };
 
     public static Dictionary<Topping, string> ToppingNames =
     new Dictionary<Topping, string>()
     {
-        { Topping.PineApple, "ÆÄÀÎ¾ÖÇÃ" },
-        { Topping.Sprinkles, "½ºÇÁ¸µÅ¬" }
+        { Topping.PineApple, "íŒŒì¸ì• í”Œ" },
+        { Topping.Sprinkles, "ìŠ¤í”„ë§í´" }
     };
 
     public static Dictionary<Syrup, string> SyrupNames =
     new Dictionary<Syrup, string>()
     {
-        { Syrup.Chocolate, "ÃÊÄÚ" },
-        { Syrup.Caramel, "Ä«¶ó¸á" }
+        { Syrup.Chocolate, "ì´ˆì½”" },
+        { Syrup.Caramel, "ì¹´ë¼ë©œ" }
     };
 }

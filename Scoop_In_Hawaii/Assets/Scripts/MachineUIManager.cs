@@ -33,7 +33,7 @@ public class MachineUIManager : MonoBehaviour
         machinePanel.SetActive(true);
         conePanel.SetActive(true);
 
-        titleText.text = "ÄÜ Á¦ÀÛ";
+        titleText.text = "ì½˜ ì•„ì´ìŠ¤í¬ë¦¼ ì œì‘";
     }
 
     public void OpenBarMachine()
@@ -49,7 +49,7 @@ public class MachineUIManager : MonoBehaviour
         machinePanel.SetActive(true);
         barPanel.SetActive(true);
 
-        titleText.text = "¹Ù Á¦ÀÛ";
+        titleText.text = "ë°” ì•„ì´ìŠ¤í¬ë¦¼ ì œì‘";
     }
 
     public void OpenRepairMiniGame()
@@ -61,7 +61,9 @@ public class MachineUIManager : MonoBehaviour
 
     public void CloseAll()
     {
-       machinePanel.SetActive(false);
+        conePanel.SetActive(false);
+        barPanel.SetActive(false);
+        machinePanel.SetActive(false);
     }
 
 }

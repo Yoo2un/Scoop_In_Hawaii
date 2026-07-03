@@ -7,32 +7,32 @@ public class OrderDialog
     {
         if (iceCream.coneOnly)
         {
-            return "ÄÜ¸¸ ÁÖ¼¼¿ä!";
+            return "ì½˜ë§Œ ì£¼ì„¸ìš”!";
         }
 
         if (iceCream.handIceCream)
         {
-            return "¼Õ¿¡ ¹Ù·Î ¿Ã·ÁÁÖ¼¼¿ä!";
+            return "ì†ì— ë°”ë¡œ ì˜¬ë ¤ì£¼ì„¸ìš”!";
         }
 
         if (iceCream.anything)
         {
-            return "¾Æ¹«°Å³ª ¸ÀÀÖ°Ô ÇØÁÖ¼¼¿ä!";
+            return "ì•„ë¬´ê±°ë‚˜ ë§›ìˆê²Œ í•´ì£¼ì„¸ìš”!";
         }
 
         string text = "";
 
         if (iceCream.Type == IceCreamType.Bar)
         {
-            text += "¹Ù·Î ";
+            text += "ë°”ë¡œ ";
 
-            // ¸À
-            text += $"¸ÀÀº {IceCreamData.FlavorNames[iceCream.Flavors[0]]} ";
+            // ë§›
+            text += $"ë§›ì€ {IceCreamData.FlavorNames[iceCream.Flavors[0]]} ";
 
-            // ÅäÇÎ
+            // í† í•‘
             if (iceCream.Toppings.Count > 0)
             {
-                text += "ÅäÇÎÀº ";
+                text += "í† í•‘ì€ ";
 
                 List<string> toppings = new List<string>();
 
@@ -43,11 +43,11 @@ public class OrderDialog
 
                 text += string.Join(", ", toppings);
 
-                text += "(À¸)·Î ÁÖ¼¼¿ä.";
+                text += "(ìœ¼)ë¡œ ì£¼ì„¸ìš”.";
             }
             else
             {
-                text += "ÅäÇÎÀº ¾øÀÌ ÁÖ¼¼¿ä.";
+                text += "í† í•‘ì€ ì—†ì´ ì£¼ì„¸ìš”.";
             }
         }
 
@@ -56,10 +56,10 @@ public class OrderDialog
         {
             Cone cone = (Cone)iceCream;
 
-            text += "ÄÜÀ¸·Î ";
+            text += "ì½˜ìœ¼ë¡œ ";
 
-            // ¸À
-            text += "1ÃşºÎÅÍ ";
+            // ë§›
+            text += "1ì¸µë¶€í„° ";
 
             List<string> flavors = new List<string>();
 
@@ -70,12 +70,12 @@ public class OrderDialog
 
             text += string.Join(", ", flavors);
 
-            text += " ¼øÀ¸·Î ÁÖ¼¼¿ä. ";
+            text += " ìˆœìœ¼ë¡œ ì£¼ì„¸ìš”. ";
 
-            // ÅäÇÎ
+            // í† í•‘
             if (cone.Toppings.Count > 0)
             {
-                text += "ÅäÇÎÀº ";
+                text += "í† í•‘ì€ ";
 
                 List<string> toppings = new List<string>();
 
@@ -86,25 +86,24 @@ public class OrderDialog
 
                 text += string.Join(", ", toppings);
 
-                text += "(À¸)·Î ÇØÁÖ¼¼¿ä. ";
+                text += "(ìœ¼)ë¡œ í•´ì£¼ì„¸ìš”. ";
             }
             else
             {
-                text += "ÅäÇÎÀº ¾øÀÌ ÇØÁÖ¼¼¿ä. ";
+                text += "í† í•‘ì€ ì—†ì´ í•´ì£¼ì„¸ìš”. ";
             }
 
-            // ½Ã·´
+            // ì‹œëŸ½
             if (cone.syrup != Syrup.None)
             {
-                text += $"½Ã·´Àº {IceCreamData.SyrupNames[cone.syrup]}·Î ºÎÅ¹µå·Á¿ä.";
+                text += $"ì‹œëŸ½ì€ {IceCreamData.SyrupNames[cone.syrup]}ë¡œ ë¶€íƒë“œë ¤ìš”.";
             }
             else
             {
-                text += "½Ã·´Àº ¾È »Ñ·ÁÁÖ¼Åµµ µÅ¿ä.";
+                text += "ì‹œëŸ½ì€ ì•ˆ ë¿Œë ¤ì£¼ì…”ë„ ë¼ìš”.";
             }
         }
 
         return text;
     }
 }
-

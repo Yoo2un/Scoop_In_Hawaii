@@ -5,15 +5,24 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager Instance { get; private set; }
 
     int day = 1;
+    // 임시 모디파이어 enum
+    public enum ModifierType { None, GoodEvent, BadEvent }
+    public ModifierType modifier = ModifierType.None;
+
+    public DayState dayState;
+    public int day = 1;
+    public int profit = 0;
+    public int material_cost = 0; // 재료비
+
     int[] time = new int[2] { 11, 55 };
     List<IceCream> client_Ice = null;
     int margin = 0;
-    int money = 1000;
+    int money = 0;
     bool gameStart = false;
 
     //�մ� �湮 ���� - ���� �մ� �湮�� �� ���
@@ -38,6 +47,7 @@ public class GameManager : MonoBehaviour
     GameObject obj_Num = null;
     GameObject client = null;
     GameObject chat = null;
+    GameObject dayCtrlBtn = null;
 
     Transform client_transform;
     View_Front client_view_front;
@@ -54,10 +64,25 @@ public class GameManager : MonoBehaviour
     private Coroutine shrinkCoroutine;
     private Coroutine posCoroutine;
     private Coroutine walkCoroutine;
+    private Coroutine timePassesCoroutine;
 
     private MachineModifier machineModifier;
 
+    public TMP_Text moneyText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public void LoadData(GameData data)
+    {
+        this.money = data.money;
+        moneyText.text = money.ToString();
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.money = this.money;
+        moneyText.text = money.ToString();
+    }
+
     void Start()
     {
         
@@ -97,49 +122,143 @@ public class GameManager : MonoBehaviour
 
     void OnDisable()
     {
+        CancelInvoke();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (!scene.name.Equals("DayScene"))
+        if (scene.name.Equals("DayScene"))
         {
-            return;
+
+            machineModifier = FindAnyObjectByType<MachineModifier>();
+
+            obj_Day = GameObject.Find("Day_Text_Day");
+            obj_Num = GameObject.Find("Day_Text_Num");
+            obj_Day.SetActive(false);
+            obj_Num.SetActive(false);
+            
+            text_Day = obj_Day.GetComponent<TextMeshProUGUI>();
+            text_Num = obj_Num.GetComponent<TextMeshProUGUI>();
+            GameObject obj_hour = GameObject.Find("Time_Text_Hour");
+            text_hour = obj_hour.GetComponent<TextMeshProUGUI>();
+            
+            day_RectTransform = obj_Day.GetComponent<RectTransform>();
+            num_RectTransform = obj_Num.GetComponent<RectTransform>();
+
+            moneyText = GameObject.Find("Money_Text").GetComponent<TextMeshProUGUI>();
+            dayState = DayState.Morning;
+            Debug.Log($"하루 시작(현재 {day}일차 아침)");
+
+            text_Num.text = $"{day}";
+            obj_Day.SetActive(true);
+            obj_Num.SetActive(true);
+
+            time[0] = 11;
+            time[1] = 55;
+            profit = 0;
+
+            text_hour.text = "11:55 PM";
+            obj_hour.SetActive(true);
+
+            chat = GameObject.Find("UI_Chat");
+            text_chat = GameObject.Find("Text_Chat").GetComponent<TextMeshProUGUI>();
+            chat.SetActive(false);
+
+            dayCtrlBtn = GameObject.Find("DayCtrlBtn");
+            dayCtrlBtn.GetComponent<Image>().color = new Color(126f, 255f, 109f, 1f);
+            dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "장사 시작";
+            Button _btn = dayCtrlBtn.GetComponent<Button>();
+            _btn.onClick.RemoveAllListeners();
+            _btn.onClick.AddListener(DayStart);
+            
         }
+        else if (scene.name.Equals("Result"))
+        {
+            ShowResult();
+        }
+    }
 
-        machineModifier = FindAnyObjectByType<MachineModifier>();
+        
+    public void DayStart()
+    {
+        if (dayState == DayState.Morning) {
+            Button _btn = dayCtrlBtn.GetComponent<Button>();
+            _btn.onClick.RemoveAllListeners();
+            _btn.onClick.AddListener(DayEnd);
+            dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "장사 종료";
+            dayCtrlBtn.GetComponent<Image>().color = new Color(212f, 47f, 41f, 1f);
 
-        obj_Day = GameObject.Find("Day_Text_Day");
-        obj_Num = GameObject.Find("Day_Text_Num");
-        obj_Day.SetActive(false);
-        obj_Num.SetActive(false);
-        text_Day = obj_Day.GetComponent<TextMeshProUGUI>();
-        text_Num = obj_Num.GetComponent<TextMeshProUGUI>();
-        text_hour = GameObject.Find("Time_Text_Hour").GetComponent<TextMeshProUGUI>();
-        day_RectTransform = obj_Day.GetComponent<RectTransform>();
-        num_RectTransform = obj_Num.GetComponent<RectTransform>();
+            profit = 0;
+            dayState = DayState.Open;
+            Debug.Log("장사 시작");
 
-        client = GameObject.Find("Client");
-        client_transform = client.GetComponent<Transform>();
-        client_view_front = client.GetComponent<View_Front>();
-        clientSpriteRenderer = client.GetComponent<SpriteRenderer>();
-        clientStartPos = client_transform.position;
+            obj_Day.SetActive(false);
+            obj_Num.SetActive(false);
+            text_Day = obj_Day.GetComponent<TextMeshProUGUI>();
+            day_RectTransform = obj_Day.GetComponent<RectTransform>();
+            num_RectTransform = obj_Num.GetComponent<RectTransform>();
 
-        chat = GameObject.Find("UI_Chat");
-        text_chat = GameObject.Find("Text_Chat").GetComponent<TextMeshProUGUI>();
-        chat.SetActive(false);
+            client = GameObject.Find("Client");
+            client_transform = client.GetComponent<Transform>();
+            client_view_front = client.GetComponent<View_Front>();
+            clientSpriteRenderer = client.GetComponent<SpriteRenderer>();
+            clientStartPos = client_transform.position;
+            isClientVisiting = false;
 
-        time[0] = 11;
-        time[1] = 55;
+            time[0] = 11;
+            time[1] = 55;
 
-        gameStart = true;
-        Invoke("Text_Day_Function", 2.0f);
-        Invoke("Text_Num_Function", 3.0f);
+            gameStart = true;
+            Invoke("Text_Day_Function", 2.0f);
+            Invoke("Text_Num_Function", 3.0f);
 
-        StartCoroutine(StartShrink(5.0f));
-        StartCoroutine(StartTextPosReset(5.0f));
-        StartCoroutine(TimePasses());
-        Invoke("VisitClient", 5.0f);
+            StartCoroutine(StartShrink(5.0f));
+            StartCoroutine(StartTextPosReset(5.0f));
+
+            if (timePassesCoroutine != null)
+            {
+                StopCoroutine(timePassesCoroutine);
+            }
+            timePassesCoroutine = StartCoroutine(TimePasses());
+
+            Invoke("VisitClient", 5.0f);
+        }
+    }
+
+    public void DayEnd()
+    {
+        if (dayState == DayState.Open)
+        {
+            dayState = DayState.Result;
+
+            CancelInvoke();
+            if (timePassesCoroutine != null)
+            {
+                StopCoroutine(timePassesCoroutine);
+                timePassesCoroutine = null;
+            }
+            StopAllCoroutines();
+
+            Debug.Log("장사 종료");
+            DataPersistenceManager.instance.SaveGame();
+            SceneManager.LoadScene("Result");
+        }
+    }
+
+    public void ShowResult()
+    {
+        Debug.Log("장사 결과 정산");
+    }
+    public void NextDay()
+    {
+        day++;
+        SceneManager.LoadScene("DayScene");
+    }
+
+    public void UseModifier()
+    {
+        Debug.Log($"useModifier() 호출됨. 현재 발동된 모디파이어: {modifier}");
     }
 
     void VisitClient()
@@ -279,7 +398,7 @@ public class GameManager : MonoBehaviour
         //���� ��� �ð�
         float randomDelay = UnityEngine.Random.Range(5f, 10f);
 
-        Debug.Log($"{randomDelay:F1}초 후 손님 등장");
+        Debug.Log($"다음 손님까지 {randomDelay:F1}초");
 
         yield return new WaitForSeconds(randomDelay);
 
@@ -289,16 +408,17 @@ public class GameManager : MonoBehaviour
         VisitClient();
     }
 
-    void Awake()
+    private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
         {
             Destroy(gameObject);
-            return;
         }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     void Text_Day_Function()
@@ -380,5 +500,28 @@ public class GameManager : MonoBehaviour
         day_RectTransform.position = day_pre_Position;
         num_RectTransform.position = num_pre_Position;
 
+    }
+
+    public int getMoney()
+    {
+        return money;
+    }
+
+    public void setMoney(int money)
+    {
+        this.money = money;
+        moneyText.text = this.money.ToString();
+    }
+
+    public void addMoney(int money)
+    {
+        this.money += money;
+        moneyText.text = this.money.ToString();
+    }
+
+    public void subtractMoney(int money)
+    {
+        this.money -= money;
+        moneyText.text = this.money.ToString();
     }
 }

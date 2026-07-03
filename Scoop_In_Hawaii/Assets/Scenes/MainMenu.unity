@@ -314,6 +314,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ed0a06d44d4494e958fdd3560e16cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  modifier: 0
+  dayState: 0
+  day: 1
+  profit: 0
+  material_cost: 0
+  isClientVisiting: 0
   clientList:
   - clientName: A
     sideSprite: {fileID: 2651377931920932437, guid: 603dc3722ecba8d4d8fd6b73b43f1aef, type: 3}
@@ -321,7 +327,7 @@ MonoBehaviour:
   - clientName: B
     sideSprite: {fileID: -4669476257333590241, guid: 5b7db8e6d48417d40b250393f3d52eb1, type: 3}
     frontSprite: {fileID: -5248298948834303939, guid: 75e173327b426da42b33b63f369618dd, type: 3}
-  Machine_Panel: {fileID: 0}
+  moneyText: {fileID: 0}
 --- !u!1 &1226016959
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,8 +546,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 80}
-  m_SizeDelta: {x: 550, y: 115}
+  m_AnchoredPosition: {x: -0.9054, y: 103.2288}
+  m_SizeDelta: {x: 625.9868, y: 157.7426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682314607
 MonoBehaviour:

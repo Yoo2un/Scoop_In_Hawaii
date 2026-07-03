@@ -3,8 +3,8 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-//½Ì±ÛÅæ Å¬·¡½º
-//ÀÎ½ºÅÏ½º¸¦ ´Ü 1°³¸¸ »ý¼ºÇØ¼­ ¾îµð¼­µç Á¢±Ù °¡´ÉÇÑ »ý¼º µðÀÚÀÎ ÆÐÅÏ
+//ï¿½Ì±ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
+//ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ð¼­µï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 public class DataPersistenceManager : MonoBehaviour
 {
 
@@ -57,34 +57,38 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-        //ÀúÀåµÈ µ¥ÀÌÅÍ ºÒ·¯¿À±â(·ÎµåÇÒ µ¥ÀÌÅÍ°¡ ÀÖ´Â °æ¿ì)
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½)
         this.gameData = dataHandler.Load();
 
-        //·ÎµåÇÒ µ¥ÀÌÅÍ°¡ ¾ø´Â °æ¿ì
+        //ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         if(this.gameData == null)
         {
             Debug.Log("No data was found.");
             NewGame();
         }
 
-        //·ÎµåµÈ µ¥ÀÌÅÍ¸¦ ÇÊ¿äÇÑ ´Ù¸¥ ¸ðµç ½ºÅ©¸³Æ®·Î Àü´ÞÇÏ´Â °æ¿ì(?)
+        //ï¿½Îµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½(?)
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.LoadData(gameData);
         }
-        
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.setMoney(this.gameData.money);
+        }
     }
 
     public void SaveGame()
     {
-        //´Ù¸¥ ½ºÅ©¸³Æ®¿¡¼­ µ¥ÀÌÅÍ¸¦ ¾÷µ¥ÀÌÆ®ÇÒ ¼ö ÀÖµµ·Ï µ¥ÀÌÅÍ Àü´ÞÇÏ±â
+        //ï¿½Ù¸ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
         foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             Debug.Log("Saving from: " + dataPersistenceObj);
             dataPersistenceObj.SaveData(ref gameData);
         }
 
-        //ÆÄÀÏ µ¥ÀÌÅÍ ÇÚµé·¯¸¦ »ç¿ëÇÏ¿© ÇØ´ç µ¥ÀÌÅÍ¸¦ ÆÄÀÏ¿¡ ÀúÀåÇÏ±â
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµé·¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
         dataHandler.Save(gameData);
     }
 

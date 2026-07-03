@@ -35,45 +35,46 @@ public class OrderBell : MonoBehaviour
             if (rt != null) rt.anchoredPosition = Vector2.zero;
             else currentSpawnedImage.transform.localPosition = Vector3.zero;
 
-            Debug.Log("ÀÓ½Ã·Î ÀÌ¹ÌÁö »ı¼º");
+            Debug.Log("ì„ì‹œë¡œ ì´ë¯¸ì§€ ìƒì„±");
         }
         else
         {
-            Debug.Log("ÀÌ¹Ì »ı¼ºµÊ");
+            Debug.Log("ì´ë¯¸ ìƒì„±ë¨");
         }
     }
 
     public void ServeIceCream()
     {
-        // »ı¼ºµÈ ¾ÆÀÌ½ºÅ©¸²ÀÌ ÀÖ°í, ¸ñÇ¥ ÁöÁ¡ÀÌ ¿¬°áµÇ¾î ÀÖÀ» ¶§¸¸ ½ÇÇà
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½Ö°ï¿½, ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (currentSpawnedImage != null)
         {
             StartCoroutine(MoveIceCream());
         }
         else
         {
-            //Debug.LogWarning("¾ÆÀÌ½ºÅ©¸²ÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+            Debug.LogWarning("ì•„ì´ìŠ¤í¬ë¦¼ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+            //Debug.LogWarning("ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
         }
 
         if(gameManager.currentOrder.Equals(iceCreamMaking.currentIceCream))
         {
-            //Debug.Log("¿Ïº®ÇÑ Á¦ÀÛ!");
+            //Debug.Log("ï¿½Ïºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
         }
         else
         {
             if (gameManager.currentOrder.Type != iceCreamMaking.currentIceCream.Type)
             {
-                //Debug.Log("Á¾·ù°¡ ´Ù¸¨´Ï´Ù.");
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");
             }
 
             if (!gameManager.currentOrder.Flavors.SequenceEqual(iceCreamMaking.currentIceCream.Flavors))
             {
-                //Debug.Log("¸ÀÀÌ ´Ù¸¨´Ï´Ù.");
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");
             }
 
             if (!gameManager.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings))
             {
-                //Debug.Log("ÅäÇÎÀÌ ´Ù¸¨´Ï´Ù.");
+                //Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");
             }
 
             if (gameManager.currentOrder is Cone orderCone &&
@@ -81,7 +82,7 @@ public class OrderBell : MonoBehaviour
             {
                 if (orderCone.syrup != madeCone.syrup)
                 {
-                    //Debug.Log("½Ã·´ÀÌ ´Ù¸¨´Ï´Ù.");
+                    //Debug.Log("ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½Ï´ï¿½.");
                 }
             }
         }
@@ -103,9 +104,8 @@ public class OrderBell : MonoBehaviour
             yield return null;
         }
 
-        rt.anchoredPosition = targetPos;
-
-        Debug.Log("ÀÌµ¿ ¿Ï·á");
+        tempPoint.position = targetPos;
+        Debug.Log("ì´ë™ ì™„ë£Œ");
     }
 
 }
