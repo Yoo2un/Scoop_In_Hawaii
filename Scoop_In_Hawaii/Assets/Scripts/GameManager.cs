@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System;
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     int day = 1;
     int[] time = new int[2] { 11, 55 };
     List<IceCream> client_Ice = null;
@@ -58,7 +60,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        machineModifier = FindAnyObjectByType<MachineModifier>();
+        
     }
 
     // Update is called once per frame
@@ -105,6 +107,8 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        machineModifier = FindAnyObjectByType<MachineModifier>();
+
         obj_Day = GameObject.Find("Day_Text_Day");
         obj_Num = GameObject.Find("Day_Text_Num");
         obj_Day.SetActive(false);
@@ -140,9 +144,14 @@ public class GameManager : MonoBehaviour
 
     void VisitClient()
     {
-        //�մ� ������ ���� �մ� �� ����
+        Debug.Log($"isClientVisiting : {isClientVisiting}");
+        Debug.Log($"MachineBroken : {machineModifier.IsAnyMachineBroken()}");
         if (isClientVisiting)
+            return;
+
+        if (machineModifier.IsAnyMachineBroken())
         {
+            StartCoroutine(WaitUntilMachineFixed());
             return;
         }
 
@@ -157,6 +166,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartWalk(2f));
         StartCoroutine(StartViewFront(3f));
         StartCoroutine(StartChat(4.5f));
+    }
+
+    private IEnumerator WaitUntilMachineFixed()
+    {
+        yield return new WaitUntil(() => !machineModifier.IsAnyMachineBroken());
+
+        float randomDelay = UnityEngine.Random.Range(5f, 10f);
+        yield return new WaitForSeconds(randomDelay);
+
+        VisitClient();
     }
 
     public IEnumerator StartViewFront(float delay)
@@ -272,7 +291,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Text_Day_Function()

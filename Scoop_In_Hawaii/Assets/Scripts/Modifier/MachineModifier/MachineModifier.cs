@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class MachineModifier : MonoBehaviour
 {
-    private GameManager gameManager;
-
     [SerializeField]
     private float breakChance = 0.1f; // 고장 확률 기본 10%
+
+    private const float MaxBreakChance = 0.4f; //고장 확률 상한치 40%
 
     [SerializeField] private Image coneMachine;
     [SerializeField] private Image barMachine;
@@ -19,13 +19,17 @@ public class MachineModifier : MonoBehaviour
     private bool coneBroken = false;
     private bool barBroken = false;
 
+    private Coroutine coneBlinkCoroutine;
+    private Coroutine barBlinkCoroutine;
+
     MachineUIManager machineUIManager;
+    
     public bool ConeBroken => coneBroken;
     public bool BarBroken => barBroken;
 
     private void Start()
     {
-        gameManager = FindAnyObjectByType<GameManager>();
+        Debug.Log(GameManager.Instance);
         machineUIManager = FindAnyObjectByType<MachineUIManager>();
         StartCoroutine(BreakRoutine());
         warningIcon.gameObject.SetActive(false);
@@ -38,8 +42,13 @@ public class MachineModifier : MonoBehaviour
             // 테스트용 5초 (실제 게임에서는 120초)
             yield return new WaitForSeconds(1f);
 
+            if (IsAnyMachineBroken())
+            {
+                continue;
+            }
+
             // 손님이 있으면 이번 고장 판정은 건너뜀
-            if (gameManager.isClientVisiting)
+            if (GameManager.Instance.isClientVisiting)
             {
                 Debug.Log("손님이 있어서 판정을 건너뜁니다.");
                 continue;
@@ -47,8 +56,8 @@ public class MachineModifier : MonoBehaviour
            
             float randomValue = Random.value;
 
-            Debug.Log($"고장 확률 : {breakChance}");
-            Debug.Log($"랜덤 값 : {randomValue}");
+            //Debug.Log($"고장 확률 : {breakChance}");
+            //Debug.Log($"랜덤 값 : {randomValue}");
 
             // 고장 확률 판정
             if (randomValue <= breakChance)
@@ -63,7 +72,7 @@ public class MachineModifier : MonoBehaviour
                     if (!coneBroken)
                     {
                         coneBroken = true;
-                        StartCoroutine(BlinkMachine(coneMachine));
+                        coneBlinkCoroutine = StartCoroutine(BlinkMachine(coneMachine));
                         warningIcon.transform.position = ConeWarningPoint.transform.position;
                         warningIcon.gameObject.SetActive(true);
                         Debug.Log("콘 기계 고장!");
@@ -78,7 +87,7 @@ public class MachineModifier : MonoBehaviour
                     if (!barBroken)
                     {
                         barBroken = true;
-                        StartCoroutine(BlinkMachine(barMachine));
+                        barBlinkCoroutine = StartCoroutine(BlinkMachine(barMachine));
                         warningIcon.transform.position = BarWarningPoint.transform.position;
                         warningIcon.gameObject.SetActive(true);
                         Debug.Log("바 기계 고장!");
@@ -109,9 +118,9 @@ public class MachineModifier : MonoBehaviour
         }
     }
 
-    public void SelfRepair()
+    public bool IsAnyMachineBroken()
     {
-        machineUIManager.OpenRepairMiniGame();
+        return coneBroken || barBroken;
     }
 
     public void RepairComplete()
@@ -119,13 +128,13 @@ public class MachineModifier : MonoBehaviour
         if (coneBroken)
         {
             coneBroken = false;
-            StopCoroutine(BlinkMachine(coneMachine));
+            StopCoroutine(coneBlinkCoroutine);
             coneMachine.color = Color.white;
         }
         else if (barBroken)
         {
             barBroken = false;
-            StopCoroutine(BlinkMachine(barMachine));
+            StopCoroutine(barBlinkCoroutine);
             barMachine.color = Color.white;
         }
 
@@ -133,4 +142,15 @@ public class MachineModifier : MonoBehaviour
 
         Debug.Log("수리 완료!");
     }
+
+    public void IncreaseBreakChance(float amount)
+    {
+        breakChance += amount;
+
+        breakChance = Mathf.Clamp(breakChance, 0f, MaxBreakChance);
+        //breakchance보다 작으면 breakchane값으로, maxbreakchance보다 크다면 maxbreakchance 값으로, 그 사이이면 그대로 반환
+
+        Debug.Log($"고장 확률 증가 : {breakChance * 100}%");
+    }
+
 }

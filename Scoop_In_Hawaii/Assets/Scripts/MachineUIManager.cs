@@ -11,7 +11,9 @@ public class MachineUIManager : MonoBehaviour
     public TMP_Text titleText;
     [SerializeField] private GameObject RepairPanel;
     [SerializeField] private GameObject RepairMiniGamePanel;
+
     MachineModifier machineModifier;
+    [SerializeField] private RepairMiniGame repairMiniGame;
 
     private void Start()
     {
@@ -53,6 +55,7 @@ public class MachineUIManager : MonoBehaviour
     public void OpenRepairMiniGame()
     {
         RepairPanel.SetActive(false);
+        repairMiniGame.InitMiniGame();
         RepairMiniGamePanel.SetActive(true);
     }
 

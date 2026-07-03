@@ -736,6 +736,7 @@ MonoBehaviour:
   titleText: {fileID: 450611283}
   RepairPanel: {fileID: 907522038}
   RepairMiniGamePanel: {fileID: 892803465}
+  repairMiniGame: {fileID: 892803469}
 --- !u!1 &197298096
 GameObject:
   m_ObjectHideFlags: 0
@@ -8787,7 +8788,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3894415531740123212, guid: bf9df3314381b44408d1d2aa536d5537, type: 3}
+  m_Sprite: {fileID: 3894415531740123212, guid: 74d159802b6a7554aadab4e5fb8cdf6c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -9361,9 +9362,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 407434002}
+      - m_Target: {fileID: 177053741}
         m_TargetAssemblyTypeName: 
-        m_MethodName: SelfRepair
+        m_MethodName: OpenRepairMiniGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

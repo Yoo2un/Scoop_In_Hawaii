@@ -18,8 +18,12 @@ public class RepairMiniGame : MonoBehaviour
     [SerializeField] private Sprite heartSprite;
     [SerializeField] private Sprite brokenHeartSprite;
     private int life = 5;
+
+    private MachineModifier machineModifier;
     private void Start()
     {
+        machineModifier = FindAnyObjectByType<MachineModifier>();
+
         RepairMiniGamePanel.gameObject.SetActive(true);
         successCount = 0;
         successText.text = "0/" + maxSuccess;
@@ -66,12 +70,12 @@ public class RepairMiniGame : MonoBehaviour
 
         successText.text = successCount + "/" + maxSuccess;
 
-        Debug.Log("����!");
+        Debug.Log("성공!");
 
         if (successCount >= maxSuccess)
         {
-            Debug.Log("���� �Ϸ�!");
-            // TODO : �̴ϰ��� ����
+            machineModifier.RepairComplete();
+            RepairMiniGamePanel.SetActive(false);
         }
         else
         {
@@ -85,12 +89,28 @@ public class RepairMiniGame : MonoBehaviour
 
         heartImages[life].sprite = brokenHeartSprite;
 
-        Debug.Log("����!");
+        Debug.Log("실패!");
 
         if (life <= 0)
         {
-            Debug.Log("���� ����!");
+            machineModifier.IncreaseBreakChance(0.05f);
+            machineModifier.RepairComplete();
+            RepairMiniGamePanel.SetActive(false);
         }
     }
 
+    public void InitMiniGame()
+    {
+        successCount = 0;
+        life = 5;
+
+        successText.text = "0/" + maxSuccess;
+
+        for (int i = 0; i < heartImages.Length; i++)
+        {
+            heartImages[i].sprite = heartSprite;
+        }
+
+        RandomSuccessZone();
+    }
 }
