@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager Instance { get; private set; }
 
-    int day = 1;
     // 임시 모디파이어 enum
     public enum ModifierType { None, GoodEvent, BadEvent }
     public ModifierType modifier = ModifierType.None;
