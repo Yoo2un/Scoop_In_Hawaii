@@ -262,8 +262,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     void VisitClient()
     {
-        Debug.Log($"isClientVisiting : {isClientVisiting}");
-        Debug.Log($"MachineBroken : {machineModifier.IsAnyMachineBroken()}");
         if (isClientVisiting)
             return;
 

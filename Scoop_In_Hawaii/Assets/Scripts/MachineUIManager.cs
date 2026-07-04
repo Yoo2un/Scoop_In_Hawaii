@@ -14,7 +14,7 @@ public class MachineUIManager : MonoBehaviour
 
     MachineModifier machineModifier;
     [SerializeField] private RepairMiniGame repairMiniGame;
-
+    [SerializeField] private RepairEffect repairEffect;
     private void Start()
     {
         machineModifier = FindAnyObjectByType<MachineModifier>();
@@ -57,6 +57,13 @@ public class MachineUIManager : MonoBehaviour
         RepairPanel.SetActive(false);
         repairMiniGame.InitMiniGame();
         RepairMiniGamePanel.SetActive(true);
+    }
+
+    public void CallRepairMan()
+    {
+        RepairPanel.SetActive(false);
+
+        StartCoroutine(repairEffect.PlayRepairEffect());
     }
 
     public void CloseAll()

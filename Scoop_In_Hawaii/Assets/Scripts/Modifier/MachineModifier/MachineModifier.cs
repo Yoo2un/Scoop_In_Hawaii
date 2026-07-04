@@ -22,15 +22,11 @@ public class MachineModifier : MonoBehaviour
     private Coroutine coneBlinkCoroutine;
     private Coroutine barBlinkCoroutine;
 
-    MachineUIManager machineUIManager;
-    
     public bool ConeBroken => coneBroken;
     public bool BarBroken => barBroken;
 
     private void Start()
     {
-        Debug.Log(GameManager.Instance);
-        machineUIManager = FindAnyObjectByType<MachineUIManager>();
         StartCoroutine(BreakRoutine());
         warningIcon.gameObject.SetActive(false);
     }
@@ -40,7 +36,7 @@ public class MachineModifier : MonoBehaviour
         while (true)
         {
             // 테스트용 5초 (실제 게임에서는 120초)
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(1f);
 
             if (IsAnyMachineBroken())
             {

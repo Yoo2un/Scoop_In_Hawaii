@@ -70,8 +70,6 @@ public class RepairMiniGame : MonoBehaviour
 
         successText.text = successCount + "/" + maxSuccess;
 
-        Debug.Log("성공!");
-
         if (successCount >= maxSuccess)
         {
             machineModifier.RepairComplete();
@@ -88,8 +86,6 @@ public class RepairMiniGame : MonoBehaviour
         life--;
 
         heartImages[life].sprite = brokenHeartSprite;
-
-        Debug.Log("실패!");
 
         if (life <= 0)
         {
