@@ -12,17 +12,13 @@ public class MachineUIManager : MonoBehaviour
     [SerializeField] private GameObject RepairPanel;
     [SerializeField] private GameObject RepairMiniGamePanel;
 
-    MachineModifier machineModifier;
     [SerializeField] private RepairMiniGame repairMiniGame;
     [SerializeField] private RepairEffect repairEffect;
-    private void Start()
-    {
-        machineModifier = FindAnyObjectByType<MachineModifier>();
-    }
+
 
     public void OpenConeMachine()
     {
-        if (machineModifier.ConeBroken)
+        if (MachineModifier.Instance.ConeBroken)
         {
             RepairPanel.SetActive(true);
             return;
@@ -38,7 +34,7 @@ public class MachineUIManager : MonoBehaviour
 
     public void OpenBarMachine()
     {
-        if (machineModifier.BarBroken)
+        if (MachineModifier.Instance.BarBroken)
         {
             RepairPanel.SetActive(true);
             return;

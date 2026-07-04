@@ -258,6 +258,18 @@ public class GameManager : MonoBehaviour, IDataPersistence
     public void UseModifier()
     {
         Debug.Log($"useModifier() 호출됨. 현재 발동된 모디파이어: {modifier}");
+
+        switch (modifier)
+        {
+            case ModifierType.GoodEvent:
+                break;
+
+            case ModifierType.BadEvent:
+
+                MachineModifier.Instance.BreakMachine();
+
+                break;
+        }
     }
 
     void VisitClient()

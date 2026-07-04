@@ -18,11 +18,8 @@ public class RepairMiniGame : MonoBehaviour
     [SerializeField] private Sprite heartSprite;
     [SerializeField] private Sprite brokenHeartSprite;
     private int life = 5;
-
-    private MachineModifier machineModifier;
     private void Start()
     {
-        machineModifier = FindAnyObjectByType<MachineModifier>();
 
         RepairMiniGamePanel.gameObject.SetActive(true);
         successCount = 0;
@@ -72,7 +69,7 @@ public class RepairMiniGame : MonoBehaviour
 
         if (successCount >= maxSuccess)
         {
-            machineModifier.RepairComplete();
+            MachineModifier.Instance.RepairComplete();
             RepairMiniGamePanel.SetActive(false);
         }
         else
@@ -89,8 +86,8 @@ public class RepairMiniGame : MonoBehaviour
 
         if (life <= 0)
         {
-            machineModifier.IncreaseBreakChance(0.05f);
-            machineModifier.RepairComplete();
+            MachineModifier.Instance.IncreaseBreakChance(0.05f);
+            MachineModifier.Instance.RepairComplete();
             RepairMiniGamePanel.SetActive(false);
         }
     }
