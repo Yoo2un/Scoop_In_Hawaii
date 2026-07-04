@@ -65,8 +65,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
     private Coroutine walkCoroutine;
     private Coroutine timePassesCoroutine;
 
-    private MachineModifier machineModifier;
-
     public TMP_Text moneyText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -129,8 +127,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
     {
         if (scene.name.Equals("DayScene"))
         {
-
-            machineModifier = FindAnyObjectByType<MachineModifier>();
 
             obj_Day = GameObject.Find("Day_Text_Day");
             obj_Num = GameObject.Find("Day_Text_Num");
@@ -265,9 +261,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
                 break;
 
             case ModifierType.BadEvent:
-
                 MachineModifier.Instance.BreakMachine();
-
+                SeagullModifier.Instance.FlySeagull();
                 break;
         }
     }
@@ -277,7 +272,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
         if (isClientVisiting)
             return;
 
-        if (machineModifier.IsAnyMachineBroken())
+        if (MachineModifier.Instance.IsAnyMachineBroken())
         {
             StartCoroutine(WaitUntilMachineFixed());
             return;
@@ -298,7 +293,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     private IEnumerator WaitUntilMachineFixed()
     {
-        yield return new WaitUntil(() => !machineModifier.IsAnyMachineBroken());
+        yield return new WaitUntil(() => !MachineModifier.Instance.IsAnyMachineBroken());
 
         float randomDelay = UnityEngine.Random.Range(5f, 10f);
         yield return new WaitForSeconds(randomDelay);
