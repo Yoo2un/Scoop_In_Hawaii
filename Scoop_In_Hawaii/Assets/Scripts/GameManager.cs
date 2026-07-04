@@ -24,20 +24,15 @@ public class GameManager : MonoBehaviour, IDataPersistence
     int money = 0;
     bool gameStart = false;
 
-    //�մ� �湮 ���� - ���� �մ� �湮�� �� ���
     public bool isClientVisiting = false;
 
-    //�մ� ���� ��ġ ����
     Vector3 clientStartPos;
 
-    //�մ� ����Ʈ
     [SerializeField]
     private List<Client> clientList;
 
-    //���� �մ�
     private Client currentClient;
 
-    //�մ� �̹�����
     SpriteRenderer clientSpriteRenderer;
 
     public IceCream currentOrder;
@@ -66,6 +61,12 @@ public class GameManager : MonoBehaviour, IDataPersistence
     private Coroutine timePassesCoroutine;
 
     public TMP_Text moneyText;
+
+    [SerializeField]
+    private float minClientDelay = 5f;
+
+    [SerializeField]
+    private float maxClientDelay = 10f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoadData(GameData data)
@@ -258,6 +259,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
         switch (modifier)
         {
             case ModifierType.GoodEvent:
+                SNSViralMdodifier.Instance.SNS_Viral();
                 break;
 
             case ModifierType.BadEvent:
@@ -400,7 +402,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
         isClientVisiting = false;
 
         //���� ��� �ð�
-        float randomDelay = UnityEngine.Random.Range(5f, 10f);
+        float randomDelay = UnityEngine.Random.Range(minClientDelay, maxClientDelay);
 
         Debug.Log($"다음 손님까지 {randomDelay:F1}초");
 
@@ -410,6 +412,18 @@ public class GameManager : MonoBehaviour, IDataPersistence
         client_transform.position = clientStartPos;
 
         VisitClient();
+    }
+
+    public void SetClientSpawnDelay(float min, float max)
+    {
+        minClientDelay = min;
+        maxClientDelay = max;
+    }
+
+    public void ResetClientSpawnDelay()
+    {
+        minClientDelay = 5f;
+        maxClientDelay = 10f;
     }
 
     private void Awake()
