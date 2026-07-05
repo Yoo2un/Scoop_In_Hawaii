@@ -264,8 +264,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
                 break;
 
             case ModifierType.BadEvent:
-                //MachineModifier.Instance.BreakMachine();
-                SeagullModifier.Instance.FlySeagull();
+                MachineModifier.Instance.BreakMachine();
+                //SeagullModifier.Instance.FlySeagull();
                 break;
         }
     }
