@@ -6696,8 +6696,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SeagulModifier
   SeagullImage: {fileID: 1731063799}
   rectransform: {fileID: 1731063797}
-  startPos: {x: 800, y: 180}
-  endPos: {x: -800, y: 180}
+  startPos: {x: 1000, y: 180}
+  endPos: {x: -1000, y: 180}
   moveTime: 2
   WarningPanel: {fileID: 1779051337}
   AlramTiming: 1.5

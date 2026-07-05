@@ -169,9 +169,19 @@ public class IceCreamMaking : MonoBehaviour
 
     public void CompleteIceCream()
     {
+
         if (currentIceCream == null)
         {
             Debug.Log("제작 중인 아이스크림 없음");
+
+            return;
+        }
+
+        if (SeagullModifier.Instance.IsActive)
+        {
+            SeagullModifier.Instance.StartFly();
+
+            ResetIceCream();
 
             return;
         }

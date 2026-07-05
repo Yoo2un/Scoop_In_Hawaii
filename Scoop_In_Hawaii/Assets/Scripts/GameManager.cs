@@ -260,12 +260,12 @@ public class GameManager : MonoBehaviour, IDataPersistence
         {
             case ModifierType.GoodEvent:
                 //SNSViralMdodifier.Instance.SNS_Viral();
-                TrendFlavorModifier.Instance.StartTrendFlavor();
+                //TrendFlavorModifier.Instance.StartTrendFlavor();
                 break;
 
             case ModifierType.BadEvent:
                 //MachineModifier.Instance.BreakMachine();
-                //SeagullModifier.Instance.FlySeagull();
+                SeagullModifier.Instance.FlySeagull();
                 break;
         }
     }
@@ -326,6 +326,12 @@ public class GameManager : MonoBehaviour, IDataPersistence
         text_chat.text = OrderDialog.GenerateText(currentOrder);
 
         chat.SetActive(true);
+    }
+
+    //갈매기 습격 때 쓸 텍스트 넘겨주기
+    public void SetChatText(string message)
+    {
+        text_chat.text = message;
     }
 
     public IEnumerator StartWalk(float delay)

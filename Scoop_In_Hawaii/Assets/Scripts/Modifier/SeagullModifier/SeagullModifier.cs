@@ -17,7 +17,7 @@ public class SeagullModifier : MonoBehaviour
     [SerializeField] private GameObject WarningPanel;
     [SerializeField] private float AlramTiming = 1.5f;
 
-
+    public bool IsActive { get; private set; } = false;
     private void Awake()
     {
         if (Instance == null)
@@ -31,6 +31,12 @@ public class SeagullModifier : MonoBehaviour
     }
 
     public void FlySeagull()
+    {
+        IsActive = true;
+        Debug.Log("갈매기 모디파이어 활성화");
+    }
+
+    public void StartFly()
     {
         StartCoroutine(FlyRoutine());
     }
@@ -63,5 +69,13 @@ public class SeagullModifier : MonoBehaviour
         rectransform.anchoredPosition = endPos;
 
         SeagullImage.gameObject.SetActive(false);
+
+        GameManager.Instance.SetChatText("흥! 돈은 못 주겠네요!");
+        Debug.Log("텍스트 변경 완료");
+
+        yield return new WaitForSeconds(2f);
+
+        GameManager.Instance.LeaveWalk(3f);
+        IsActive = false;
     }
 }
