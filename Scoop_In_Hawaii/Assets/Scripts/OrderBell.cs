@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System.Linq;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class OrderBell : MonoBehaviour
 {
@@ -56,36 +57,16 @@ public class OrderBell : MonoBehaviour
             //Debug.LogWarning("���̽�ũ���� �������� �ʽ��ϴ�.");
         }
 
-        if(gameManager.currentOrder.Equals(iceCreamMaking.currentIceCream))
-        {
-            //Debug.Log("�Ϻ��� ����!");
-        }
-        else
-        {
-            if (gameManager.currentOrder.Type != iceCreamMaking.currentIceCream.Type)
-            {
-                //Debug.Log("������ �ٸ��ϴ�.");
-            }
+        float accuracy = CalculateAccuracy();
 
-            if (!gameManager.currentOrder.Flavors.SequenceEqual(iceCreamMaking.currentIceCream.Flavors))
-            {
-                //Debug.Log("���� �ٸ��ϴ�.");
-            }
+        int basePrice = GetBasePrice();
 
-            if (!gameManager.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings))
-            {
-                //Debug.Log("������ �ٸ��ϴ�.");
-            }
+        int amount = Mathf.RoundToInt(basePrice * accuracy); //소수점 첫번째 자리에서 반올림
 
-            if (gameManager.currentOrder is Cone orderCone &&
-               iceCreamMaking.currentIceCream is Cone madeCone)
-            {
-                if (orderCone.syrup != madeCone.syrup)
-                {
-                    //Debug.Log("�÷��� �ٸ��ϴ�.");
-                }
-            }
-        }
+        iceCreamMaking.CompleteIceCream(amount);
+        Debug.Log($"정확도 : {accuracy * 100}%");
+        Debug.Log($"판매가 : {basePrice}");
+        Debug.Log($"최종 금액 : {amount}");
     }
     private IEnumerator MoveIceCream()
     {
@@ -108,4 +89,35 @@ public class OrderBell : MonoBehaviour
         Debug.Log("이동 완료");
     }
 
+    private int GetBasePrice()
+    {
+        Flavor flavor = GameManager.Instance.currentOrder.Flavors[0];
+
+        return IceCreamData.FlavorPrices[flavor];
+    }
+
+    private float CalculateAccuracy()
+    {
+        float score = 0f;
+
+        // 타입
+        if (GameManager.Instance.currentOrder.Type == iceCreamMaking.currentIceCream.Type)
+            score += 0.2f;
+
+        // 맛
+        if (GameManager.Instance.currentOrder.Flavors.SequenceEqual(iceCreamMaking.currentIceCream.Flavors))
+            score += 0.5f;
+
+        // 토핑
+        if (GameManager.Instance.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings))
+            score += 0.2f;
+
+        // 시럽
+        if (GameManager.Instance.currentOrder is Cone orderCone && iceCreamMaking.currentIceCream is Cone madeCone && orderCone.syrup == madeCone.syrup)
+        {
+            score += 0.1f;
+        }
+
+        return score;
+    }
 }

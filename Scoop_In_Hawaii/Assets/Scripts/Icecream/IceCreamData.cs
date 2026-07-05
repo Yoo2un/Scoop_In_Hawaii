@@ -32,4 +32,13 @@ public static class IceCreamData
         { Syrup.Chocolate, "초코" },
         { Syrup.Caramel, "카라멜" }
     };
+
+    public static Dictionary<Flavor, int> FlavorPrices =
+    new Dictionary<Flavor, int>()
+    {
+        { Flavor.Vanilla, 180 },
+        { Flavor.Chocolate, 220 },
+        { Flavor.Soda, 100 },
+        { Flavor.Mango, 120 }
+    };
 }

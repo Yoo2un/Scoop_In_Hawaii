@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class IceCreamMaking : MonoBehaviour
 {
@@ -167,7 +168,7 @@ public class IceCreamMaking : MonoBehaviour
         Debug.Log("아이스크림 초기화");
     }
 
-    public void CompleteIceCream()
+    public void CompleteIceCream(int amount)
     {
 
         if (currentIceCream == null)
@@ -229,14 +230,11 @@ public class IceCreamMaking : MonoBehaviour
 
         //Debug.Log(result);
 
-        GameManager.Instance.addMoney(50);
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.profit += 50;
-        }
+        GameManager.Instance.addMoney(amount);
+        GameManager.Instance.profit += amount;
 
-        ResetIceCream(); // 완료 후 초기화
+        ResetIceCream();
 
-        GameManager.Instance.LeaveWalk(3f);
+        GameManager.Instance.LeaveWalk(3f);
     }
 }
