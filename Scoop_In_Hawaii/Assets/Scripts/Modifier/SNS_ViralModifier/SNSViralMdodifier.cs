@@ -6,7 +6,7 @@ public class SNSViralMdodifier : MonoBehaviour
     public static SNSViralMdodifier Instance { get; private set; }
 
     [SerializeField] private GameObject AlramPanel;
-    [SerializeField] private float warningTime = 1.5f;
+    [SerializeField] private float AlramTiming = 1.5f;
 
     private void Awake()
     {
@@ -20,11 +20,6 @@ public class SNSViralMdodifier : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        SNS_Viral();
-    }
-
     public void SNS_Viral()
     {
         StartCoroutine(PlaySNSModifier());
@@ -34,15 +29,17 @@ public class SNSViralMdodifier : MonoBehaviour
     {
         AlramPanel.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(warningTime);
+        yield return new WaitForSeconds(AlramTiming);
 
         AlramPanel.gameObject.SetActive(false);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         GameManager.Instance.SetClientSpawnDelay(2f, 4f);
 
-        yield return new WaitForSeconds(30f);
+        Debug.Log("SNS Àû¿ë!");
+
+        yield return new WaitForSeconds(10f);
 
         GameManager.Instance.ResetClientSpawnDelay();
     }

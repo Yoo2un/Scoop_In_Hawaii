@@ -21,7 +21,7 @@ public class IceCreamMaking : MonoBehaviour
         }
         currentIceCream.Type = (IceCreamType)type;
 
-        Debug.Log(currentIceCream.Type + "추가");
+        //Debug.Log(currentIceCream.Type + "추가");
     }
 
 
@@ -72,10 +72,10 @@ public class IceCreamMaking : MonoBehaviour
 
             currentIceCream.Flavors.Add(flavor);
 
-            Debug.Log(flavor + "맛 추가");
+            //Debug.Log(flavor + "맛 추가");
 
             GameManager.Instance.material_cost += 10;
-            Debug.Log("(임시)재료비 10원 증가");
+            //Debug.Log("(임시)재료비 10원 증가");
         }
 
         // 바
@@ -86,10 +86,10 @@ public class IceCreamMaking : MonoBehaviour
 
             currentIceCream.Flavors.Add(flavor);
 
-            Debug.Log(flavor + "맛 추가");
+            //Debug.Log(flavor + "맛 추가");
 
             GameManager.Instance.material_cost += 10;
-            Debug.Log("(임시)재료비 10원 증가");
+            //Debug.Log("(임시)재료비 10원 증가");
         }
     }
 
@@ -105,7 +105,7 @@ public class IceCreamMaking : MonoBehaviour
 
         currentIceCream.Toppings.Add(topping);
 
-        Debug.Log(topping + " 토핑 추가");
+        //Debug.Log(topping + " 토핑 추가");
     }
 
     [VisibleEnum(typeof(Syrup))]

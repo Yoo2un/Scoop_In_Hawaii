@@ -259,12 +259,13 @@ public class GameManager : MonoBehaviour, IDataPersistence
         switch (modifier)
         {
             case ModifierType.GoodEvent:
-                SNSViralMdodifier.Instance.SNS_Viral();
+                //SNSViralMdodifier.Instance.SNS_Viral();
+                TrendFlavorModifier.Instance.StartTrendFlavor();
                 break;
 
             case ModifierType.BadEvent:
-                MachineModifier.Instance.BreakMachine();
-                SeagullModifier.Instance.FlySeagull();
+                //MachineModifier.Instance.BreakMachine();
+                //SeagullModifier.Instance.FlySeagull();
                 break;
         }
     }
@@ -404,6 +405,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
         //���� ��� �ð�
         float randomDelay = UnityEngine.Random.Range(minClientDelay, maxClientDelay);
 
+        //Debug.Log($"minClientDelay: {minClientDelay:F1}초, maxClientDelay: {maxClientDelay:F1}초");
         Debug.Log($"다음 손님까지 {randomDelay:F1}초");
 
         yield return new WaitForSeconds(randomDelay);
@@ -422,8 +424,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     public void ResetClientSpawnDelay()
     {
-        minClientDelay = 5f;
-        maxClientDelay = 10f;
+        minClientDelay = 30f;
+        maxClientDelay = 60f;
     }
 
     private void Awake()

@@ -15,12 +15,8 @@ public class SeagullModifier : MonoBehaviour
     [SerializeField] private float moveTime = 2f;
 
     [SerializeField] private GameObject WarningPanel;
-    [SerializeField] private float warningTime = 1.5f;
+    [SerializeField] private float AlramTiming = 1.5f;
 
-    private void Start()
-    {
-        FlySeagull();
-    }
 
     private void Awake()
     {
@@ -43,7 +39,7 @@ public class SeagullModifier : MonoBehaviour
     {
         WarningPanel.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(warningTime);
+        yield return new WaitForSeconds(AlramTiming);
 
         WarningPanel.gameObject.SetActive(false);
 
