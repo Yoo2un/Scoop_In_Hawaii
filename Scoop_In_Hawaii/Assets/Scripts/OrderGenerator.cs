@@ -17,12 +17,10 @@ public class OrderGenerator : MonoBehaviour
             if (Random.value < 0.8f)
             {
                 type = TrendFlavorModifier.Instance.CurrentTrendType == IceCreamType.Cone ? 1 : 0;
-                Debug.Log("유행하는 종류 당첨: " + type);
             }
             else
             {
                 type = Random.Range(0, 2);
-                Debug.Log("일반 종류 당첨: " + type);
             }
         }
         else

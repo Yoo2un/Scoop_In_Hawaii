@@ -10,7 +10,6 @@ public class OrderBell : MonoBehaviour
 
     GameObject currentSpawnedImage;
     
-    private GameManager gameManager;
     private IceCreamMaking iceCreamMaking;
 
     //float moveSpeed = 800f;
@@ -18,7 +17,6 @@ public class OrderBell : MonoBehaviour
     private void Start()
     {
         GameObject pointObj = GameObject.Find("temp_Point");
-        gameManager = FindAnyObjectByType<GameManager>();
         iceCreamMaking = FindAnyObjectByType<IceCreamMaking>();
 
         if (pointObj != null)
@@ -104,20 +102,48 @@ public class OrderBell : MonoBehaviour
         if (GameManager.Instance.currentOrder.Type == iceCreamMaking.currentIceCream.Type)
             score += 0.2f;
 
+        //콘:시럽 포함 10%이기 때문에 0.5이고 바일 때는 시럽이 없기 때문에 0.6
+        float flavorWeight = GameManager.Instance.currentOrder.Type == IceCreamType.Bar ? 0.6f : 0.5f;
+
         // 맛
-        if (GameManager.Instance.currentOrder.Flavors.SequenceEqual(iceCreamMaking.currentIceCream.Flavors))
-            score += 0.5f;
+        score += CalculateFlavorScore() * flavorWeight; // (2/3) * 0.5 = 0.33점
+        Debug.Log($"맛 점수 : {CalculateFlavorScore() * 0.5f}");
 
         // 토핑
         if (GameManager.Instance.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings))
             score += 0.2f;
+            Debug.Log("토핑: " + score);
 
         // 시럽
-        if (GameManager.Instance.currentOrder is Cone orderCone && iceCreamMaking.currentIceCream is Cone madeCone && orderCone.syrup == madeCone.syrup)
+        if (GameManager.Instance.currentOrder is Cone orderCone && iceCreamMaking.currentIceCream is Cone madeCone )
         {
-            score += 0.1f;
+            Debug.Log(orderCone.syrup);
+            Debug.Log(madeCone.syrup);
+            if (orderCone.syrup == madeCone.syrup)
+            {
+                Debug.Log("시럽 일치 +0.1");
+                score += 0.1f;
+            }
+        }
+        Debug.Log($"최종 점수 : {score}");
+        return score;
+    }
+
+    //여러 층 스쿱 비교
+    private float CalculateFlavorScore()
+    {
+        int correct = 0;
+
+        int total = GameManager.Instance.currentOrder.Flavors.Count;
+
+        for (int i = 0; i < total; i++)
+        {
+            if (GameManager.Instance.currentOrder.Flavors[i] == iceCreamMaking.currentIceCream.Flavors[i])
+            {
+                correct++;
+            }
         }
 
-        return score;
+        return (float)correct / total;
     }
 }
