@@ -89,9 +89,10 @@ public class OrderBell : MonoBehaviour
 
     private int GetBasePrice()
     {
-        Flavor flavor = GameManager.Instance.currentOrder.Flavors[0];
+        if (GameManager.Instance.currentOrder.Flavors.Count == 0)
+            return 0;
 
-        return IceCreamData.FlavorPrices[flavor];
+        return IceCreamData.FlavorPrices[GameManager.Instance.currentOrder.Flavors[0]];
     }
 
     private float CalculateAccuracy()
@@ -132,18 +133,25 @@ public class OrderBell : MonoBehaviour
     //여러 층 스쿱 비교
     private float CalculateFlavorScore()
     {
+        int orderCount = GameManager.Instance.currentOrder.Flavors.Count;
+        int madeCount = iceCreamMaking.currentIceCream.Flavors.Count;
+
+        if (orderCount == 0)
+            return madeCount == 0 ? 1f : 0f;
+
+        int compareCount = Mathf.Min(orderCount, madeCount);
+
         int correct = 0;
 
-        int total = GameManager.Instance.currentOrder.Flavors.Count;
-
-        for (int i = 0; i < total; i++)
+        for (int i = 0; i < compareCount; i++)
         {
-            if (GameManager.Instance.currentOrder.Flavors[i] == iceCreamMaking.currentIceCream.Flavors[i])
+            if (GameManager.Instance.currentOrder.Flavors[i] ==
+                iceCreamMaking.currentIceCream.Flavors[i])
             {
                 correct++;
             }
         }
 
-        return (float)correct / total;
+        return (float)correct / orderCount;
     }
 }

@@ -50,7 +50,7 @@ public class ModifierScheduler : MonoBehaviour
     private void ResetModifierTimer()
     {
         modifierTimer = 0f;
-        targetModifierTime = Random.Range(30f, 60f);
+        targetModifierTime = Random.Range(5f, 10f);
         Debug.Log($"다음 모디파이어 생성까지 걸리는 시간 : {targetModifierTime:F1}초");
     }
 
