@@ -108,31 +108,40 @@ public class OrderBell : MonoBehaviour
 
         // 맛
         score += CalculateFlavorScore() * flavorWeight; // (2/3) * 0.5 = 0.33점
-        Debug.Log($"맛 점수 : {CalculateFlavorScore() * 0.5f}");
 
         // 토핑
         if (GameManager.Instance.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings))
             score += 0.2f;
-            Debug.Log("토핑: " + score);
 
         // 시럽
         if (GameManager.Instance.currentOrder is Cone orderCone && iceCreamMaking.currentIceCream is Cone madeCone )
         {
-            Debug.Log(orderCone.syrup);
-            Debug.Log(madeCone.syrup);
             if (orderCone.syrup == madeCone.syrup)
             {
-                Debug.Log("시럽 일치 +0.1");
                 score += 0.1f;
+                Debug.Log("시럽 : " + (orderCone.syrup == madeCone.syrup));
             }
         }
-        Debug.Log($"최종 점수 : {score}");
+
+        Debug.Log("===== 점수 =====");
+        Debug.Log("타입 : " + (GameManager.Instance.currentOrder.Type == iceCreamMaking.currentIceCream.Type));
+
+        Debug.Log("맛 : " + CalculateFlavorScore());
+
+        Debug.Log("토핑 : " +
+        GameManager.Instance.currentOrder.Toppings.SetEquals(iceCreamMaking.currentIceCream.Toppings));
+
+        Debug.Log("최종 점수 : " + score);
+
         return score;
     }
 
     //여러 층 스쿱 비교
     private float CalculateFlavorScore()
     {
+        Debug.Log(iceCreamMaking.currentIceCream);
+        Debug.Log(iceCreamMaking.currentIceCream.Flavors.Count);
+
         int orderCount = GameManager.Instance.currentOrder.Flavors.Count;
         int madeCount = iceCreamMaking.currentIceCream.Flavors.Count;
 

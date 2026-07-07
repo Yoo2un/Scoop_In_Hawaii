@@ -28,20 +28,19 @@ public class IceCreamMaking : MonoBehaviour
 
     [VisibleEnum(typeof(Flavor))]
     public void AddFlavor(int flavorIndex)
-    {
+    { 
+
         if (currentIceCream == null)
         {
             return;
         }
 
-        // ������ �̹� �ö��ִ��� �˻�
         if (currentIceCream.Toppings.Count > 0)
         {
             Debug.Log("");
             return;
         }
 
-        // �÷��� �̹� �ö��ִ��� �˻�
         if (currentIceCream.Type == IceCreamType.Cone)
         {
             Cone cone = (Cone)currentIceCream;
@@ -92,6 +91,7 @@ public class IceCreamMaking : MonoBehaviour
             GameManager.Instance.material_cost += 10;
             //Debug.Log("(임시)재료비 10원 증가");
         }
+
     }
 
     [VisibleEnum(typeof(Topping))]
