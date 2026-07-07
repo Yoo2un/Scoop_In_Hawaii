@@ -28,8 +28,8 @@ public class IceCreamMaking : MonoBehaviour
 
     [VisibleEnum(typeof(Flavor))]
     public void AddFlavor(int flavorIndex)
-    { 
-
+    {
+        Debug.Log($"AddFlavor 호출! index={flavorIndex}");
         if (currentIceCream == null)
         {
             return;
