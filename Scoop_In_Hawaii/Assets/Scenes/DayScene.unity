@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a283004ede899469e0f93415e1a568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Guideline
-  machinePanel: {fileID: 0}
+  machinePanel: {fileID: 729530576}
   guideLine: {fileID: 0}
   userLine: {fileID: 0}
 --- !u!114 &163800439
@@ -6326,7 +6326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a283004ede899469e0f93415e1a568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Guideline
-  machinePanel: {fileID: 0}
+  machinePanel: {fileID: 729530576}
   guideLine: {fileID: 0}
   userLine: {fileID: 0}
 --- !u!114 &871400424
