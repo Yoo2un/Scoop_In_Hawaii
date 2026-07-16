@@ -27,7 +27,7 @@ public class ResultScene : MonoBehaviour
 
         if (Instance != null)
         {
-            title_text.text = $"[{GameManager.Instance.day}일차] 장사 결과 정산";
+            title_text.text = $"[{DayManager.Instance.day}일차] 장사 결과 정산";
             profit_text.text = $"매출 : {GameManager.Instance.profit}";
             net_profit_text.text = $"순이익 : {GameManager.Instance.profit - GameManager.Instance.material_cost}";
             money_text.text = $"보유 자금 : {GameManager.Instance.getMoney()}";
@@ -41,6 +41,6 @@ public class ResultScene : MonoBehaviour
         }
 
         next_btn.onClick.RemoveAllListeners();
-        next_btn.onClick.AddListener(GameManager.Instance.NextDay);
+        next_btn.onClick.AddListener(DayManager.Instance.NextDay);
     }
 }

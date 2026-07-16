@@ -13,12 +13,9 @@ public class GameManager : MonoBehaviour, IDataPersistence
     public enum ModifierType { None, GoodEvent, BadEvent }
     public ModifierType modifier = ModifierType.None;
 
-    public DayState dayState;
-    public int day = 1;
     public int profit = 0;
     public int material_cost = 0; // 재료비
 
-    int[] time = new int[2] { 11, 55 };
     List<IceCream> client_Ice = null;
     int margin = 0;
     int money = 0;
@@ -58,7 +55,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
     private Coroutine shrinkCoroutine;
     private Coroutine posCoroutine;
     private Coroutine walkCoroutine;
-    private Coroutine timePassesCoroutine;
 
     public TMP_Text moneyText;
 
@@ -96,22 +92,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
         }
     }
 
-    IEnumerator TimePasses()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1.0f);
-            ++time[1];
-            while (time[1] >= 60)
-            {
-                time[1] = 0;
-                ++time[0];
-            }
-            text_hour.text = $"{time[0]}:{time[1]:D2} PM";
-            //text_minute.text = $"{time[1]}";
-            text_Num.text = $"{day}";
-        }
-    }
 
     void OnEnable()
     {
@@ -143,18 +123,18 @@ public class GameManager : MonoBehaviour, IDataPersistence
             num_RectTransform = obj_Num.GetComponent<RectTransform>();
 
             moneyText = GameObject.Find("Money_Text").GetComponent<TextMeshProUGUI>();
-            dayState = DayState.Morning;
-            Debug.Log($"하루 시작(현재 {day}일차 아침)");
 
-            text_Num.text = $"{day}";
             obj_Day.SetActive(true);
             obj_Num.SetActive(true);
 
-            time[0] = 11;
-            time[1] = 55;
+            DayManager.Instance.SetUI(text_hour, text_Num);
+            DayManager.Instance.ResetDay();
+            DayManager.Instance.StartTime();
+
+            Debug.Log($"하루 시작(현재 {DayManager.Instance.day}일차 아침)");
+
             profit = 0;
 
-            text_hour.text = "11:55 PM";
             obj_hour.SetActive(true);
 
             chat = GameObject.Find("UI_Chat");
@@ -167,12 +147,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
             Button _btn = dayCtrlBtn.GetComponent<Button>();
             _btn.onClick.RemoveAllListeners();
             _btn.onClick.AddListener(DayStart);
-
-            if (timePassesCoroutine != null)
-            {
-                StopCoroutine(timePassesCoroutine);
-            }
-            timePassesCoroutine = StartCoroutine(TimePasses());
 
             obj_Day.SetActive(false);
             obj_Num.SetActive(false);
@@ -195,7 +169,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
         
     public void DayStart()
     {
-        if (dayState == DayState.Morning) {
+        if (DayManager.Instance.dayState == DayState.Morning) {
             Button _btn = dayCtrlBtn.GetComponent<Button>();
             _btn.onClick.RemoveAllListeners();
             _btn.onClick.AddListener(CloseBusiness);
@@ -203,7 +177,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
             dayCtrlBtn.GetComponent<Image>().color = new Color32(212, 47, 41, 255);
 
             profit = 0;
-            dayState = DayState.Open;
+            DayManager.Instance.SetState(DayState.Open);
             Debug.Log("장사 시작");
 
             client = GameObject.Find("Client");
@@ -221,17 +195,12 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     public void CloseBusiness()
     {
-        if (dayState == DayState.Morning || 
-            dayState == DayState.Open)
+        if (DayManager.Instance.dayState == DayState.Morning || DayManager.Instance.dayState == DayState.Open)
         {
-            dayState = DayState.Closed;
+            DayManager.Instance.SetState(DayState.Closed);
 
             CancelInvoke();
-            if (timePassesCoroutine != null)
-            {
-                StopCoroutine(timePassesCoroutine);
-                timePassesCoroutine = null;
-            }
+            DayManager.Instance.StopTime();
             StopAllCoroutines();
 
             Debug.Log("장사 종료");
@@ -246,16 +215,12 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     public void DayEnd()
     {
-        if (dayState == DayState.Closed)
+        if (DayManager.Instance.dayState == DayState.Closed)
         {
-            dayState = DayState.Result;
+            DayManager.Instance.SetState(DayState.Result);
 
             CancelInvoke();
-            if (timePassesCoroutine != null)
-            {
-                StopCoroutine(timePassesCoroutine);
-                timePassesCoroutine = null;
-            }
+            DayManager.Instance.StopTime();
             StopAllCoroutines();
 
             DataPersistenceManager.instance.SaveGame();
@@ -267,11 +232,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
     public void ShowResult()
     {
         Debug.Log("장사 결과 정산");
-    }
-    public void NextDay()
-    {
-        day++;
-        SceneManager.LoadScene("DayScene");
     }
 
     public void UseModifier()

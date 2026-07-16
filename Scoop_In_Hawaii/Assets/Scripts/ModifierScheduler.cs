@@ -24,9 +24,8 @@ public class ModifierScheduler : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance == null || 
-            (GameManager.Instance.dayState != DayState.Open && 
-            GameManager.Instance.dayState != DayState.Morning))
+        if (GameManager.Instance == null || DayManager.Instance == null || (DayManager.Instance.dayState != DayState.Open &&
+            DayManager.Instance.dayState != DayState.Morning))
             return;
 
         // 1. 전체 장사 시간 타이머 (4분 제한)
