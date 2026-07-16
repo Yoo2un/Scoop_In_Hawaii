@@ -17,31 +17,14 @@ public class GameManager : MonoBehaviour, IDataPersistence
     public int material_cost = 0; // 재료비
 
     List<IceCream> client_Ice = null;
-    int margin = 0;
     int money = 0;
     bool gameStart = false;
 
-    public bool isClientVisiting = false;
-
-    Vector3 clientStartPos;
-
-    [SerializeField]
-    private List<Client> clientList;
-
-    private Client currentClient;
-
-    SpriteRenderer clientSpriteRenderer;
-
-    public IceCream currentOrder;
-
     GameObject obj_Day = null;
     GameObject obj_Num = null;
-    GameObject client = null;
     GameObject chat = null;
     GameObject dayCtrlBtn = null;
 
-    Transform client_transform;
-    View_Front client_view_front;
 
     TextMeshProUGUI text_Day;
     TextMeshProUGUI text_Num;
@@ -54,15 +37,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     private Coroutine shrinkCoroutine;
     private Coroutine posCoroutine;
-    private Coroutine walkCoroutine;
 
     public TMP_Text moneyText;
-
-    [SerializeField]
-    private float minClientDelay = 5f;
-
-    [SerializeField]
-    private float maxClientDelay = 10f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void LoadData(GameData data)
@@ -77,9 +53,17 @@ public class GameManager : MonoBehaviour, IDataPersistence
         moneyText.text = money.ToString();
     }
 
-    void Start()
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -91,7 +75,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
             return;
         }
     }
-
 
     void OnEnable()
     {
@@ -141,6 +124,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
             text_chat = GameObject.Find("Text_Chat").GetComponent<TextMeshProUGUI>();
             chat.SetActive(false);
 
+            CustomerManager.Instance.SetUI(chat, text_chat);
+
             dayCtrlBtn = GameObject.Find("DayCtrlBtn");
             dayCtrlBtn.GetComponent<Image>().color = new Color32(126, 255, 109, 255);
             dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "장사 시작";
@@ -180,16 +165,9 @@ public class GameManager : MonoBehaviour, IDataPersistence
             DayManager.Instance.SetState(DayState.Open);
             Debug.Log("장사 시작");
 
-            client = GameObject.Find("Client");
-            client_transform = client.GetComponent<Transform>();
-            client_view_front = client.GetComponent<View_Front>();
-            clientSpriteRenderer = client.GetComponent<SpriteRenderer>();
-            clientStartPos = client_transform.position;
-            isClientVisiting = false;
-
             gameStart = true;
 
-            Invoke("VisitClient", 5.0f);
+            CustomerManager.Instance.StartBusiness();
         }
     }
 
@@ -202,6 +180,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
             CancelInvoke();
             DayManager.Instance.StopTime();
             StopAllCoroutines();
+
+            CustomerManager.Instance.StopBusiness();
 
             Debug.Log("장사 종료");
 
@@ -249,183 +229,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
                 MachineModifier.Instance.BreakMachine();
                 //SeagullModifier.Instance.FlySeagull();
                 break;
-        }
-    }
-
-    void VisitClient()
-    {
-        if (isClientVisiting)
-            return;
-
-        if (MachineModifier.Instance.IsAnyMachineBroken())
-        {
-            StartCoroutine(WaitUntilMachineFixed());
-            return;
-        }
-
-        isClientVisiting = true;
-
-        Client randomClient = clientList[UnityEngine.Random.Range(0, clientList.Count)];
-        currentClient = randomClient;
-        clientSpriteRenderer.sprite = currentClient.sideSprite;
-
-        StartCoroutine(StartWalk(0f));
-        StartCoroutine(StartWalk(1f));
-        StartCoroutine(StartWalk(2f));
-        StartCoroutine(StartViewFront(3f));
-        StartCoroutine(StartChat(4.5f));
-    }
-
-    private IEnumerator WaitUntilMachineFixed()
-    {
-        yield return new WaitUntil(() => !MachineModifier.Instance.IsAnyMachineBroken());
-
-        float randomDelay = UnityEngine.Random.Range(5f, 10f);
-        yield return new WaitForSeconds(randomDelay);
-
-        VisitClient();
-    }
-
-    public IEnumerator StartViewFront(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        clientSpriteRenderer.sprite = currentClient.frontSprite;
-
-        //client_view_front.Active_View_Front();
-    }
-
-    public IEnumerator StartChat(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Chat();
-    }
-
-    private void Chat()
-    {
-        currentOrder = OrderGenerator.GenerateOrder();
-
-        text_chat.text = OrderDialog.GenerateText(currentOrder);
-
-        chat.SetActive(true);
-    }
-
-    //갈매기 습격 때 쓸 텍스트 넘겨주기
-    public void SetChatText(string message)
-    {
-        text_chat.text = message;
-    }
-
-    public IEnumerator StartWalk(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        ClientWalk(1f);
-    }
-
-    public void ClientWalk(float duration)
-    {
-        if (walkCoroutine != null) StopCoroutine(walkCoroutine);
-
-        walkCoroutine = StartCoroutine(ClientWalkProcess(duration));
-    }
-
-    private IEnumerator ClientWalkProcess(float duration)
-    {
-        Vector3 start_Pos = client_transform.position;
-        Vector3 dest_Pos = new Vector3(client_transform.position.x + 3, client_transform.position.y, 0);
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            client_transform.position = Vector3.Lerp(start_Pos, dest_Pos, elapsed / duration);
-            yield return null;
-        }
-
-        client_transform.position = dest_Pos;
-
-        start_Pos = dest_Pos;
-        dest_Pos = new Vector3(dest_Pos.x, dest_Pos.y - 0.5f, 0);
-        elapsed = 0f;
-
-        while (elapsed < (duration / 2))
-        {
-            elapsed += Time.deltaTime;
-            client_transform.position = Vector3.Lerp(start_Pos, dest_Pos, elapsed / (duration / 2));
-            yield return null;
-        }
-
-        client_transform.position = dest_Pos;
-
-    }
-
-    public void LeaveWalk(float duration)
-    {
-        if (walkCoroutine != null) StopCoroutine(walkCoroutine);
-
-        walkCoroutine = StartCoroutine(ClientLeaveProcess(duration));
-    }
-
-    private IEnumerator ClientLeaveProcess(float duration)
-    {
-        chat.SetActive(false);
-
-        Vector3 start_Pos = client_transform.position;
-
-        Vector3 dest_Pos = new Vector3(client_transform.position.x - 10, client_transform.position.y, 0);
-
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-
-            client_transform.position = Vector3.Lerp(start_Pos, dest_Pos, elapsed / duration);
-
-            yield return null;
-        }
-
-        client_transform.position = dest_Pos;
-
-        //���� ���� �մ� ����
-        isClientVisiting = false;
-
-        //���� ��� �ð�
-        float randomDelay = UnityEngine.Random.Range(minClientDelay, maxClientDelay);
-
-        //Debug.Log($"minClientDelay: {minClientDelay:F1}초, maxClientDelay: {maxClientDelay:F1}초");
-        Debug.Log($"다음 손님까지 {randomDelay:F1}초");
-
-        yield return new WaitForSeconds(randomDelay);
-
-        //�մ� ��ġ �ʱ�ȭ
-        client_transform.position = clientStartPos;
-
-        VisitClient();
-    }
-
-    public void SetClientSpawnDelay(float min, float max)
-    {
-        minClientDelay = min;
-        maxClientDelay = max;
-    }
-
-    public void ResetClientSpawnDelay()
-    {
-        minClientDelay = 30f;
-        maxClientDelay = 60f;
-    }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 

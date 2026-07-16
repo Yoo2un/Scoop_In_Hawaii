@@ -70,12 +70,12 @@ public class SeagullModifier : MonoBehaviour
 
         SeagullImage.gameObject.SetActive(false);
 
-        GameManager.Instance.SetChatText("흥! 돈은 못 주겠네요!");
+        CustomerManager.Instance.SetChatText("흥! 돈은 못 주겠네요!");
         Debug.Log("텍스트 변경 완료");
 
         yield return new WaitForSeconds(2f);
 
-        GameManager.Instance.LeaveWalk(3f);
+        CustomerManager.Instance.LeaveWalk(3f);
         IsActive = false;
     }
 }

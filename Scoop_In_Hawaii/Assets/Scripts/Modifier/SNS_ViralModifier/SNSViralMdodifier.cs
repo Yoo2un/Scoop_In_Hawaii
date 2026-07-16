@@ -35,12 +35,12 @@ public class SNSViralMdodifier : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
-        GameManager.Instance.SetClientSpawnDelay(2f, 4f);
+        CustomerManager.Instance.SetClientSpawnDelay(2f, 4f);
 
         Debug.Log("SNS Àû¿ë!");
 
         yield return new WaitForSeconds(10f);
 
-        GameManager.Instance.ResetClientSpawnDelay();
+        CustomerManager.Instance.ResetClientSpawnDelay();
     }
 }

@@ -52,7 +52,7 @@ public class MachineModifier : MonoBehaviour
         }
 
         // 손님이 있으면 이번 고장 판정은 건너뜀
-        if (GameManager.Instance.isClientVisiting)
+        if (CustomerManager.Instance.isClientVisiting)
         {
             Debug.Log("손님이 있어서 판정을 건너뜁니다.");
             return;

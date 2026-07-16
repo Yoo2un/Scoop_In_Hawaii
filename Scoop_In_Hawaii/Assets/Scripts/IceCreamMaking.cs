@@ -235,6 +235,6 @@ public class IceCreamMaking : MonoBehaviour
 
         ResetIceCream();
 
-        GameManager.Instance.LeaveWalk(3f);
+        CustomerManager.Instance.LeaveWalk(3f);
     }
 }
