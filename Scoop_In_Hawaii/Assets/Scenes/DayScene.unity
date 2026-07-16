@@ -11807,6 +11807,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e22fc1a2527ed429c0f0ba10007fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ModifierScheduler
+  modifierArray:
+  - {fileID: 11400000, guid: aa722895e1a2ed242b456256f6e151c1, type: 2}
+  - {fileID: 11400000, guid: d6dd067afd7e6bf40aa3e6d5e5b32aa3, type: 2}
+  - {fileID: 11400000, guid: b3d2b3531fcd29d4883c0fbbc8779e96, type: 2}
+  - {fileID: 11400000, guid: dc118f5bd2f26bf4b86c40904f6db290, type: 2}
 --- !u!4 &1835691543
 Transform:
   m_ObjectHideFlags: 0

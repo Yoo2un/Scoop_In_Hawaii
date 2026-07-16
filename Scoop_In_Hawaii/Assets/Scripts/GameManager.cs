@@ -9,9 +9,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager Instance { get; private set; }
 
-    // 임시 모디파이어 enum
-    public enum ModifierType { None, GoodEvent, BadEvent }
-    public ModifierType modifier = ModifierType.None;
+    public ModifierData modifier = null;
 
     public DayState dayState;
     public int day = 1;
@@ -276,19 +274,32 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
     public void UseModifier()
     {
-        Debug.Log($"useModifier() 호출됨. 현재 발동된 모디파이어: {modifier}");
-
-        switch (modifier)
+        if (modifier == null)
         {
-            case ModifierType.GoodEvent:
-                //SNSViralMdodifier.Instance.SNS_Viral();
-                //TrendFlavorModifier.Instance.StartTrendFlavor();
+            Debug.Log("useModifier() 호출됨. 현재 발동된 모디파이어: null");
+            return;
+        }
+        Debug.Log($"useModifier() 호출됨. 현재 발동된 모디파이어: {modifier.modifierName}");
+
+        switch (modifier.modifierName)
+        {
+            // Good Event
+            case "SNS":
+                SNSViralMdodifier.Instance.SNS_Viral();
+                break;
+            case "Trend":
+                TrendFlavorModifier.Instance.StartTrendFlavor();
                 break;
 
-            case ModifierType.BadEvent:
+            // Bad Event
+            case "Machine":
                 MachineModifier.Instance.BreakMachine();
-                //SeagullModifier.Instance.FlySeagull();
                 break;
+            case "Seagull":
+                SeagullModifier.Instance.FlySeagull();
+                break;
+
+            // Neutral Event (아직 없음)
         }
     }
 
