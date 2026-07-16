@@ -28,10 +28,10 @@ public class ResultScene : MonoBehaviour
         if (Instance != null)
         {
             title_text.text = $"[{DayManager.Instance.day}일차] 장사 결과 정산";
-            profit_text.text = $"매출 : {GameManager.Instance.profit}";
-            net_profit_text.text = $"순이익 : {GameManager.Instance.profit - GameManager.Instance.material_cost}";
-            money_text.text = $"보유 자금 : {GameManager.Instance.getMoney()}";
-            GameManager.Instance.material_cost = 0; // 재료비 초기화
+            profit_text.text = $"매출 : {EconomyManager.Instance.profit}";
+            net_profit_text.text = $"순이익 : {EconomyManager.Instance.profit - EconomyManager.Instance.material_cost}";
+            money_text.text = $"보유 자금 : {EconomyManager.Instance.GetMoney()}";
+            EconomyManager.Instance.material_cost = 0; // 재료비 초기화
         }
         else
         {

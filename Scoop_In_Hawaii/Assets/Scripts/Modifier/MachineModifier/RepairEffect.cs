@@ -85,7 +85,7 @@ public class RepairEffect : MonoBehaviour
         // 텍스트만 사라짐
         yield return StartCoroutine(FadeOutText());
 
-        GameManager.Instance.subtractMoney(500);
+        EconomyManager.Instance.SubtractMoney(500);
         machineModifier.RepairComplete();
     }
 }

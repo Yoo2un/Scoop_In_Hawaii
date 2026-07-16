@@ -5,20 +5,13 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
-public class GameManager : MonoBehaviour, IDataPersistence
+public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
     // 임시 모디파이어 enum
     public enum ModifierType { None, GoodEvent, BadEvent }
     public ModifierType modifier = ModifierType.None;
-
-    public int profit = 0;
-    public int material_cost = 0; // 재료비
-
-    List<IceCream> client_Ice = null;
-    int money = 0;
-    bool gameStart = false;
 
     GameObject obj_Day = null;
     GameObject obj_Num = null;
@@ -38,20 +31,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
     private Coroutine shrinkCoroutine;
     private Coroutine posCoroutine;
 
-    public TMP_Text moneyText;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void LoadData(GameData data)
-    {
-        this.money = data.money;
-        moneyText.text = money.ToString();
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.money = this.money;
-        moneyText.text = money.ToString();
-    }
+    public TextMeshProUGUI moneyText;
 
     private void Awake()
     {
@@ -106,6 +86,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
             num_RectTransform = obj_Num.GetComponent<RectTransform>();
 
             moneyText = GameObject.Find("Money_Text").GetComponent<TextMeshProUGUI>();
+            EconomyManager.Instance.SetUI(moneyText);
 
             obj_Day.SetActive(true);
             obj_Num.SetActive(true);
@@ -116,7 +97,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
             Debug.Log($"하루 시작(현재 {DayManager.Instance.day}일차 아침)");
 
-            profit = 0;
+            EconomyManager.Instance.profit = 0;
 
             obj_hour.SetActive(true);
 
@@ -161,11 +142,9 @@ public class GameManager : MonoBehaviour, IDataPersistence
             dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "장사 종료";
             dayCtrlBtn.GetComponent<Image>().color = new Color32(212, 47, 41, 255);
 
-            profit = 0;
+            EconomyManager.Instance.profit = 0;
             DayManager.Instance.SetState(DayState.Open);
             Debug.Log("장사 시작");
-
-            gameStart = true;
 
             CustomerManager.Instance.StartBusiness();
         }
@@ -311,28 +290,5 @@ public class GameManager : MonoBehaviour, IDataPersistence
         day_RectTransform.position = day_pre_Position;
         num_RectTransform.position = num_pre_Position;
 
-    }
-
-    public int getMoney()
-    {
-        return money;
-    }
-
-    public void setMoney(int money)
-    {
-        this.money = money;
-        moneyText.text = this.money.ToString();
-    }
-
-    public void addMoney(int money)
-    {
-        this.money += money;
-        moneyText.text = this.money.ToString();
-    }
-
-    public void subtractMoney(int money)
-    {
-        this.money -= money;
-        moneyText.text = this.money.ToString();
     }
 }

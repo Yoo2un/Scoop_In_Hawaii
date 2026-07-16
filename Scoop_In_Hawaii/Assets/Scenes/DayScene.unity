@@ -517,6 +517,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55911998}
   m_CullTransparentMesh: 1
+--- !u!1 &89417136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 89417138}
+  - component: {fileID: 89417137}
+  m_Layer: 0
+  m_Name: EconomyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &89417137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89417136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50f2af2bc365da45b4824daa453c697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EconomyManager
+  money: 0
+  profit: 0
+  material_cost: 0
+  moneyText: {fileID: 1881007737}
+--- !u!4 &89417138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89417136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &91446604
 GameObject:
   m_ObjectHideFlags: 0
@@ -9834,8 +9882,8 @@ MonoBehaviour:
     sideSprite: {fileID: -4669476257333590241, guid: 5b7db8e6d48417d40b250393f3d52eb1, type: 3}
     frontSprite: {fileID: -5248298948834303939, guid: 75e173327b426da42b33b63f369618dd, type: 3}
   - clientName: B
-    sideSprite: {fileID: -7516575146871756489, guid: f3ae42faa493fe1418d28a5cf99038e4, type: 3}
-    frontSprite: {fileID: 2651377931920932437, guid: 603dc3722ecba8d4d8fd6b73b43f1aef, type: 3}
+    sideSprite: {fileID: 2651377931920932437, guid: 603dc3722ecba8d4d8fd6b73b43f1aef, type: 3}
+    frontSprite: {fileID: -7516575146871756489, guid: f3ae42faa493fe1418d28a5cf99038e4, type: 3}
   minClientDelay: 5
   maxClientDelay: 10
 --- !u!4 &1480440944
@@ -13399,3 +13447,4 @@ SceneRoots:
   - {fileID: 540080256}
   - {fileID: 931313925}
   - {fileID: 1480440944}
+  - {fileID: 89417138}

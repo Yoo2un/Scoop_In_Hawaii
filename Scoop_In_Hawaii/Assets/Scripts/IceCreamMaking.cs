@@ -74,7 +74,7 @@ public class IceCreamMaking : MonoBehaviour
 
             Debug.Log(flavor + "맛 추가");
 
-            GameManager.Instance.material_cost += 10;
+            EconomyManager.Instance.material_cost += 10;
             //Debug.Log("(임시)재료비 10원 증가");
         }
 
@@ -88,7 +88,7 @@ public class IceCreamMaking : MonoBehaviour
 
             Debug.Log(flavor + "맛 추가");
 
-            GameManager.Instance.material_cost += 10;
+            EconomyManager.Instance.material_cost += 10;
             //Debug.Log("(임시)재료비 10원 증가");
         }
 
@@ -230,8 +230,8 @@ public class IceCreamMaking : MonoBehaviour
 
         //Debug.Log(result);
 
-        GameManager.Instance.addMoney(amount);
-        GameManager.Instance.profit += amount;
+        EconomyManager.Instance.AddMoney(amount);
+        EconomyManager.Instance.profit += amount;
 
         ResetIceCream();
 
