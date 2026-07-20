@@ -10,6 +10,8 @@ public class EconomyManager : MonoBehaviour, IDataPersistence
     public int profit = 0;
     public int material_cost = 0;
 
+    public int duty = 500;
+    
     [SerializeField]
     private TextMeshProUGUI moneyText;
 
