@@ -8,7 +8,9 @@ public class ResultScene : MonoBehaviour
 
     public TextMeshProUGUI title_text;
     public TextMeshProUGUI profit_text;
-    public TextMeshProUGUI net_profit_text; // 순이익
+    public TextMeshProUGUI expense_text; // 지출
+    public TextMeshProUGUI duty_text; // 세금
+    public TextMeshProUGUI final_profit_text; // 최종 수익
     public TextMeshProUGUI money_text;
     public Button next_btn;
 
@@ -29,7 +31,9 @@ public class ResultScene : MonoBehaviour
         {
             title_text.text = $"[{GameManager.Instance.day}일차] 장사 결과 정산";
             profit_text.text = $"매출 : {GameManager.Instance.profit}";
-            net_profit_text.text = $"순이익 : {GameManager.Instance.profit - GameManager.Instance.material_cost}";
+            expense_text.text = $"지출 : {GameManager.Instance.material_cost}";
+            duty_text.text = $"세금 : {GameManager.Instance.duty}";
+            final_profit_text.text = $"최종 수익 : {GameManager.Instance.profit - GameManager.Instance.material_cost - GameManager.Instance.duty}";
             money_text.text = $"보유 자금 : {GameManager.Instance.getMoney()}";
             GameManager.Instance.material_cost = 0; // 재료비 초기화
         }

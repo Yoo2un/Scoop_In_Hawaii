@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: 1f2a48b49aeda3245b7321339441ba57
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5916738578624896339
+    second: pngtree-blue-ocean-soda-png-image_9163884_0
+  - first:
+      213: 7947807386799899635
+    second: pngtree-blue-ocean-soda-png-image_9163884_1
+  - first:
+      213: 4390202154185065639
+    second: pngtree-blue-ocean-soda-png-image_9163884_2
+  - first:
+      213: 818805140309980176
+    second: pngtree-blue-ocean-soda-png-image_9163884_3
+  - first:
+      213: -4254494708988291571
+    second: pngtree-blue-ocean-soda-png-image_9163884_4
+  - first:
+      213: -8672169028257964730
+    second: pngtree-blue-ocean-soda-png-image_9163884_5
+  - first:
+      213: 2287788776068863276
+    second: pngtree-blue-ocean-soda-png-image_9163884_6
+  - first:
+      213: -5041961584051369245
+    second: pngtree-blue-ocean-soda-png-image_9163884_7
+  - first:
+      213: 103823324858786740
+    second: pngtree-blue-ocean-soda-png-image_9163884_8
+  - first:
+      213: 7032378246679615251
+    second: pngtree-blue-ocean-soda-png-image_9163884_9
+  - first:
+      213: -4064529567714275232
+    second: pngtree-blue-ocean-soda-png-image_9163884_10
+  - first:
+      213: 1890482463212130534
+    second: pngtree-blue-ocean-soda-png-image_9163884_11
+  - first:
+      213: 4055339028930877057
+    second: pngtree-blue-ocean-soda-png-image_9163884_12
+  - first:
+      213: -1633050333209494249
+    second: pngtree-blue-ocean-soda-png-image_9163884_13
+  - first:
+      213: -3979479803717488746
+    second: pngtree-blue-ocean-soda-png-image_9163884_14
+  - first:
+      213: 6758825786411519423
+    second: pngtree-blue-ocean-soda-png-image_9163884_15
+  - first:
+      213: 7098961753912955264
+    second: pngtree-blue-ocean-soda-png-image_9163884_16
+  - first:
+      213: -8654169548256472306
+    second: pngtree-blue-ocean-soda-png-image_9163884_17
+  - first:
+      213: -2641173413041301804
+    second: pngtree-blue-ocean-soda-png-image_9163884_18
+  - first:
+      213: 5861594109491295401
+    second: pngtree-blue-ocean-soda-png-image_9163884_19
+  - first:
+      213: 4611744457986735834
+    second: pngtree-blue-ocean-soda-png-image_9163884_20
+  - first:
+      213: -2408623261709867037
+    second: pngtree-blue-ocean-soda-png-image_9163884_21
+  - first:
+      213: 5331631698363215418
+    second: pngtree-blue-ocean-soda-png-image_9163884_22
+  - first:
+      213: -4753937749818494090
+    second: pngtree-blue-ocean-soda-png-image_9163884_23
+  - first:
+      213: 2938194281078142754
+    second: pngtree-blue-ocean-soda-png-image_9163884_24
+  - first:
+      213: 1411055750094282387
+    second: pngtree-blue-ocean-soda-png-image_9163884_25
+  - first:
+      213: -4894622701204672263
+    second: pngtree-blue-ocean-soda-png-image_9163884_26
+  - first:
+      213: -6959059693916831302
+    second: pngtree-blue-ocean-soda-png-image_9163884_27
+  - first:
+      213: -798298525412972026
+    second: pngtree-blue-ocean-soda-png-image_9163884_28
+  - first:
+      213: -9200232763951512055
+    second: pngtree-blue-ocean-soda-png-image_9163884_29
+  - first:
+      213: 7221064794959295178
+    second: pngtree-blue-ocean-soda-png-image_9163884_30
+  - first:
+      213: 5592915273008335700
+    second: pngtree-blue-ocean-soda-png-image_9163884_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-blue-ocean-soda-png-image_9163884_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 13
+        width: 523
+        height: 1180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f30f6185b84c4e60800000000000000
+      internalID: 7947807386799899635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c337ad1dcf4cced4c8c7f6d94f4d3556
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pngtree-blue-ocean-soda-png-image_9163884_0: -5916738578624896339
+      pngtree-blue-ocean-soda-png-image_9163884_1: 7947807386799899635
+      pngtree-blue-ocean-soda-png-image_9163884_10: -4064529567714275232
+      pngtree-blue-ocean-soda-png-image_9163884_11: 1890482463212130534
+      pngtree-blue-ocean-soda-png-image_9163884_12: 4055339028930877057
+      pngtree-blue-ocean-soda-png-image_9163884_13: -1633050333209494249
+      pngtree-blue-ocean-soda-png-image_9163884_14: -3979479803717488746
+      pngtree-blue-ocean-soda-png-image_9163884_15: 6758825786411519423
+      pngtree-blue-ocean-soda-png-image_9163884_16: 7098961753912955264
+      pngtree-blue-ocean-soda-png-image_9163884_17: -8654169548256472306
+      pngtree-blue-ocean-soda-png-image_9163884_18: -2641173413041301804
+      pngtree-blue-ocean-soda-png-image_9163884_19: 5861594109491295401
+      pngtree-blue-ocean-soda-png-image_9163884_2: 4390202154185065639
+      pngtree-blue-ocean-soda-png-image_9163884_20: 4611744457986735834
+      pngtree-blue-ocean-soda-png-image_9163884_21: -2408623261709867037
+      pngtree-blue-ocean-soda-png-image_9163884_22: 5331631698363215418
+      pngtree-blue-ocean-soda-png-image_9163884_23: -4753937749818494090
+      pngtree-blue-ocean-soda-png-image_9163884_24: 2938194281078142754
+      pngtree-blue-ocean-soda-png-image_9163884_25: 1411055750094282387
+      pngtree-blue-ocean-soda-png-image_9163884_26: -4894622701204672263
+      pngtree-blue-ocean-soda-png-image_9163884_27: -6959059693916831302
+      pngtree-blue-ocean-soda-png-image_9163884_28: -798298525412972026
+      pngtree-blue-ocean-soda-png-image_9163884_29: -9200232763951512055
+      pngtree-blue-ocean-soda-png-image_9163884_3: 818805140309980176
+      pngtree-blue-ocean-soda-png-image_9163884_30: 7221064794959295178
+      pngtree-blue-ocean-soda-png-image_9163884_31: 5592915273008335700
+      pngtree-blue-ocean-soda-png-image_9163884_4: -4254494708988291571
+      pngtree-blue-ocean-soda-png-image_9163884_5: -8672169028257964730
+      pngtree-blue-ocean-soda-png-image_9163884_6: 2287788776068863276
+      pngtree-blue-ocean-soda-png-image_9163884_7: -5041961584051369245
+      pngtree-blue-ocean-soda-png-image_9163884_8: 103823324858786740
+      pngtree-blue-ocean-soda-png-image_9163884_9: 7032378246679615251
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

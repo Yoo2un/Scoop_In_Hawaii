@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
     public int day = 1;
     public int profit = 0;
     public int material_cost = 0; // 재료비
+    public int duty = 500; // 세금
 
     int[] time = new int[2] { 11, 55 };
     List<IceCream> client_Ice = null;

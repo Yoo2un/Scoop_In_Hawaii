@@ -1,0 +1,2873 @@
+fileFormatVersion: 2
+guid: 041b275f1daa6ce4f9403a2b69f10e8a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5810418274629508994
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_0
+  - first:
+      213: 7813278908227424714
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_1
+  - first:
+      213: -6186316002740406372
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_2
+  - first:
+      213: 2502343468044167690
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_3
+  - first:
+      213: 4483056633333892243
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_4
+  - first:
+      213: 7093583959275102058
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_5
+  - first:
+      213: -3184957095494147530
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_6
+  - first:
+      213: 1824213667603997152
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_7
+  - first:
+      213: 5501794669765376209
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_8
+  - first:
+      213: 2819002646265071767
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_9
+  - first:
+      213: 4388504031799122992
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_10
+  - first:
+      213: 4367155718961781833
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_11
+  - first:
+      213: 7554689379367849784
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_12
+  - first:
+      213: 5478875323212458129
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_13
+  - first:
+      213: 7013063297251965545
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_14
+  - first:
+      213: -8613716284273525279
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_15
+  - first:
+      213: -5008818417674428135
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_16
+  - first:
+      213: -7274574342090688300
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_17
+  - first:
+      213: 2604673000248436459
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_18
+  - first:
+      213: -7197013076431197265
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_19
+  - first:
+      213: -5181251048803953502
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_20
+  - first:
+      213: -8285151360205719945
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_21
+  - first:
+      213: -5740258171194602074
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_22
+  - first:
+      213: 8466140015226141682
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_23
+  - first:
+      213: 5628076454873721487
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_24
+  - first:
+      213: 3171001848713494314
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_25
+  - first:
+      213: 2551792430102701894
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_26
+  - first:
+      213: 3848974449339178628
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_27
+  - first:
+      213: -2282785708872868741
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_28
+  - first:
+      213: 3770151181649367290
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_29
+  - first:
+      213: -6791208726402077118
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_30
+  - first:
+      213: -4569894677398535358
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_31
+  - first:
+      213: -5004333886293234535
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_32
+  - first:
+      213: 7474544412010146675
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_33
+  - first:
+      213: 1103022078539798264
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_34
+  - first:
+      213: -4012091001336048581
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_35
+  - first:
+      213: 3433040486818080682
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_36
+  - first:
+      213: -3337175792224774916
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_37
+  - first:
+      213: -211759136874797382
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_38
+  - first:
+      213: 6586452422194476034
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_39
+  - first:
+      213: -80018860901211353
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_40
+  - first:
+      213: -2454348983375024936
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_41
+  - first:
+      213: 4855019865717253575
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_42
+  - first:
+      213: -6649975027149116029
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_43
+  - first:
+      213: 1965462346728542522
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_44
+  - first:
+      213: 795891557579658348
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_45
+  - first:
+      213: -8801978984347484526
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_46
+  - first:
+      213: 4402982175070058900
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_47
+  - first:
+      213: -5060194325367038811
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_48
+  - first:
+      213: 1165219005718710297
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_49
+  - first:
+      213: -8795064578986565155
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_50
+  - first:
+      213: 8407297521558652791
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_51
+  - first:
+      213: -4685982387636945458
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_52
+  - first:
+      213: -3712838665605566725
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_53
+  - first:
+      213: -2950146544805557874
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_54
+  - first:
+      213: 1780402623720934124
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_55
+  - first:
+      213: -2050887998274352998
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_56
+  - first:
+      213: -7897196236658257966
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_57
+  - first:
+      213: -1701509363994587093
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_58
+  - first:
+      213: -3249780732163962241
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_59
+  - first:
+      213: 1799917688138869543
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_60
+  - first:
+      213: -4183422602515155058
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_61
+  - first:
+      213: -2437352331286503098
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_62
+  - first:
+      213: -7574602912610596751
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_63
+  - first:
+      213: -8514798009256557272
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_64
+  - first:
+      213: 669321937578895126
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_65
+  - first:
+      213: 1822040318741560989
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_66
+  - first:
+      213: -2518652351575894290
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_67
+  - first:
+      213: -8908577287855440783
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_68
+  - first:
+      213: -7124403078734726540
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_69
+  - first:
+      213: -2760129470837235178
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_70
+  - first:
+      213: -1748992899247676857
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_71
+  - first:
+      213: -7438753139957416975
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_72
+  - first:
+      213: 1457408203810239868
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_73
+  - first:
+      213: -7364685751694296242
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_74
+  - first:
+      213: -3161012838176071273
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_75
+  - first:
+      213: 5054044973534992844
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_76
+  - first:
+      213: 2573114642672916509
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_77
+  - first:
+      213: 6394068672701635482
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_78
+  - first:
+      213: -3484955817700886808
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_79
+  - first:
+      213: -1846356045354750951
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_80
+  - first:
+      213: -3538005052466905269
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_81
+  - first:
+      213: 939275630806133271
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_82
+  - first:
+      213: -5867510294378935649
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_83
+  - first:
+      213: 6730959325206071538
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_84
+  - first:
+      213: -6931897919430836443
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_85
+  - first:
+      213: 6761216233380829429
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_86
+  - first:
+      213: -273813347449955439
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_87
+  - first:
+      213: -2667983209899035336
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_88
+  - first:
+      213: 7924661419984397266
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_89
+  - first:
+      213: 6711374916196295453
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_90
+  - first:
+      213: 31042560513341182
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_91
+  - first:
+      213: 4179902042058055691
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_92
+  - first:
+      213: -334513215809716379
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_93
+  - first:
+      213: -6944477535603787106
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_94
+  - first:
+      213: 8785214771836232965
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_95
+  - first:
+      213: -2814551208670199027
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_96
+  - first:
+      213: 1539822457508449816
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_97
+  - first:
+      213: 6736756728962415461
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_98
+  - first:
+      213: -4080895150675248162
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_99
+  - first:
+      213: -1552807956582436453
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_100
+  - first:
+      213: -8712883542550075683
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_101
+  - first:
+      213: -5712765276940235117
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_102
+  - first:
+      213: -6039403963098007452
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_103
+  - first:
+      213: -6381288619641679896
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_104
+  - first:
+      213: -6002265810218675328
+    second: pngtree-sweet-mango-fruit-png-png-image_14554102_105
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2248
+        width: 245
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28fdab7c2a0c2a050800000000000000
+      internalID: 5810418274629508994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_1
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 2365
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac192ff35c75e6c60800000000000000
+      internalID: 7813278908227424714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_2
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 2391
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c97f75c3f5ac52aa0800000000000000
+      internalID: -6186316002740406372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_3
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 2248
+        width: 245
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0aaace402c1ab220800000000000000
+      internalID: 2502343468044167690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_4
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 2365
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39443d97144073e30800000000000000
+      internalID: 4483056633333892243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_5
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 2391
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f500d0709717260800000000000000
+      internalID: 7093583959275102058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_6
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 2248
+        width: 245
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63226327562ccc3d0800000000000000
+      internalID: -3184957095494147530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_7
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 2365
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1e2f36aa8e05910800000000000000
+      internalID: 1824213667603997152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_8
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 2391
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8b0863a1d4a5c40800000000000000
+      internalID: 5501794669765376209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_9
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 2248
+        width: 245
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798048798fb1f1720800000000000000
+      internalID: 2819002646265071767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_10
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 2365
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c91c66a2917ec30800000000000000
+      internalID: 4388504031799122992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_11
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 2391
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c588bfcf04b9c30800000000000000
+      internalID: 4367155718961781833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_12
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 2398
+        width: 89
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83f03adc6f5a7d860800000000000000
+      internalID: 7554689379367849784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_13
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 2308
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1986bb00410e80c40800000000000000
+      internalID: 5478875323212458129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_14
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 2346
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a780c79e7635160800000000000000
+      internalID: 7013063297251965545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_15
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 2308
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1edf0e74daee57880800000000000000
+      internalID: -8613716284273525279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_16
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 2346
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911e41edf2a1d7ab0800000000000000
+      internalID: -5008818417674428135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_17
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 2308
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8738f9d258b0b90800000000000000
+      internalID: -7274574342090688300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_18
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 2346
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6ebd72b48a52420800000000000000
+      internalID: 2604673000248436459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_19
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 2308
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab2a770db21f1c90800000000000000
+      internalID: -7197013076431197265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_20
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 2346
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a49bef5f9f7818b0800000000000000
+      internalID: -5181251048803953502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_21
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 776f7980cba350d80800000000000000
+      internalID: -8285151360205719945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_22
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ad89e24b918650b0800000000000000
+      internalID: -5740258171194602074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_23
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb36420d75cd7570800000000000000
+      internalID: 8466140015226141682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_24
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8aec7587b1fa1e40800000000000000
+      internalID: 5628076454873721487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_25
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2fbca67169a10c20800000000000000
+      internalID: 3171001848713494314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_26
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6476dc8f1b9c96320800000000000000
+      internalID: 2551792430102701894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_27
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e9a627edd4a6530800000000000000
+      internalID: 3848974449339178628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_28
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c5b441e7ae150e0800000000000000
+      internalID: -2282785708872868741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_29
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2162
+        width: 75
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0dabb4684425430800000000000000
+      internalID: 3770151181649367290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_30
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1917
+        width: 247
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e654b05a7c0c1a0800000000000000
+      internalID: -6791208726402077118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_31
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 2162
+        width: 75
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24346b4d0097490c0800000000000000
+      internalID: -4569894677398535358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_32
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1917
+        width: 247
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99caa0238d80d8ab0800000000000000
+      internalID: -5004333886293234535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_33
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 2162
+        width: 75
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37beeb77a8aeab760800000000000000
+      internalID: 7474544412010146675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_34
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 1917
+        width: 247
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f617c28cb8be4f00800000000000000
+      internalID: 1103022078539798264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_35
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 2162
+        width: 75
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b34d2d2cd703258c0800000000000000
+      internalID: -4012091001336048581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_36
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 1917
+        width: 247
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7635c322c94af20800000000000000
+      internalID: 3433040486818080682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_37
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4d86f4c48ffa1d0800000000000000
+      internalID: -3337175792224774916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_38
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab662acdf2eaf0df0800000000000000
+      internalID: -211759136874797382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_39
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204b9ead497c76b50800000000000000
+      internalID: 6586452422194476034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_40
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 723e6ac1547b3eef0800000000000000
+      internalID: -80018860901211353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_41
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc27137a9660fdd0800000000000000
+      internalID: -2454348983375024936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_42
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c5aa8948de706340800000000000000
+      internalID: 4855019865717253575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_43
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38dee8522fa86b3a0800000000000000
+      internalID: -6649975027149116029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_44
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3119244799b64b10800000000000000
+      internalID: 1965462346728542522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_45
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 2028
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c649441a7239b0b00800000000000000
+      internalID: 795891557579658348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_46
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 2066
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29eb385afb619d580800000000000000
+      internalID: -8801978984347484526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_47
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 2028
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4997d61d5f88a1d30800000000000000
+      internalID: 4402982175070058900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_48
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2066
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5acdc06321496c9b0800000000000000
+      internalID: -5060194325367038811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_49
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 2028
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 918c5691380bb2010800000000000000
+      internalID: 1165219005718710297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_50
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 2066
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1a2e81d57a1f580800000000000000
+      internalID: -8795064578986565155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_51
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 2028
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77786855d88bca470800000000000000
+      internalID: 8407297521558652791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_52
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 2066
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecdb92988db08feb0800000000000000
+      internalID: -4685982387636945458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_53
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfeae34b7e8597cc0800000000000000
+      internalID: -3712838665605566725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_54
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1999
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89c4891959fe07d0800000000000000
+      internalID: -2950146544805557874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_55
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea4f08d0c245b810800000000000000
+      internalID: 1780402623720934124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_56
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 1999
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98cebc4b38c983e0800000000000000
+      internalID: -2050887998274352998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_57
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dfce682dd5876290800000000000000
+      internalID: -7897196236658257966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_58
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 1999
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b201a199f360368e0800000000000000
+      internalID: -1701509363994587093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_59
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a457564a576e2d0800000000000000
+      internalID: -3249780732163962241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_60
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 1999
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ba57ad9979af810800000000000000
+      internalID: 1799917688138869543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_61
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1969
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e877eb7ce4f71f5c0800000000000000
+      internalID: -4183422602515155058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_62
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 359
+        width: 2379
+        height: 1531
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 641a235e7f8cc2ed0800000000000000
+      internalID: -2437352331286503098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_63
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 1797
+        width: 88
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178c43f68ca91e690800000000000000
+      internalID: -7574602912610596751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_64
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1368
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8254f0ce25c55d980800000000000000
+      internalID: -8514798009256557272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_65
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 1196
+        width: 89
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61724c981c8e94900800000000000000
+      internalID: 669321937578895126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_66
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 767
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9eb70d2400394910800000000000000
+      internalID: 1822040318741560989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_67
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 595
+        width: 88
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6dd97d703fb0dd0800000000000000
+      internalID: -2518652351575894290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_68
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c734708206e5480800000000000000
+      internalID: -8908577287855440783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_69
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 307
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a31578529012d90800000000000000
+      internalID: -7124403078734726540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_70
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 116
+        width: 245
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612e8acbedc02b9d0800000000000000
+      internalID: -2760129470837235178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_71
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74269a589345ab7e0800000000000000
+      internalID: -1748992899247676857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_72
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 307
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb34017e6d34c890800000000000000
+      internalID: -7438753139957416975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_73
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 116
+        width: 245
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7579d82a01c93410800000000000000
+      internalID: 1457408203810239868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_74
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4b71ef14516bc990800000000000000
+      internalID: -7364685751694296242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_75
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 307
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791e01a4293d124d0800000000000000
+      internalID: -3161012838176071273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_76
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 116
+        width: 245
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9d66e3023932640800000000000000
+      internalID: 5054044973534992844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_77
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1810e2722a85b320800000000000000
+      internalID: 2573114642672916509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_78
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 307
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b95d1a49b4cb850800000000000000
+      internalID: 6394068672701635482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_79
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 116
+        width: 245
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e6f10cd523f2afc0800000000000000
+      internalID: -3484955817700886808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_80
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c2cbb85fc6066e0800000000000000
+      internalID: -1846356045354750951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_81
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 263
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f3c22662b76eec0800000000000000
+      internalID: -3538005052466905269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_82
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a6160b53af80d00800000000000000
+      internalID: 939275630806133271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_83
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 263
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a8893897a629ea0800000000000000
+      internalID: -5867510294378935649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_84
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8c28818db296d50800000000000000
+      internalID: 6730959325206071538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_85
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 263
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f3e0da193fccf90800000000000000
+      internalID: -6931897919430836443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_86
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8d440875aa4dd50800000000000000
+      internalID: 6761216233380829429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_87
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 263
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b1c721638333cf0800000000000000
+      internalID: -273813347449955439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_88
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835f24bf76b69fad0800000000000000
+      internalID: -2667983209899035336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_89
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 196
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3a967239d0afd60800000000000000
+      internalID: 7924661419984397266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_90
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13e85a8de7932d50800000000000000
+      internalID: 6711374916196295453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_91
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 196
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6f0585b094e6000800000000000000
+      internalID: 31042560513341182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_92
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b00ecccd2cef10a30800000000000000
+      internalID: 4179902042058055691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_93
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 196
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ffcf6a0029b5bf0800000000000000
+      internalID: -334513215809716379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_94
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9af7ab897240af90800000000000000
+      internalID: -6944477535603787106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_95
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 196
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50520d6f94a5be970800000000000000
+      internalID: 8785214771836232965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_96
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 166
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03011d7694b0f8d0800000000000000
+      internalID: -2814551208670199027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_97
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 94
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81ec5f4ed5c8e5510800000000000000
+      internalID: 1539822457508449816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_98
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56bf6085d84cd7d50800000000000000
+      internalID: 6736756728962415461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_99
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 94
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edb33626b7fbd57c0800000000000000
+      internalID: -4080895150675248162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_100
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91f08ff361537ae0800000000000000
+      internalID: -1552807956582436453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_101
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 0
+        width: 94
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6a4f4b49e951780800000000000000
+      internalID: -8712883542550075683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_102
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 0
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39e8ac68f3e28b0b0800000000000000
+      internalID: -5712765276940235117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_103
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 0
+        width: 94
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 468f47cf71abf2ca0800000000000000
+      internalID: -6039403963098007452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_104
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8efc3095fcb1177a0800000000000000
+      internalID: -6381288619641679896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-sweet-mango-fruit-png-png-image_14554102_105
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 0
+        width: 89
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08391760c0ba3bca0800000000000000
+      internalID: -6002265810218675328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pngtree-sweet-mango-fruit-png-png-image_14554102_0: 5810418274629508994
+      pngtree-sweet-mango-fruit-png-png-image_14554102_1: 7813278908227424714
+      pngtree-sweet-mango-fruit-png-png-image_14554102_10: 4388504031799122992
+      pngtree-sweet-mango-fruit-png-png-image_14554102_100: -1552807956582436453
+      pngtree-sweet-mango-fruit-png-png-image_14554102_101: -8712883542550075683
+      pngtree-sweet-mango-fruit-png-png-image_14554102_102: -5712765276940235117
+      pngtree-sweet-mango-fruit-png-png-image_14554102_103: -6039403963098007452
+      pngtree-sweet-mango-fruit-png-png-image_14554102_104: -6381288619641679896
+      pngtree-sweet-mango-fruit-png-png-image_14554102_105: -6002265810218675328
+      pngtree-sweet-mango-fruit-png-png-image_14554102_11: 4367155718961781833
+      pngtree-sweet-mango-fruit-png-png-image_14554102_12: 7554689379367849784
+      pngtree-sweet-mango-fruit-png-png-image_14554102_13: 5478875323212458129
+      pngtree-sweet-mango-fruit-png-png-image_14554102_14: 7013063297251965545
+      pngtree-sweet-mango-fruit-png-png-image_14554102_15: -8613716284273525279
+      pngtree-sweet-mango-fruit-png-png-image_14554102_16: -5008818417674428135
+      pngtree-sweet-mango-fruit-png-png-image_14554102_17: -7274574342090688300
+      pngtree-sweet-mango-fruit-png-png-image_14554102_18: 2604673000248436459
+      pngtree-sweet-mango-fruit-png-png-image_14554102_19: -7197013076431197265
+      pngtree-sweet-mango-fruit-png-png-image_14554102_2: -6186316002740406372
+      pngtree-sweet-mango-fruit-png-png-image_14554102_20: -5181251048803953502
+      pngtree-sweet-mango-fruit-png-png-image_14554102_21: -8285151360205719945
+      pngtree-sweet-mango-fruit-png-png-image_14554102_22: -5740258171194602074
+      pngtree-sweet-mango-fruit-png-png-image_14554102_23: 8466140015226141682
+      pngtree-sweet-mango-fruit-png-png-image_14554102_24: 5628076454873721487
+      pngtree-sweet-mango-fruit-png-png-image_14554102_25: 3171001848713494314
+      pngtree-sweet-mango-fruit-png-png-image_14554102_26: 2551792430102701894
+      pngtree-sweet-mango-fruit-png-png-image_14554102_27: 3848974449339178628
+      pngtree-sweet-mango-fruit-png-png-image_14554102_28: -2282785708872868741
+      pngtree-sweet-mango-fruit-png-png-image_14554102_29: 3770151181649367290
+      pngtree-sweet-mango-fruit-png-png-image_14554102_3: 2502343468044167690
+      pngtree-sweet-mango-fruit-png-png-image_14554102_30: -6791208726402077118
+      pngtree-sweet-mango-fruit-png-png-image_14554102_31: -4569894677398535358
+      pngtree-sweet-mango-fruit-png-png-image_14554102_32: -5004333886293234535
+      pngtree-sweet-mango-fruit-png-png-image_14554102_33: 7474544412010146675
+      pngtree-sweet-mango-fruit-png-png-image_14554102_34: 1103022078539798264
+      pngtree-sweet-mango-fruit-png-png-image_14554102_35: -4012091001336048581
+      pngtree-sweet-mango-fruit-png-png-image_14554102_36: 3433040486818080682
+      pngtree-sweet-mango-fruit-png-png-image_14554102_37: -3337175792224774916
+      pngtree-sweet-mango-fruit-png-png-image_14554102_38: -211759136874797382
+      pngtree-sweet-mango-fruit-png-png-image_14554102_39: 6586452422194476034
+      pngtree-sweet-mango-fruit-png-png-image_14554102_4: 4483056633333892243
+      pngtree-sweet-mango-fruit-png-png-image_14554102_40: -80018860901211353
+      pngtree-sweet-mango-fruit-png-png-image_14554102_41: -2454348983375024936
+      pngtree-sweet-mango-fruit-png-png-image_14554102_42: 4855019865717253575
+      pngtree-sweet-mango-fruit-png-png-image_14554102_43: -6649975027149116029
+      pngtree-sweet-mango-fruit-png-png-image_14554102_44: 1965462346728542522
+      pngtree-sweet-mango-fruit-png-png-image_14554102_45: 795891557579658348
+      pngtree-sweet-mango-fruit-png-png-image_14554102_46: -8801978984347484526
+      pngtree-sweet-mango-fruit-png-png-image_14554102_47: 4402982175070058900
+      pngtree-sweet-mango-fruit-png-png-image_14554102_48: -5060194325367038811
+      pngtree-sweet-mango-fruit-png-png-image_14554102_49: 1165219005718710297
+      pngtree-sweet-mango-fruit-png-png-image_14554102_5: 7093583959275102058
+      pngtree-sweet-mango-fruit-png-png-image_14554102_50: -8795064578986565155
+      pngtree-sweet-mango-fruit-png-png-image_14554102_51: 8407297521558652791
+      pngtree-sweet-mango-fruit-png-png-image_14554102_52: -4685982387636945458
+      pngtree-sweet-mango-fruit-png-png-image_14554102_53: -3712838665605566725
+      pngtree-sweet-mango-fruit-png-png-image_14554102_54: -2950146544805557874
+      pngtree-sweet-mango-fruit-png-png-image_14554102_55: 1780402623720934124
+      pngtree-sweet-mango-fruit-png-png-image_14554102_56: -2050887998274352998
+      pngtree-sweet-mango-fruit-png-png-image_14554102_57: -7897196236658257966
+      pngtree-sweet-mango-fruit-png-png-image_14554102_58: -1701509363994587093
+      pngtree-sweet-mango-fruit-png-png-image_14554102_59: -3249780732163962241
+      pngtree-sweet-mango-fruit-png-png-image_14554102_6: -3184957095494147530
+      pngtree-sweet-mango-fruit-png-png-image_14554102_60: 1799917688138869543
+      pngtree-sweet-mango-fruit-png-png-image_14554102_61: -4183422602515155058
+      pngtree-sweet-mango-fruit-png-png-image_14554102_62: -2437352331286503098
+      pngtree-sweet-mango-fruit-png-png-image_14554102_63: -7574602912610596751
+      pngtree-sweet-mango-fruit-png-png-image_14554102_64: -8514798009256557272
+      pngtree-sweet-mango-fruit-png-png-image_14554102_65: 669321937578895126
+      pngtree-sweet-mango-fruit-png-png-image_14554102_66: 1822040318741560989
+      pngtree-sweet-mango-fruit-png-png-image_14554102_67: -2518652351575894290
+      pngtree-sweet-mango-fruit-png-png-image_14554102_68: -8908577287855440783
+      pngtree-sweet-mango-fruit-png-png-image_14554102_69: -7124403078734726540
+      pngtree-sweet-mango-fruit-png-png-image_14554102_7: 1824213667603997152
+      pngtree-sweet-mango-fruit-png-png-image_14554102_70: -2760129470837235178
+      pngtree-sweet-mango-fruit-png-png-image_14554102_71: -1748992899247676857
+      pngtree-sweet-mango-fruit-png-png-image_14554102_72: -7438753139957416975
+      pngtree-sweet-mango-fruit-png-png-image_14554102_73: 1457408203810239868
+      pngtree-sweet-mango-fruit-png-png-image_14554102_74: -7364685751694296242
+      pngtree-sweet-mango-fruit-png-png-image_14554102_75: -3161012838176071273
+      pngtree-sweet-mango-fruit-png-png-image_14554102_76: 5054044973534992844
+      pngtree-sweet-mango-fruit-png-png-image_14554102_77: 2573114642672916509
+      pngtree-sweet-mango-fruit-png-png-image_14554102_78: 6394068672701635482
+      pngtree-sweet-mango-fruit-png-png-image_14554102_79: -3484955817700886808
+      pngtree-sweet-mango-fruit-png-png-image_14554102_8: 5501794669765376209
+      pngtree-sweet-mango-fruit-png-png-image_14554102_80: -1846356045354750951
+      pngtree-sweet-mango-fruit-png-png-image_14554102_81: -3538005052466905269
+      pngtree-sweet-mango-fruit-png-png-image_14554102_82: 939275630806133271
+      pngtree-sweet-mango-fruit-png-png-image_14554102_83: -5867510294378935649
+      pngtree-sweet-mango-fruit-png-png-image_14554102_84: 6730959325206071538
+      pngtree-sweet-mango-fruit-png-png-image_14554102_85: -6931897919430836443
+      pngtree-sweet-mango-fruit-png-png-image_14554102_86: 6761216233380829429
+      pngtree-sweet-mango-fruit-png-png-image_14554102_87: -273813347449955439
+      pngtree-sweet-mango-fruit-png-png-image_14554102_88: -2667983209899035336
+      pngtree-sweet-mango-fruit-png-png-image_14554102_89: 7924661419984397266
+      pngtree-sweet-mango-fruit-png-png-image_14554102_9: 2819002646265071767
+      pngtree-sweet-mango-fruit-png-png-image_14554102_90: 6711374916196295453
+      pngtree-sweet-mango-fruit-png-png-image_14554102_91: 31042560513341182
+      pngtree-sweet-mango-fruit-png-png-image_14554102_92: 4179902042058055691
+      pngtree-sweet-mango-fruit-png-png-image_14554102_93: -334513215809716379
+      pngtree-sweet-mango-fruit-png-png-image_14554102_94: -6944477535603787106
+      pngtree-sweet-mango-fruit-png-png-image_14554102_95: 8785214771836232965
+      pngtree-sweet-mango-fruit-png-png-image_14554102_96: -2814551208670199027
+      pngtree-sweet-mango-fruit-png-png-image_14554102_97: 1539822457508449816
+      pngtree-sweet-mango-fruit-png-png-image_14554102_98: 6736756728962415461
+      pngtree-sweet-mango-fruit-png-png-image_14554102_99: -4080895150675248162
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
