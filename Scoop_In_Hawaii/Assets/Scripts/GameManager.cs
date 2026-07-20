@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     /// 게임 내에서 적용되는 모디파이어 종류
     /// </summary>
     public enum ModifierType { None, GoodEvent, BadEvent }
-    public ModifierType modifier = ModifierType.None;
+    public ModifierData modifier = null;
     private void Awake()
     {
         if (Instance == null)
