@@ -21,13 +21,8 @@ public class DayManager : MonoBehaviour
     // 시간 흐름 코루틴
     Coroutine timeCoroutine;
 
-    // 시간 UI
-    [SerializeField] private TextMeshProUGUI timeText;
-
-    // 날짜 UI
-    [SerializeField] private TextMeshProUGUI dayText;
-
-
+    public int Hour => time[0];
+    public int Minute => time[1];
     void Awake()
     {
         if (Instance == null)
@@ -39,6 +34,16 @@ public class DayManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public int GetHour()
+    {
+        return time[0];
+    }
+
+    public int GetMinute()
+    {
+        return time[1];
     }
 
     /// <summary>
@@ -98,11 +103,7 @@ public class DayManager : MonoBehaviour
                 time[0]++;
             }
 
-            if (timeText != null)
-                timeText.text = $"{time[0]}:{time[1]:D2} PM";
-
-            if (dayText != null)
-                dayText.text = $"{day}";
+            UIManager.Instance.RefreshTime();
         }
     }
 
@@ -116,20 +117,6 @@ public class DayManager : MonoBehaviour
         time[1] = 55;
 
         dayState = DayState.Morning;
-
-        if (timeText != null)
-            timeText.text = "11:55 PM";
-
-        if (dayText != null)
-            dayText.text = day.ToString();
     }
 
-    /// <summary>
-    /// Day UI를 연결한다.
-    /// </summary>
-    public void SetUI(TextMeshProUGUI timeText, TextMeshProUGUI dayText)
-    {
-        this.timeText = timeText;
-        this.dayText = dayText;
-    }
 }

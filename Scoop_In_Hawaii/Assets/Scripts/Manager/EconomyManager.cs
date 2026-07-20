@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using TMPro;
 
 public class EconomyManager : MonoBehaviour, IDataPersistence
 {

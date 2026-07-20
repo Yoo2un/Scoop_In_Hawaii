@@ -1,37 +1,15 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using UnityEngine.UI;
-using System.Collections.Generic;
-using System;
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    // 임시 모디파이어 enum
+    /// <summary>
+    /// 게임 내에서 적용되는 모디파이어 종류
+    /// </summary>
     public enum ModifierType { None, GoodEvent, BadEvent }
     public ModifierType modifier = ModifierType.None;
-
-    GameObject obj_Day = null;
-    GameObject obj_Num = null;
-    GameObject chat = null;
-    GameObject dayCtrlBtn = null;
-
-
-    TextMeshProUGUI text_Day;
-    TextMeshProUGUI text_Num;
-    TextMeshProUGUI text_hour;
-    TextMeshProUGUI text_chat;
-    Vector3 day_pre_Position;
-    Vector3 num_pre_Position;
-    RectTransform day_RectTransform;
-    RectTransform num_RectTransform;
-
-    private Coroutine shrinkCoroutine;
-    private Coroutine posCoroutine;
-
-    public TextMeshProUGUI moneyText;
 
     private void Awake()
     {
@@ -46,85 +24,43 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        if (!scene.name.Equals("DayScene"))
-        {
-            return;
-        }
-    }
-
+    /// <summary>
+    /// 씬이 로드될 때 호출되는 이벤트를 등록한다.
+    /// </summary>
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    /// <summary>
+    /// 등록된 씬 로드 이벤트를 해제하고
+    /// 예약된 Invoke를 취소한다.
+    /// </summary>
     void OnDisable()
     {
         CancelInvoke();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    /// <summary>
+    /// 씬이 로드되면 게임을 초기화하고
+    /// 씬에 맞는 동작을 수행한다.
+    /// </summary>
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name.Equals("DayScene"))
         {
+            UIManager.Instance.Initialize();
+            UIManager.Instance.PlayIntro();
 
-            obj_Day = GameObject.Find("Day_Text_Day");
-            obj_Num = GameObject.Find("Day_Text_Num");
-            obj_Day.SetActive(false);
-            obj_Num.SetActive(false);
-            
-            text_Day = obj_Day.GetComponent<TextMeshProUGUI>();
-            text_Num = obj_Num.GetComponent<TextMeshProUGUI>();
-            GameObject obj_hour = GameObject.Find("Time_Text_Hour");
-            text_hour = obj_hour.GetComponent<TextMeshProUGUI>();
-            
-            day_RectTransform = obj_Day.GetComponent<RectTransform>();
-            num_RectTransform = obj_Num.GetComponent<RectTransform>();
-
-            moneyText = GameObject.Find("Money_Text").GetComponent<TextMeshProUGUI>();
-            EconomyManager.Instance.SetUI(moneyText);
-
-            obj_Day.SetActive(true);
-            obj_Num.SetActive(true);
-
-            DayManager.Instance.SetUI(text_hour, text_Num);
             DayManager.Instance.ResetDay();
             DayManager.Instance.StartTime();
 
-            Debug.Log($"하루 시작(현재 {DayManager.Instance.day}일차 아침)");
-
             EconomyManager.Instance.profit = 0;
 
-            obj_hour.SetActive(true);
+            UIManager.Instance.SetDayButton(DayStart, "장사 시작", new Color32(126, 255, 109, 255));
 
-            chat = GameObject.Find("UI_Chat");
-            text_chat = GameObject.Find("Text_Chat").GetComponent<TextMeshProUGUI>();
-            chat.SetActive(false);
-
-            CustomerManager.Instance.SetUI(chat, text_chat);
-
-            dayCtrlBtn = GameObject.Find("DayCtrlBtn");
-            dayCtrlBtn.GetComponent<Image>().color = new Color32(126, 255, 109, 255);
-            dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "장사 시작";
-            Button _btn = dayCtrlBtn.GetComponent<Button>();
-            _btn.onClick.RemoveAllListeners();
-            _btn.onClick.AddListener(DayStart);
-
-            obj_Day.SetActive(false);
-            obj_Num.SetActive(false);
-            text_Day = obj_Day.GetComponent<TextMeshProUGUI>();
-            day_RectTransform = obj_Day.GetComponent<RectTransform>();
-            num_RectTransform = obj_Num.GetComponent<RectTransform>();
-
-            Invoke("Text_Day_Function", 2.0f);
-            Invoke("Text_Num_Function", 3.0f);
-
-            StartCoroutine(StartShrink(5.0f));
-            StartCoroutine(StartTextPosReset(5.0f));
+            Debug.Log($"하루 시작(현재 {DayManager.Instance.day}일차 아침)");
         }
         else if (scene.name.Equals("Result"))
         {
@@ -132,24 +68,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
-        
+    /// <summary>
+    /// 영업을 시작하고
+    /// 손님 생성 및 게임 진행을 시작한다.
+    /// </summary>
     public void DayStart()
     {
-        if (DayManager.Instance.dayState == DayState.Morning) {
-            Button _btn = dayCtrlBtn.GetComponent<Button>();
-            _btn.onClick.RemoveAllListeners();
-            _btn.onClick.AddListener(CloseBusiness);
-            dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "장사 종료";
-            dayCtrlBtn.GetComponent<Image>().color = new Color32(212, 47, 41, 255);
+        if (DayManager.Instance.dayState == DayState.Morning)
+        {
+            UIManager.Instance.SetDayButton(CloseBusiness, "장사 종료", new Color32(212, 47, 41, 255));
 
             EconomyManager.Instance.profit = 0;
             DayManager.Instance.SetState(DayState.Open);
+
             Debug.Log("장사 시작");
 
             CustomerManager.Instance.StartBusiness();
         }
     }
 
+    /// <summary>
+    /// 영업을 종료하고
+    /// 하루 종료 상태로 전환한다.
+    /// </summary>
     public void CloseBusiness()
     {
         if (DayManager.Instance.dayState == DayState.Morning || DayManager.Instance.dayState == DayState.Open)
@@ -164,14 +105,14 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("장사 종료");
 
-            Button _btn = dayCtrlBtn.GetComponent<Button>();
-            _btn.onClick.RemoveAllListeners();
-            _btn.onClick.AddListener(DayEnd);
-            dayCtrlBtn.GetComponentInChildren<TextMeshProUGUI>().text = "하루 종료";
-            dayCtrlBtn.GetComponent<Image>().color = new Color32(248, 224, 36, 255);
+            UIManager.Instance.SetDayButton(DayEnd, "하루 종료", new Color32(248, 224, 36, 255));
         }
     }
 
+    /// <summary>
+    /// 하루를 종료하고
+    /// 결과 화면으로 이동한다.
+    /// </summary>
     public void DayEnd()
     {
         if (DayManager.Instance.dayState == DayState.Closed)
@@ -188,11 +129,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 하루의 영업 결과를 출력한다.
+    /// </summary>
     public void ShowResult()
     {
         Debug.Log("장사 결과 정산");
     }
 
+    /// <summary>
+    /// 현재 설정된 모디파이어 효과를 실행한다.
+    /// </summary>
     public void UseModifier()
     {
         Debug.Log($"useModifier() 호출됨. 현재 발동된 모디파이어: {modifier}");
@@ -209,86 +156,5 @@ public class GameManager : MonoBehaviour
                 //SeagullModifier.Instance.FlySeagull();
                 break;
         }
-    }
-
-    void Text_Day_Function()
-    {
-        day_pre_Position = day_RectTransform.position;
-
-        text_Day.fontSize = 120;
-        day_RectTransform.position = GameObject.Find("Pos_Day").GetComponent<RectTransform>().position;
-        obj_Day.SetActive(true);
-    }
-
-    void Text_Num_Function()
-    {
-        num_pre_Position = num_RectTransform.position;
-
-        text_Num.fontSize = 120;
-        num_RectTransform.position = GameObject.Find("Pos_Num").GetComponent<RectTransform>().position;
-        obj_Num.SetActive(true);
-    }
-
-    public IEnumerator StartShrink(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Shrink(36f, 5.0f);
-    }
-
-    public void Shrink(float targetSize, float duration)
-    {
-        if (shrinkCoroutine != null) StopCoroutine(shrinkCoroutine);
-
-        shrinkCoroutine = StartCoroutine(ShrinkProcess(targetSize, duration));
-    }
-
-    private IEnumerator ShrinkProcess(float targetSize, float duration)
-    {
-        float day_StartSize = text_Day.fontSize;
-        float num_StartSize = text_Num.fontSize;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            text_Day.fontSize = Mathf.Lerp(day_StartSize, targetSize, elapsed / duration);
-            text_Num.fontSize = Mathf.Lerp(num_StartSize, targetSize, elapsed / duration);
-            yield return null;
-        }
-
-        text_Day.fontSize = targetSize;
-        text_Day.fontSize = targetSize;
-    }
-
-    public IEnumerator StartTextPosReset(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        TextPosReset(3.0f);
-    }
-
-    public void TextPosReset(float duration)
-    {
-        if (posCoroutine != null) StopCoroutine(posCoroutine);
-
-        posCoroutine = StartCoroutine(TextPosResetProcess(duration));
-    }
-
-    private IEnumerator TextPosResetProcess(float duration)
-    {
-        Vector3 day_Start_Pos = day_RectTransform.position;
-        Vector3 num_Start_Pos = num_RectTransform.position;
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            day_RectTransform.position = Vector3.Lerp(day_Start_Pos, day_pre_Position, elapsed / duration);
-            num_RectTransform.position = Vector3.Lerp(num_Start_Pos, num_pre_Position, elapsed / duration);
-            yield return null;
-        }
-
-        day_RectTransform.position = day_pre_Position;
-        num_RectTransform.position = num_pre_Position;
-
     }
 }
