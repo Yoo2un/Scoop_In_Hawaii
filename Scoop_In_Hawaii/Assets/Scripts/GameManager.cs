@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public enum ModifierType { None, GoodEvent, BadEvent }
     public ModifierType modifier = ModifierType.None;
-
     private void Awake()
     {
         if (Instance == null)
