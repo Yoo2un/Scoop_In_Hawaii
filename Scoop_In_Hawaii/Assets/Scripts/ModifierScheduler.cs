@@ -73,21 +73,21 @@ public class ModifierScheduler : MonoBehaviour
         ModifierData selectedModifier = null;
 
         // 랜덤 기반 보정 시스템 (연속성 체크)
-        if (continuousBadCount >= MaxContinuousStreak)
-        {
-            Debug.Log("[보정] 나쁜 이벤트가 연속으로 나와 좋은 이벤트를 강제 배정합니다.");
-            selectedModifier = ChooseGoodModifierWithBalancedDistribution();
-        }
-        else if (continuousGoodCount >= MaxContinuousStreak)
-        {
-            Debug.Log("[보정] 좋은 이벤트가 연속으로 나와 나쁜 이벤트를 강제 배정합니다.");
-            selectedModifier = ChooseBadModifierWithBalancedDistribution();
-        }
-        else
-        {
-            // 균등 분포 알고리즘 (두 개를 뽑아 빈도가 낮은 쪽 선택)
-            selectedModifier = ChooseModifierWithBalancedDistribution();
-        }
+        //if (continuousBadCount >= MaxContinuousStreak)
+        //{
+        //    Debug.Log("[보정] 나쁜 이벤트가 연속으로 나와 좋은 이벤트를 강제 배정합니다.");
+        //    selectedModifier = ChooseGoodModifierWithBalancedDistribution();
+        //}
+        //else if (continuousGoodCount >= MaxContinuousStreak)
+        //{
+        //    Debug.Log("[보정] 좋은 이벤트가 연속으로 나와 나쁜 이벤트를 강제 배정합니다.");
+        //    selectedModifier = ChooseBadModifierWithBalancedDistribution();
+        //}
+        //else
+        //{
+        //    // 균등 분포 알고리즘 (두 개를 뽑아 빈도가 낮은 쪽 선택)
+        //    selectedModifier = ChooseModifierWithBalancedDistribution();
+        //}
 
         // 일회성 / 다회성 구분 (주석 처리)
         /*
@@ -115,6 +115,9 @@ public class ModifierScheduler : MonoBehaviour
             continuousGoodCount = 0;
             continuousBadCount = 0;
         }
+
+        // 테스트용
+        selectedModifier = modifierArray[4];
 
         // 매니저에 전달 및 실행
         GameManager.Instance.modifier = selectedModifier;

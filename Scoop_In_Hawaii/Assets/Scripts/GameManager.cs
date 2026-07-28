@@ -165,7 +165,10 @@ public class GameManager : MonoBehaviour
             case "Seagull":
                 SeagullModifier.Instance.FlySeagull();
                 break;
-
+            case "Weather":
+                WeatherModifier.Instance.StartWeather();
+                break;
+            
             // Neutral Event (아직 없음)
         }
     }

@@ -298,8 +298,8 @@ public class CustomerManager : MonoBehaviour
     /// </summary>
     public void ResetClientSpawnDelay()
     {
-        minClientDelay = 30f;
-        maxClientDelay = 60f;
+        minClientDelay = 10f;
+        maxClientDelay = 12f;
     }
 
     public void SetUI(GameObject chat, TextMeshProUGUI textChat)
