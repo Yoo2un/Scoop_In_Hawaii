@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
-public class DayManager : MonoBehaviour
+public class DayManager : MonoBehaviour, IDataPersistence
 {
     // ΩÃ±€≈Ê
     public static DayManager Instance;
@@ -34,6 +34,22 @@ public class DayManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        Debug.Log($"DayManager SaveData : day = {day}");
+        data.day = day;
+    }
+
+    public void LoadData(GameData data)
+    {
+        Debug.Log($"DayManager LoadData : data.day = {data.day}");
+
+        day = data.day;
+        ResetDay();
+        UIManager.Instance.RefreshTime();
+        UIManager.Instance.RefreshDay();
     }
 
     public int GetHour()
@@ -74,6 +90,9 @@ public class DayManager : MonoBehaviour
     public void NextDay()
     {
         day++;
+
+        DataPersistenceManager.instance.SaveGame();
+
         SceneManager.LoadScene("DayScene");
     }
 

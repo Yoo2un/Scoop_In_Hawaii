@@ -122,7 +122,6 @@ public class GameManager : MonoBehaviour
             DayManager.Instance.StopTime();
             StopAllCoroutines();
 
-            DataPersistenceManager.instance.SaveGame();
             Debug.Log("하루 종료");
             SceneManager.LoadScene("Result");
         }

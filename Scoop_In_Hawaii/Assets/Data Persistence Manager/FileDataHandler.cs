@@ -117,6 +117,23 @@ public class FileDataHandler
         }
     }
 
+    public void Delete()
+    {
+        string fullPath = Path.Combine(dataDirPath, dataFileName);
+
+        if (File.Exists(fullPath))
+        {
+            File.Delete(fullPath);
+        }
+    }
+
+    public bool HasSaveFile()
+    {
+        string fullPath = Path.Combine(dataDirPath, dataFileName);
+
+        return File.Exists(fullPath);
+    }
+
     private string EncryptDecrypt(string data)
     {
         string modifiedData = "";

@@ -4,10 +4,11 @@ using UnityEngine;
 public class GameData
 {
     public int money;
+    public int day;
 
-    //������ 0���� ��ȭ
     public GameData()
     {
-        this.money = 0;
+        money = 0;
+        day = 1;
     }
 }

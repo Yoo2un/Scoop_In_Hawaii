@@ -17,6 +17,7 @@ public class EconomyManager : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
+        Debug.Log($"[Load] money = {data.money}");
         money = data.money;
 
         RefreshMoneyUI();
@@ -24,6 +25,7 @@ public class EconomyManager : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
+        Debug.Log($"[Save] money = {money}");
         data.money = money;
     }
 
@@ -52,7 +54,7 @@ public class EconomyManager : MonoBehaviour, IDataPersistence
     }
 
     public void AddMoney(int money)
-    {
+    { 
         this.money += money;
         RefreshMoneyUI();
     }

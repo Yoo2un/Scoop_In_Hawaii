@@ -46,13 +46,20 @@ public class DataPersistenceManager : MonoBehaviour
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
 
+        if (scene.name == "MainMenu" || scene.name == "Result")
+            return;
+
         LoadGame();
     }
 
 
     public void NewGame()
     {
-        this.gameData = new GameData();
+        DeleteGame();
+
+        gameData = new GameData();
+
+        SaveGame();
     }
 
     public void LoadGame()
@@ -76,20 +83,22 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        //�ٸ� ��ũ��Ʈ���� �����͸� ������Ʈ�� �� �ֵ��� ������ �����ϱ�
         foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
-            Debug.Log("Saving from: " + dataPersistenceObj);
+            Debug.Log(dataPersistenceObj.GetType().Name);
             dataPersistenceObj.SaveData(ref gameData);
         }
 
-        //���� ������ �ڵ鷯�� ����Ͽ� �ش� �����͸� ���Ͽ� �����ϱ�
         dataHandler.Save(gameData);
     }
 
-    private void OnApplicationQuit()
+    public bool HasGameData()
     {
-        SaveGame();
+        return dataHandler.HasSaveFile();
+    }
+    public void DeleteGame()
+    {
+        dataHandler.Delete();
     }
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()

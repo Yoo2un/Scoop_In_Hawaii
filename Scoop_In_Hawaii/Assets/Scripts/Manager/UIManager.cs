@@ -137,6 +137,11 @@ public class UIManager : MonoBehaviour
         timeText.text = $"{DayManager.Instance.GetHour()}:{DayManager.Instance.GetMinute():D2} PM";
     }
 
+    public void RefreshDay()
+    {
+        text_Num.text = DayManager.Instance.day.ToString();
+    }
+
     /// <summary>
     /// 지정한 시간만큼 대기한 후
     /// 텍스트 축소 애니메이션을 시작한다.
