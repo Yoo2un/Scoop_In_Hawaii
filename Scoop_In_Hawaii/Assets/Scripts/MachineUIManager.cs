@@ -8,7 +8,7 @@ public class MachineUIManager : MonoBehaviour
     public GameObject barPanel;
     public GameObject machinePanel;
     public GameObject chocolatePanel;
-    public GameObject VanillaPanel;
+    public GameObject vanillaPanel;
 
     public TMP_Text titleText;
 
@@ -33,7 +33,7 @@ public class MachineUIManager : MonoBehaviour
     public void OpenVanilla()
     {
 
-        VanillaPanel.SetActive(true);
+        vanillaPanel.SetActive(true);
 
         titleText.text = "바닐라 스쿱";
     }
@@ -54,5 +54,6 @@ public class MachineUIManager : MonoBehaviour
         barPanel.SetActive(false);
         machinePanel.SetActive(false);
         chocolatePanel.SetActive(false);
+        vanillaPanel.SetActive(false);
     }
 }
