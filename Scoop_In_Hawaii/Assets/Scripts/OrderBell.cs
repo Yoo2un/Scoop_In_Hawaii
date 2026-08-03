@@ -92,7 +92,7 @@ public class OrderBell : MonoBehaviour
         if (CustomerManager.Instance.currentOrder.Flavors.Count == 0)
             return 0;
 
-        return IceCreamData.FlavorPrices[CustomerManager.Instance.currentOrder.Flavors[0]];
+        return IceCreamData.FlavorPrices[CustomerManager.Instance.currentOrder.Flavors[0]][0];
     }
 
     private float CalculateAccuracy()

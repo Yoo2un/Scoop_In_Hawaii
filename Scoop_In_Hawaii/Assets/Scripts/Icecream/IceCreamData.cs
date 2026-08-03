@@ -33,12 +33,12 @@ public static class IceCreamData
         { Syrup.Caramel, "카라멜" }
     };
 
-    public static Dictionary<Flavor, int> FlavorPrices =
-    new Dictionary<Flavor, int>()
+    public static Dictionary<Flavor, List<int>> FlavorPrices =
+    new Dictionary<Flavor, List<int>>
     {
-        { Flavor.Vanilla, 180 },
-        { Flavor.Chocolate, 220 },
-        { Flavor.Soda, 100 },
-        { Flavor.Mango, 120 }
+        { Flavor.Vanilla, new List<int> {180, 1300} },
+        { Flavor.Chocolate, new List<int> {220, 1600} },
+        { Flavor.Soda, new List<int> {100, 800} },
+        { Flavor.Mango, new List<int> {120, 950} }
     };
 }
