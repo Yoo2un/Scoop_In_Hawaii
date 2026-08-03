@@ -6,8 +6,10 @@ using System.Collections;
 public class PhoneManager : MonoBehaviour
 {
     public RectTransform phone;
+    public GameObject internet; // 인터넷 창
 
     private bool isUp = false;
+    private bool isOn_internet = false;
 
     public Vector2 downPosition = new Vector2(800, -700); 
     public Vector2 upPosition = new Vector2(800, -275);
@@ -46,5 +48,19 @@ public class PhoneManager : MonoBehaviour
 
         phone.anchoredPosition = targetPos; // 목표치에 고정
         moveCoroutine = null; // 연산 종료
+    }
+    
+    public void OpenInternet()
+    {
+        if (isOn_internet)
+        {
+            isOn_internet = false ;
+            internet.SetActive(false);
+        }
+        else
+        {
+            isOn_internet = true;
+            internet.SetActive(true);
+        }
     }
 }
