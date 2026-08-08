@@ -18,7 +18,7 @@ public class IceCreamMaking : MonoBehaviour
         }
         else //바이면
         {
-            currentIceCream = new IceCream();
+            currentIceCream = new Bar();
         }
         currentIceCream.Type = (IceCreamType)type;
 
