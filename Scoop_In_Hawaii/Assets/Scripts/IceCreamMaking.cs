@@ -73,9 +73,6 @@ public class IceCreamMaking : MonoBehaviour
             currentIceCream.Flavors.Add(flavor);
 
             Debug.Log(flavor + "맛 추가");
-
-            EconomyManager.Instance.material_cost += 10;
-            //Debug.Log("(임시)재료비 10원 증가");
         }
 
         // 바
@@ -87,9 +84,6 @@ public class IceCreamMaking : MonoBehaviour
             currentIceCream.Flavors.Add(flavor);
 
             Debug.Log(flavor + "맛 추가");
-
-            EconomyManager.Instance.material_cost += 10;
-            //Debug.Log("(임시)재료비 10원 증가");
         }
 
     }

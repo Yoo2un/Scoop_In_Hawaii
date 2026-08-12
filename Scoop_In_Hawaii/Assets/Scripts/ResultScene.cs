@@ -33,8 +33,7 @@ public class ResultScene : MonoBehaviour
             profit_text.text = $"매출 : {EconomyManager.Instance.profit}";
             expense_text.text = $"지출 : {EconomyManager.Instance.material_cost}";
             duty_text.text = $"세금 : {EconomyManager.Instance.duty}";
-            final_profit_text.text =
-                $"최종 수익 : {EconomyManager.Instance.profit - EconomyManager.Instance.material_cost - EconomyManager.Instance.duty}";
+            final_profit_text.text = $"최종 수익 : {EconomyManager.Instance.profit - EconomyManager.Instance.material_cost - EconomyManager.Instance.duty}";
             money_text.text = $"보유 자금 : {EconomyManager.Instance.GetMoney()}";
 
             EconomyManager.Instance.material_cost = 0;

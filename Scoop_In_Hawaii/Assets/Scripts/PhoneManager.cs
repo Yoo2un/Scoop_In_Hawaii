@@ -63,4 +63,18 @@ public class PhoneManager : MonoBehaviour
             internet.SetActive(true);
         }
     }
+    public void purchase(int flavor_num)
+    {
+        Flavor flavor = (Flavor)flavor_num;
+
+        int flavor_price = IceCreamData.FlavorPrices[flavor][1];
+        int money = EconomyManager.Instance.GetMoney();
+        if (flavor_price > money) {
+            Debug.Log("구매 실패(돈 없음)");
+            return;
+        }
+        EconomyManager.Instance.SubtractMoney(flavor_price);
+        EconomyManager.Instance.material_cost += flavor_price;
+        Debug.Log("구매 성공");
+    }
 }
