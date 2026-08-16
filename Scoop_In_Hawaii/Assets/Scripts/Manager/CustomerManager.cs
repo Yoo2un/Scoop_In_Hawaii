@@ -68,6 +68,7 @@ public class CustomerManager : MonoBehaviour
     // 인내심 감소 코루틴
     private Coroutine patienceCoroutine;
 
+    private float patienceDrainMultiplier = 1f;
 
     private void Awake()
     {
@@ -79,6 +80,11 @@ public class CustomerManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SetPatienceDrainMultiplier(float multiplier)
+    {
+        patienceDrainMultiplier = multiplier;
     }
 
     /// <summary>
@@ -175,7 +181,7 @@ public class CustomerManager : MonoBehaviour
     {
         while (currentClient.currentPatience > 0f)
         {
-            currentClient.currentPatience -= Time.deltaTime;
+            currentClient.currentPatience -= Time.deltaTime * patienceDrainMultiplier;
 
             patienceSlider.value =
                 currentClient.currentPatience / currentClient.maxPatience;

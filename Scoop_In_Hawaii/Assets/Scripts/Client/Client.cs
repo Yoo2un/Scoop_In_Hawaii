@@ -10,5 +10,6 @@ public class Client
     public Sprite frontSprite;
 
     public float maxPatience = 30f;
+
     [HideInInspector] public float currentPatience;
 }
