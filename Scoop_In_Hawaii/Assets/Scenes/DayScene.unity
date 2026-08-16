@@ -8010,8 +8010,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 11:55 PM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10267,11 +10267,17 @@ MonoBehaviour:
   - clientName: A
     sideSprite: {fileID: -4669476257333590241, guid: 5b7db8e6d48417d40b250393f3d52eb1, type: 3}
     frontSprite: {fileID: -5248298948834303939, guid: 75e173327b426da42b33b63f369618dd, type: 3}
+    maxPatience: 30
+    currentPatience: 0
   - clientName: B
     sideSprite: {fileID: 2651377931920932437, guid: 603dc3722ecba8d4d8fd6b73b43f1aef, type: 3}
     frontSprite: {fileID: -7516575146871756489, guid: f3ae42faa493fe1418d28a5cf99038e4, type: 3}
+    maxPatience: 30
+    currentPatience: 0
   minClientDelay: 5
   maxClientDelay: 10
+  patienceSliderPrefab: {fileID: 451007076529730227, guid: ec638ca9100589f4fab5117258efea5b, type: 3}
+  canvasTransform: {fileID: 1800227122}
 --- !u!4 &1480440944
 Transform:
   m_ObjectHideFlags: 0
@@ -12841,8 +12847,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13590,8 +13596,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Day
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
