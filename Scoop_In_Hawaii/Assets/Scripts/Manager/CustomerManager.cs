@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -53,6 +54,22 @@ public class CustomerManager : MonoBehaviour
     [SerializeField]
     private float maxClientDelay = 10f;
 
+    //손님 인내심 슬라이더
+    [SerializeField]
+    private GameObject patienceSliderPrefab;
+
+    // 인내심 Slider가 생성될 Canvas
+    [SerializeField]
+    private Transform canvasTransform;
+
+    // 현재 생성된 인내심 Slider
+    private Slider patienceSlider;
+
+    // 인내심 감소 코루틴
+    private Coroutine patienceCoroutine;
+
+    private float patienceDrainMultiplier = 1f;
+
     private void Awake()
     {
         if (Instance == null)
@@ -63,6 +80,11 @@ public class CustomerManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SetPatienceDrainMultiplier(float multiplier)
+    {
+        patienceDrainMultiplier = multiplier;
     }
 
     /// <summary>
@@ -94,6 +116,14 @@ public class CustomerManager : MonoBehaviour
         CancelInvoke();
         StopAllCoroutines();
 
+        if (patienceSlider != null)
+        {
+            Destroy(patienceSlider.gameObject);
+            patienceSlider = null;
+        }
+
+        patienceCoroutine = null;
+
         isClientVisiting = false;
     }
 
@@ -116,6 +146,10 @@ public class CustomerManager : MonoBehaviour
 
         Client randomClient = clientList[UnityEngine.Random.Range(0, clientList.Count)];
         currentClient = randomClient;
+
+        currentClient.currentPatience = currentClient.maxPatience;
+
+        // 인내심 초기화
         clientSpriteRenderer.sprite = currentClient.sideSprite;
 
         StartCoroutine(StartWalk(0f));
@@ -123,6 +157,70 @@ public class CustomerManager : MonoBehaviour
         StartCoroutine(StartWalk(2f));
         StartCoroutine(StartViewFront(3f));
         StartCoroutine(StartChat(4.5f));
+
+    }
+
+    private void CreatePatienceSlider()
+    {
+        if (patienceSlider != null)
+        {
+            Destroy(patienceSlider.gameObject);
+        }
+
+        GameObject sliderObject =
+            Instantiate(patienceSliderPrefab, canvasTransform);
+
+        patienceSlider = sliderObject.GetComponent<Slider>();
+
+        patienceSlider.minValue = 0f;
+        patienceSlider.maxValue = 1f;
+        patienceSlider.value = 1f;
+    }
+
+    private IEnumerator PatienceProcess()
+    {
+        while (currentClient.currentPatience > 0f)
+        {
+            currentClient.currentPatience -= Time.deltaTime * patienceDrainMultiplier;
+
+            patienceSlider.value =
+                currentClient.currentPatience / currentClient.maxPatience;
+
+            yield return null;
+        }
+
+        currentClient.currentPatience = 0f;
+
+        patienceSlider.value = 0f;
+
+        PatienceOver();
+    }
+
+    private void PatienceOver()
+    {
+        StartCoroutine(PatienceOverProcess());
+    }
+
+    private IEnumerator PatienceOverProcess()
+    {
+        // 주문 말풍선 변경
+        text_chat.text = "너무 오래 걸리네요... \n 그냥 갈게요.";
+
+        // 기존 말풍선이 꺼져 있을 가능성을 대비
+        chat.SetActive(true);
+
+        // Slider 제거
+        if (patienceSlider != null)
+        {
+            Destroy(patienceSlider.gameObject);
+            patienceSlider = null;
+        }
+
+        // 대사를 2초 동안 보여줌
+        yield return new WaitForSeconds(2f);
+
+        // 손님 퇴장
+        LeaveWalk(3f);
     }
 
     /// <summary>
@@ -173,6 +271,15 @@ public class CustomerManager : MonoBehaviour
         text_chat.text = OrderDialog.GenerateText(currentOrder);
 
         chat.SetActive(true);
+
+        // 인내심 초기화
+        currentClient.currentPatience = currentClient.maxPatience;
+
+        // 인내심 Slider 생성
+        CreatePatienceSlider();
+
+        // 인내심 감소 시작
+        patienceCoroutine = StartCoroutine(PatienceProcess());
     }
 
     /// <summary>
@@ -252,6 +359,18 @@ public class CustomerManager : MonoBehaviour
     private IEnumerator ClientLeaveProcess(float duration)
     {
         chat.SetActive(false);
+
+        if (patienceCoroutine != null)
+        {
+            StopCoroutine(patienceCoroutine);
+            patienceCoroutine = null;
+        }
+
+        if (patienceSlider != null)
+        {
+            Destroy(patienceSlider.gameObject);
+            patienceSlider = null;
+        }
 
         Vector3 start_Pos = client_transform.position;
 
