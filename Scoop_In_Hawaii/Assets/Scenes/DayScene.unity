@@ -1181,6 +1181,8 @@ MonoBehaviour:
   conePanel: {fileID: 841059057}
   barPanel: {fileID: 687843971}
   machinePanel: {fileID: 729530576}
+  chocolatePanel: {fileID: 163800436}
+  vanillaPanel: {fileID: 871400421}
   titleText: {fileID: 450611283}
   RepairPanel: {fileID: 907522038}
   RepairMiniGamePanel: {fileID: 892803465}
