@@ -1056,6 +1056,7 @@ GameObject:
   - component: {fileID: 163800437}
   - component: {fileID: 163800440}
   - component: {fileID: 163800439}
+  - component: {fileID: 163800441}
   m_Layer: 0
   m_Name: Chocolate_Panel
   m_TagString: Untagged
@@ -1120,6 +1121,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163800436}
   m_CullTransparentMesh: 1
+--- !u!114 &163800441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163800436}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1444cdb70ecf9d4478754a45a5ca2edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Guideline
+  machinePanel: {fileID: 0}
+  guidelineImage: {fileID: 0}
+  userLine: {fileID: 0}
+  guidelineDataList:
+  - guidelineSprite: {fileID: 8029978121978200134, guid: c2a618042574b23478060450dcfa24ff, type: 3}
+    pathPoints: []
 --- !u!1 &177053739
 GameObject:
   m_ObjectHideFlags: 0
@@ -6600,7 +6619,7 @@ GameObject:
   - component: {fileID: 871400422}
   - component: {fileID: 871400425}
   - component: {fileID: 871400424}
-  - component: {fileID: 871400423}
+  - component: {fileID: 871400426}
   m_Layer: 0
   m_Name: Vanilla_Panel
   m_TagString: Untagged
@@ -6627,18 +6646,6 @@ RectTransform:
   m_AnchoredPosition: {x: -53, y: -84}
   m_SizeDelta: {x: 219.3645, y: 227.54297}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &871400423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871400421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69a283004ede899469e0f93415e1a568, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Guideline
 --- !u!114 &871400424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6677,6 +6684,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871400421}
   m_CullTransparentMesh: 1
+--- !u!114 &871400426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871400421}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1444cdb70ecf9d4478754a45a5ca2edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Guideline
+  machinePanel: {fileID: 0}
+  guidelineImage: {fileID: 0}
+  userLine: {fileID: 0}
+  guidelineDataList:
+  - guidelineSprite: {fileID: 8029978121978200134, guid: c2a618042574b23478060450dcfa24ff, type: 3}
+    pathPoints: []
 --- !u!1 &885119238
 GameObject:
   m_ObjectHideFlags: 0
