@@ -231,4 +231,29 @@ public class IceCreamMaking : MonoBehaviour
 
         CustomerManager.Instance.LeaveWalk(3f);
     }
+
+    public void TakeOutFirstBar()
+    {
+        if (currentIceCream == null)
+        {
+            return;
+        }
+
+        Bar targetBar = BarIceCreamManager.Instance.TakeOutFirstBar();
+        if (targetBar == null) return;
+
+        currentIceCream = targetBar;
+    }
+    public void TakeOutSecondBar()
+    {
+        if (currentIceCream == null)
+        {
+            return;
+        }
+
+        Bar targetBar = BarIceCreamManager.Instance.TakeOutSecondBar();
+        if (targetBar == null) return;
+
+        currentIceCream = targetBar;
+    }
 }
