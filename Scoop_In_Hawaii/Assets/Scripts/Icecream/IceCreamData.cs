@@ -41,4 +41,22 @@ public static class IceCreamData
         { Flavor.Soda, new List<int> {100, 800} },
         { Flavor.Mango, new List<int> {120, 950} }
     };
+
+    public static Dictionary<Flavor, int> FlavorStocks =
+    new Dictionary<Flavor, int>()
+    {
+        { Flavor.Vanilla, 20 },
+        { Flavor.Chocolate, 20 },
+        { Flavor.Soda, 10 },
+        { Flavor.Mango, 10 }
+    };
+
+    public static Dictionary<Flavor, int> MaxFlavorStocks =
+    new Dictionary<Flavor, int>()
+    {
+        { Flavor.Vanilla, 20 },
+        { Flavor.Chocolate, 20 },
+        { Flavor.Soda, 10 },
+        { Flavor.Mango, 10 }
+    };
 }
