@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
+
+    public event Action<Flavor> OnStockChanged;
 
     private void Awake()
     {
@@ -22,7 +25,12 @@ public class InventoryManager : MonoBehaviour
         if (IceCreamData.FlavorStocks[flavor] > 0)
         {
             IceCreamData.FlavorStocks[flavor]--;
+
             Debug.Log($"{flavor} 재고: {IceCreamData.FlavorStocks[flavor]}");
+
+            OnStockChanged?.Invoke(flavor);
+
+            //Debug.Log($"OnStockChanged 호출: {flavor}");
         }
     }
 

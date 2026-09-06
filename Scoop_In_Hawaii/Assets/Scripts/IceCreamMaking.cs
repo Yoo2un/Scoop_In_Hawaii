@@ -84,6 +84,8 @@ public class IceCreamMaking : MonoBehaviour
 
             currentIceCream.Flavors.Add(flavor);
 
+            InventoryManager.Instance.UseFlavor(flavor);
+
             Debug.Log(flavor + "맛 추가");
         }
 

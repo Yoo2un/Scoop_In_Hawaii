@@ -37,7 +37,7 @@ public class MachineUIManager : MonoBehaviour
     public void OpenChocolate()
     {
 
-        chocolatePanel.SetActive(true);
+        //chocolatePanel.SetActive(true);
 
         titleText.text = "초콜릿 스쿱";
     }
@@ -45,7 +45,7 @@ public class MachineUIManager : MonoBehaviour
     public void OpenVanilla()
     {
 
-        vanillaPanel.SetActive(true);
+        //vanillaPanel.SetActive(true);
 
         titleText.text = "바닐라 스쿱";
     }
