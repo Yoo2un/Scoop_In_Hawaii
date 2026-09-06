@@ -10,6 +10,7 @@ public class MachineUIManager : MonoBehaviour
     public GameObject chocolatePanel;
     public GameObject vanillaPanel;
 
+
     public TMP_Text titleText;
     [SerializeField] private GameObject RepairPanel;
     [SerializeField] private GameObject RepairMiniGamePanel;
@@ -17,12 +18,16 @@ public class MachineUIManager : MonoBehaviour
     [SerializeField] private RepairMiniGame repairMiniGame;
     [SerializeField] private RepairEffect repairEffect;
 
+    [SerializeField] private BoxCollider2D showcaseCollider;
 
     public void OpenConeMachine()
-    {
-        if (MachineModifier.Instance.ConeBroken)
+    {  if (MachineModifier.Instance.ConeBroken)
         {
             RepairPanel.SetActive(true);
+
+            if (showcaseCollider != null)
+                showcaseCollider.enabled = false;
+
             return;
         }
 
@@ -30,14 +35,20 @@ public class MachineUIManager : MonoBehaviour
 
         machinePanel.SetActive(true);
         conePanel.SetActive(true);
+        chocolatePanel.SetActive(true);
+        vanillaPanel.SetActive(true);
 
         titleText.text = "콘 아이스크림 제작";
+        
+        if (showcaseCollider != null)
+            showcaseCollider.enabled = false;
+
     }
 
     public void OpenChocolate()
     {
 
-        chocolatePanel.SetActive(true);
+        //chocolatePanel.SetActive(true);
 
         titleText.text = "초콜릿 스쿱";
     }
@@ -45,7 +56,7 @@ public class MachineUIManager : MonoBehaviour
     public void OpenVanilla()
     {
 
-        vanillaPanel.SetActive(true);
+        //vanillaPanel.SetActive(true);
 
         titleText.text = "바닐라 스쿱";
     }
@@ -87,6 +98,9 @@ public class MachineUIManager : MonoBehaviour
         machinePanel.SetActive(false);
         chocolatePanel.SetActive(false);
         vanillaPanel.SetActive(false);
+
+        if (showcaseCollider != null)
+            showcaseCollider.enabled = true;
     }
 
 }
