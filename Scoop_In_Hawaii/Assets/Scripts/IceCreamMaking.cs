@@ -55,10 +55,9 @@ public class IceCreamMaking : MonoBehaviour
         Flavor flavor = (Flavor)flavorIndex;
 
         // 현재 타입에서 사용 가능한 맛인지 검사
-        if (!IceCreamData.TypeFlavors[currentIceCream.Type].Contains(flavor))
+        if (!InventoryManager.Instance.HasStock(flavor))
         {
-            Debug.Log("이 타입에서는 사용할 수 없는 맛");
-
+            Debug.Log($"{flavor} 재고가 없습니다.");
             return;
         }
 
@@ -72,6 +71,8 @@ public class IceCreamMaking : MonoBehaviour
 
             currentIceCream.Flavors.Add(flavor);
 
+            InventoryManager.Instance.UseFlavor(flavor);
+
             Debug.Log(flavor + "맛 추가");
         }
 
@@ -82,6 +83,8 @@ public class IceCreamMaking : MonoBehaviour
             currentIceCream.Flavors.Clear();
 
             currentIceCream.Flavors.Add(flavor);
+
+            InventoryManager.Instance.UseFlavor(flavor);
 
             Debug.Log(flavor + "맛 추가");
         }

@@ -70,6 +70,16 @@ public class BarIceCreamManager : MonoBehaviour
             return;
         }
 
+        // 재고 확인
+        if (!InventoryManager.Instance.HasStock(realFlavor))
+        {
+            Debug.Log($"{realFlavor} 재고가 없습니다.");
+            return;
+        }
+
+        // 재고 1개 사용
+        InventoryManager.Instance.UseFlavor(realFlavor);
+
         firstBar = new Bar();
         firstBar.Type = IceCreamType.Bar;
         firstBar.Flavors.Add(realFlavor);
@@ -96,6 +106,16 @@ public class BarIceCreamManager : MonoBehaviour
         {
             return;
         }
+
+        // 재고 확인
+        if (!InventoryManager.Instance.HasStock(realFlavor))
+        {
+            Debug.Log($"{realFlavor} 재고가 없습니다.");
+            return;
+        }
+
+        // 재고 1개 사용
+        InventoryManager.Instance.UseFlavor(realFlavor);
 
         secondBar = new Bar();
         secondBar.Type = IceCreamType.Bar;
