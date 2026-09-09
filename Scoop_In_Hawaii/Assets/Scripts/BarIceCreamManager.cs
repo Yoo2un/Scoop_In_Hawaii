@@ -132,4 +132,23 @@ public class BarIceCreamManager : MonoBehaviour
     {
         secondBar = null;
     }
+
+    public Bar TakeOutFirstBar()
+    {
+        if (firstBar == null) return null;
+
+        Bar targetBar = (Bar)firstBar;
+        ResetFirstBar();
+
+        return targetBar;
+    }
+    public Bar TakeOutSecondBar()
+    {
+        if (secondBar == null) return null;
+
+        Bar targetBar = (Bar)secondBar;
+        ResetSecondBar();
+
+        return targetBar;
+    }
 }
