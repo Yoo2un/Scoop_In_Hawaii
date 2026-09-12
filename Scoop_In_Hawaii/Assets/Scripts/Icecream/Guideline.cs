@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System.Collections;
 
-public class Guideline : MonoBehaviour, IDragHandler, IEndDragHandler
+public class Guideline : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
     [System.Serializable]
@@ -23,13 +23,38 @@ public class Guideline : MonoBehaviour, IDragHandler, IEndDragHandler
 
     private GuidelineData currentGuidelineData;     // 현재 선택된 가이드라인 데이터
     private List<Vector3> userPoints = new List<Vector3>();
-    private bool isDrawing = true; // 중복 입력 방지용
 
-    void OnEnable()
+    private bool isSelected = false; //패널 선택 여부
+    private bool isDrawing = false; // 중복 입력 방지용
+
+    private static Guideline activeGuidelinePanel;
+
+    [SerializeField] private BoxCollider2D showcaseCollider;
+
+    private void Awake()
     {
-        isDrawing = true;    // 입력 활성화
-        userPoints.Clear();     //사용자 그리기 데이터 초기화
-        userLine.positionCount = 0;    //사용자 라인 초기화
+        if (guidelineImage != null) guidelineImage.gameObject.SetActive(false);
+        if (userLine != null) userLine.positionCount = 0;
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (activeGuidelinePanel != null && activeGuidelinePanel != this)
+        {
+            activeGuidelinePanel.ResetPanel();
+        }
+
+        activeGuidelinePanel = this;
+        Debug.Log($"선택한 맛(임시 확인용): {gameObject.name}");
+
+        ActivateGuideline();
+    }
+
+    private void ActivateGuideline()
+    {
+        isSelected = true;
+        isDrawing = false;
+        userPoints.Clear();
+        if (userLine != null) userLine.positionCount = 0;
 
         // 랜덤으로 가이드라인 선택
         if (guidelineDataList != null && guidelineDataList.Count > 0)
@@ -37,7 +62,6 @@ public class Guideline : MonoBehaviour, IDragHandler, IEndDragHandler
             int randomIndex = Random.Range(0, guidelineDataList.Count);
             currentGuidelineData = guidelineDataList[randomIndex];
 
-            // 선택된 가이드라인 표시
             if (currentGuidelineData.guidelineSprite != null)
             {
                 guidelineImage.sprite = currentGuidelineData.guidelineSprite;
@@ -46,12 +70,38 @@ public class Guideline : MonoBehaviour, IDragHandler, IEndDragHandler
         }
     }
 
+    // 패널 초기화
+    public void ResetPanel()
+    {
+        isSelected = false;
+        isDrawing = false;
+        if (guidelineImage != null) guidelineImage.gameObject.SetActive(false);
+        if (userLine != null) userLine.positionCount = 0;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (!isSelected) return;
+        isDrawing = true;
+
+        eventData.Use();
+    }
     public void OnDrag(PointerEventData eventData)
     {
+        if (!isSelected || !isDrawing) return;
+
+        RectTransform rectTransform = transform as RectTransform;
         Vector2 localPoint;
+
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            transform as RectTransform, eventData.position, eventData.pressEventCamera, out localPoint))
+            rectTransform, eventData.position, eventData.pressEventCamera, out localPoint))
         {
+            if (!rectTransform.rect.Contains(localPoint))
+            {
+                OnEndDrag(eventData); // 범위를 벗어나면 즉시 종료
+                return;
+            }
+
             Vector3 newPoint = new Vector3(localPoint.x, localPoint.y, 0);
 
             if (userPoints.Count == 0 || Vector3.Distance(userPoints[userPoints.Count - 1], newPoint) > 2f)
@@ -62,6 +112,8 @@ public class Guideline : MonoBehaviour, IDragHandler, IEndDragHandler
                 userLine.SetPosition(count - 1, userPoints[count - 1]);
             }
         }
+
+        eventData.Use();
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -70,7 +122,6 @@ public class Guideline : MonoBehaviour, IDragHandler, IEndDragHandler
 
         // 드래그가 끝나면 그리기 잠금
         isDrawing = false;
-
         Debug.Log("그리기 완료");
 
         // 3. 가이드 라인 좌표값과  비교
@@ -130,5 +181,10 @@ public class Guideline : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         yield return new WaitForSeconds(delay);
         machinePanel.SetActive(false);
+
+        if (showcaseCollider != null)
+            showcaseCollider.enabled = true;
+
+        ResetPanel();
     }
 }
