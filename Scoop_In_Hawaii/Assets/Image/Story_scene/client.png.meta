@@ -1,34 +1,22 @@
 fileFormatVersion: 2
-guid: 73d567dbca62d25489cf4ef79a1232b7
+guid: b3721eee1807444449335c71dfc465a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6857359210604208517
-    second: story_chat_0
+      213: -2074488818583544417
+    second: client_0
   - first:
-      213: 2353661911093214170
-    second: story_chat_1
+      213: -968861390954259834
+    second: client_1
   - first:
-      213: 3408368754922948810
-    second: story_chat_2
+      213: -7178971065544492962
+    second: client_2
   - first:
-      213: -474040511718178995
-    second: story_chat_3
+      213: -2270586361018710479
+    second: client_3
   - first:
-      213: 1883991512801295023
-    second: story_chat_4
-  - first:
-      213: 1676561491114096774
-    second: story_chat_5
-  - first:
-      213: 3921770786658631421
-    second: story_chat_6
-  - first:
-      213: -721337273864665623
-    second: story_chat_7
-  - first:
-      213: -6106528214564731325
-    second: story_chat_8
+      213: 5347733847137224269
+    second: client_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,199 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: story_chat_0
+      name: client_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2150
-        height: 700
+        width: 160
+        height: 880
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 26, y: 45, z: 0, w: 100}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b7edeaa3124c5d0a0800000000000000
-      internalID: -6857359210604208517
+      spriteID: f9ddecd196fe533e0800000000000000
+      internalID: -2074488818583544417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: story_chat_1
+      name: client_1
       rect:
         serializedVersion: 2
-        x: 615
-        y: 657
+        x: 0
+        y: 69
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a949bb2b9ed82f0800000000000000
+      internalID: -968861390954259834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: client_2
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 15
+        width: 911
+        height: 1279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e58b9690adb2f5c90800000000000000
+      internalID: -7178971065544492962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: client_3
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 378
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13602a71cb14d70e0800000000000000
+      internalID: -2270586361018710479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: client_4
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 81
         width: 9
-        height: 7
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: adbf314b903e9a020800000000000000
-      internalID: 2353661911093214170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_2
-      rect:
-        serializedVersion: 2
-        x: 618
-        y: 642
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac809b40355fc4f20800000000000000
-      internalID: 3408368754922948810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_3
-      rect:
-        serializedVersion: 2
-        x: 629
-        y: 644
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4fb4e98aaedb69f0800000000000000
-      internalID: -474040511718178995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_4
-      rect:
-        serializedVersion: 2
-        x: 991
-        y: 612
-        width: 8
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: faa3f509c48452a10800000000000000
-      internalID: 1883991512801295023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_5
-      rect:
-        serializedVersion: 2
-        x: 1225
-        y: 598
-        width: 15
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68874f91bc7544710800000000000000
-      internalID: 1676561491114096774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_6
-      rect:
-        serializedVersion: 2
-        x: 1512
-        y: 610
-        width: 20
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dfeba4580cdec6630800000000000000
-      internalID: 3921770786658631421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_7
-      rect:
-        serializedVersion: 2
-        x: 1587
-        y: 620
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e54c0c329b4df5f0800000000000000
-      internalID: -721337273864665623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_8
-      rect:
-        serializedVersion: 2
-        x: 1237
-        y: 578
-        width: 27
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34608ff41f0414ba0800000000000000
-      internalID: -6106528214564731325
+      spriteID: d4682f7b997f63a40800000000000000
+      internalID: 5347733847137224269
       vertices: []
       indices: 
       edges: []
@@ -325,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e149b6fc52df296409eabe37c6b27cdc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -335,15 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      story_chat_0: -6857359210604208517
-      story_chat_1: 2353661911093214170
-      story_chat_2: 3408368754922948810
-      story_chat_3: -474040511718178995
-      story_chat_4: 1883991512801295023
-      story_chat_5: 1676561491114096774
-      story_chat_6: 3921770786658631421
-      story_chat_7: -721337273864665623
-      story_chat_8: -6106528214564731325
+      client_0: -2074488818583544417
+      client_1: -968861390954259834
+      client_2: -7178971065544492962
+      client_3: -2270586361018710479
+      client_4: 5347733847137224269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
