@@ -65,6 +65,10 @@ public class GameManager : MonoBehaviour
         {
             ShowResult();
         }
+        else if (scene.name.Equals("StoryScene"))
+        {
+            Debug.Log("스토리 씬으로 이동!");
+        }
     }
 
     /// <summary>
@@ -123,7 +127,11 @@ public class GameManager : MonoBehaviour
             StopAllCoroutines();
 
             Debug.Log("하루 종료");
-            SceneManager.LoadScene("Result");
+
+            //테스트용
+            SceneManager.LoadScene("StroyScene");
+
+            //SceneManager.LoadScene("Result");
         }
     }
 
