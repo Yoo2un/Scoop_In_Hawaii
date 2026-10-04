@@ -73,7 +73,7 @@ public class DialogueManager : MonoBehaviour
 
             yield return new WaitUntil(
                 () => Keyboard.current != null &&
-                      Keyboard.current.zKey.wasPressedThisFrame
+                      Mouse.current.leftButton.wasPressedThisFrame
             );
         }
 

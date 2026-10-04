@@ -1,34 +1,43 @@
 fileFormatVersion: 2
-guid: 73d567dbca62d25489cf4ef79a1232b7
+guid: a32b81633e1aa2b4b92b70bdd9fbd4c9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6857359210604208517
-    second: story_chat_0
+      213: -479939641371298885
+    second: story_chat 1_0
   - first:
-      213: 2353661911093214170
-    second: story_chat_1
+      213: -6799958596017517336
+    second: story_chat 1_1
   - first:
-      213: 3408368754922948810
-    second: story_chat_2
+      213: -1943542707560849950
+    second: story_chat 1_2
   - first:
-      213: -474040511718178995
-    second: story_chat_3
+      213: -101442231430593539
+    second: story_chat 1_3
   - first:
-      213: 1883991512801295023
-    second: story_chat_4
+      213: -6853306728032157358
+    second: story_chat 1_4
   - first:
-      213: 1676561491114096774
-    second: story_chat_5
+      213: -6398051456438119526
+    second: story_chat 1_5
   - first:
-      213: 3921770786658631421
-    second: story_chat_6
+      213: -654993521538173623
+    second: story_chat 1_6
   - first:
-      213: -721337273864665623
-    second: story_chat_7
+      213: -6263285379974326348
+    second: story_chat 1_7
   - first:
-      213: -6106528214564731325
-    second: story_chat_8
+      213: 4061830262926634714
+    second: story_chat 1_8
+  - first:
+      213: 1346276434796914248
+    second: story_chat 1_9
+  - first:
+      213: -8419174203362061914
+    second: story_chat 1_10
+  - first:
+      213: 7913162273535488057
+    second: story_chat 1_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,199 +133,265 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: story_chat_0
+      name: story_chat 1_0
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 693
+        width: 132
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb37f626079e659f0800000000000000
+      internalID: -479939641371298885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: story_chat 1_1
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 713
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec03054fa1b1a1a0800000000000000
+      internalID: -6799958596017517336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: story_chat 1_2
+      rect:
+        serializedVersion: 2
+        x: 2061
+        y: 703
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2edd80e64362705e0800000000000000
+      internalID: -1943542707560849950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: story_chat 1_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 2150
-        height: 700
+        y: 31
+        width: 2155
+        height: 671
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 26, y: 45, z: 0, w: 100}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b7edeaa3124c5d0a0800000000000000
-      internalID: -6857359210604208517
+      spriteID: df34b56f3da979ef0800000000000000
+      internalID: -101442231430593539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: story_chat_1
+      name: story_chat 1_4
       rect:
         serializedVersion: 2
-        x: 615
-        y: 657
+        x: 1100
+        y: 645
         width: 9
-        height: 7
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: adbf314b903e9a020800000000000000
-      internalID: 2353661911093214170
+      spriteID: 25149da57d924e0a0800000000000000
+      internalID: -6853306728032157358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: story_chat_2
+      name: story_chat 1_5
       rect:
         serializedVersion: 2
-        x: 618
-        y: 642
+        x: 1456
+        y: 660
         width: 7
-        height: 6
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac809b40355fc4f20800000000000000
-      internalID: 3408368754922948810
+      spriteID: a93d554491e8537a0800000000000000
+      internalID: -6398051456438119526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: story_chat_3
+      name: story_chat 1_6
       rect:
         serializedVersion: 2
-        x: 629
-        y: 644
-        width: 6
-        height: 6
+        x: 1544
+        y: 642
+        width: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d4fb4e98aaedb69f0800000000000000
-      internalID: -474040511718178995
+      spriteID: 945f88accdef8e6f0800000000000000
+      internalID: -654993521538173623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: story_chat_4
+      name: story_chat 1_7
       rect:
         serializedVersion: 2
-        x: 991
-        y: 612
-        width: 8
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: faa3f509c48452a10800000000000000
-      internalID: 1883991512801295023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_5
-      rect:
-        serializedVersion: 2
-        x: 1225
-        y: 598
+        x: 1040
+        y: 618
         width: 15
-        height: 24
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68874f91bc7544710800000000000000
-      internalID: 1676561491114096774
+      spriteID: 4b79bb791275419a0800000000000000
+      internalID: -6263285379974326348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: story_chat_6
+      name: story_chat 1_8
       rect:
         serializedVersion: 2
-        x: 1512
-        y: 610
-        width: 20
-        height: 12
+        x: 1078
+        y: 628
+        width: 7
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dfeba4580cdec6630800000000000000
-      internalID: 3921770786658631421
+      spriteID: ade6ca78a158e5830800000000000000
+      internalID: 4061830262926634714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: story_chat_7
+      name: story_chat 1_9
       rect:
         serializedVersion: 2
-        x: 1587
-        y: 620
-        width: 10
+        x: 1389
+        y: 630
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 846ac89d84feea210800000000000000
+      internalID: 1346276434796914248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: story_chat 1_10
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 626
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a1d8723ba5192b80800000000000000
+      internalID: -8419174203362061914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: story_chat 1_11
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 63
+        width: 7
         height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e54c0c329b4df5f0800000000000000
-      internalID: -721337273864665623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: story_chat_8
-      rect:
-        serializedVersion: 2
-        x: 1237
-        y: 578
-        width: 27
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34608ff41f0414ba0800000000000000
-      internalID: -6106528214564731325
+      spriteID: 930fa1c792331dd60800000000000000
+      internalID: 7913162273535488057
       vertices: []
       indices: 
       edges: []
@@ -325,7 +400,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e149b6fc52df296409eabe37c6b27cdc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -335,15 +410,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      story_chat_0: -6857359210604208517
-      story_chat_1: 2353661911093214170
-      story_chat_2: 3408368754922948810
-      story_chat_3: -474040511718178995
-      story_chat_4: 1883991512801295023
-      story_chat_5: 1676561491114096774
-      story_chat_6: 3921770786658631421
-      story_chat_7: -721337273864665623
-      story_chat_8: -6106528214564731325
+      story_chat 1_0: -479939641371298885
+      story_chat 1_1: -6799958596017517336
+      story_chat 1_10: -8419174203362061914
+      story_chat 1_11: 7913162273535488057
+      story_chat 1_2: -1943542707560849950
+      story_chat 1_3: -101442231430593539
+      story_chat 1_4: -6853306728032157358
+      story_chat 1_5: -6398051456438119526
+      story_chat 1_6: -654993521538173623
+      story_chat 1_7: -6263285379974326348
+      story_chat 1_8: 4061830262926634714
+      story_chat 1_9: 1346276434796914248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
