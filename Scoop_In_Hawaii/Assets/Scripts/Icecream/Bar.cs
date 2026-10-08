@@ -4,6 +4,7 @@ public class Bar : IceCream
 {
     public enum Frozen {
         None,
+        LIQUID,
         HALF,
         PERFECT,
         DEEP
