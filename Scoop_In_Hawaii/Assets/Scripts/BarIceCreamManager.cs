@@ -12,9 +12,18 @@ public class BarIceCreamManager : MonoBehaviour
     private GameObject panelCloseBtn;
     [SerializeField]
     private GameObject barMachineBtn;
+    [SerializeField]
+    private GameObject barMoldLeft;
+    [SerializeField]
+    private GameObject barMoldRight;
+    private MoldSlot moldslotLeft;
+    private MoldSlot moldslotRight;
 
     private IceCream firstBar = null;
     private IceCream secondBar = null;
+
+    private FrozenTimer rightFrozenTimer;
+    private FrozenTimer leftFrozenTimer;
 
     private void Awake()
     {
@@ -27,6 +36,11 @@ public class BarIceCreamManager : MonoBehaviour
         barMachineBtn.GetComponent<Button>().onClick.AddListener(openBarMakingPanel);
 
         barMakingPanel.SetActive(false);
+
+        leftFrozenTimer = GameObject.Find("LeftFrozenTimer").GetComponent<FrozenTimer>();
+        rightFrozenTimer = GameObject.Find("RightFrozenTimer").GetComponent<FrozenTimer>();
+        moldslotLeft = barMoldLeft.GetComponent<MoldSlot>();
+        moldslotRight = barMoldRight.GetComponent<MoldSlot>();
     }
 
     // Update is called once per frame
@@ -70,20 +84,20 @@ public class BarIceCreamManager : MonoBehaviour
             return;
         }
 
-        // Àç°í È®ÀÎ
+        // ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if (!InventoryManager.Instance.HasStock(realFlavor))
         {
-            Debug.Log($"{realFlavor} Àç°í°¡ ¾ø½À´Ï´Ù.");
+            Debug.Log($"{realFlavor} ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
-        // Àç°í 1°³ »ç¿ë
+        // ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½
         InventoryManager.Instance.UseFlavor(realFlavor);
 
         firstBar = new Bar();
         firstBar.Type = IceCreamType.Bar;
         firstBar.Flavors.Add(realFlavor);
-        ((Bar)firstBar).status = Bar.Frozen.HALF;
+        ((Bar)firstBar).status = Bar.Frozen.LIQUID;
     }
 
     public void MakeSecondBar(string flavor)
@@ -107,20 +121,20 @@ public class BarIceCreamManager : MonoBehaviour
             return;
         }
 
-        // Àç°í È®ÀÎ
+        // ï¿½ï¿½ï¿½ È®ï¿½ï¿½
         if (!InventoryManager.Instance.HasStock(realFlavor))
         {
-            Debug.Log($"{realFlavor} Àç°í°¡ ¾ø½À´Ï´Ù.");
+            Debug.Log($"{realFlavor} ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
-        // Àç°í 1°³ »ç¿ë
+        // ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½
         InventoryManager.Instance.UseFlavor(realFlavor);
 
         secondBar = new Bar();
         secondBar.Type = IceCreamType.Bar;
         secondBar.Flavors.Add(realFlavor);
-        ((Bar)secondBar).status = Bar.Frozen.HALF;
+        ((Bar)secondBar).status = Bar.Frozen.LIQUID;
     }
 
     public void ResetFirstBar()
@@ -150,5 +164,57 @@ public class BarIceCreamManager : MonoBehaviour
         ResetSecondBar();
 
         return targetBar;
+    }
+
+    public bool isFillFirstBar()
+    {
+        return firstBar != null;
+    }
+
+    public bool isFillSecondBar()
+    {
+        return secondBar != null;
+    }
+
+    public void LeftHeldBar()
+    {
+        if (((Bar)firstBar).status == Bar.Frozen.LIQUID)
+        {
+            ToastManager.Instance.Toast("ì•„ì§ ì•„ì´ìŠ¤í¬ë¦¼ì´ ì–¼ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+            return;
+        }
+
+        TakeOutFirstBar();
+        leftFrozenTimer.ResetTimer();
+        moldslotLeft.ResetMold();
+    }
+
+    public void RightHeldBar()
+    {
+        if (((Bar)secondBar).status == Bar.Frozen.LIQUID)
+        {
+            ToastManager.Instance.Toast("ì•„ì§ ì•„ì´ìŠ¤í¬ë¦¼ì´ ì–¼ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+            return;
+        }
+
+        TakeOutSecondBar();
+        rightFrozenTimer.ResetTimer();
+        moldslotRight.ResetMold();
+    }
+
+    public void SetFisrtBarStatus(Bar.Frozen status)
+    {
+        if (isFillFirstBar())
+        {
+            ((Bar)firstBar).status = status;
+        }
+    }
+
+    public void SetSecondBarStatus(Bar.Frozen status)
+    {
+        if (isFillSecondBar())
+        {
+            ((Bar)secondBar).status = status;
+        }
     }
 }

@@ -28,13 +28,22 @@ public class FrozenTimer : MonoBehaviour
     [SerializeField]
     private GameObject frozenUI;
 
+    [SerializeField]
+    private GameObject leftMoldSlotObject;
+    [SerializeField]
+    private GameObject rightMoldSlotObject;
+    private MoldSlot leftMoldSlot;
+    private MoldSlot rightMoldSlot;
+
     public int timerCount = 0;
-    public Bar.Frozen currentState = Bar.Frozen.HALF;
+    public Bar.Frozen currentState = Bar.Frozen.LIQUID;
     public bool isRunning = false;
     private Button timerStartBtn;
     private Image timerStartImage;
 
     private Coroutine timerCoroutine;
+
+    private bool frozenEvent1 = false;
 
     private void Awake()
     {
@@ -52,6 +61,11 @@ public class FrozenTimer : MonoBehaviour
         smallSlider.value = 0;
 
         frozenUI.SetActive(false);
+
+        frozenEvent1 = false;
+
+        leftMoldSlot = leftMoldSlotObject.GetComponent<MoldSlot>();
+        rightMoldSlot = rightMoldSlotObject.GetComponent<MoldSlot>();
     }
 
     public void StartTimer()
@@ -87,7 +101,15 @@ public class FrozenTimer : MonoBehaviour
     {
         StopTimer();
         timerCount = 0;
-        currentState = Bar.Frozen.HALF;
+        currentState = Bar.Frozen.LIQUID;
+        if (moldPosition == MoldPosition.Left)
+        {
+            BarIceCreamManager.Instance.SetFisrtBarStatus(currentState);
+        }
+        else
+        {
+            BarIceCreamManager.Instance.SetSecondBarStatus(currentState);
+        }
 
         timerStartImage.color = new Color32(77, 250, 240, 255);
         timerStartText.text = "얼리기 시작";
@@ -102,6 +124,8 @@ public class FrozenTimer : MonoBehaviour
         smallSlider.handleRect.GetComponent<Image>().enabled = true;
 
         frozenUI.SetActive(false);
+
+        frozenEvent1 = false;
     }
 
     private IEnumerator TimerRoutine()
@@ -121,6 +145,14 @@ public class FrozenTimer : MonoBehaviour
         // 90 카운트(9.0초) 도달 시 DEEP 상태로 고정 후 종료
         timerCount = 90;
         currentState = Bar.Frozen.DEEP;
+        if (moldPosition == MoldPosition.Left)
+        {
+            BarIceCreamManager.Instance.SetFisrtBarStatus(currentState);
+        }
+        else
+        {
+            BarIceCreamManager.Instance.SetSecondBarStatus(currentState);
+        }
         isRunning = false;
         Debug.Log($"[{moldPosition}] State: DEEP || Timer Stop");
 
@@ -133,9 +165,25 @@ public class FrozenTimer : MonoBehaviour
 
     private void UpdateState(int count)
     {
-        if (count >= 0 && count <= 59)
+        if (count >= 0 && count <= 29)
+        {
+            currentState = Bar.Frozen.LIQUID;
+        }
+        else if (count >= 30 && count <= 59)
         {
             currentState = Bar.Frozen.HALF;
+            if (!frozenEvent1)
+            {
+                frozenEvent1 = true;
+                if (moldPosition == MoldPosition.Left)
+                {
+                    leftMoldSlot.FrozenEvent1();
+                }
+                else
+                {
+                    rightMoldSlot.FrozenEvent1();
+                }
+            }
         }
         else if (count >= 60 && count <= 89)
         {
@@ -147,7 +195,16 @@ public class FrozenTimer : MonoBehaviour
         }
         else
         {
-            currentState = Bar.Frozen.HALF;
+            currentState = Bar.Frozen.LIQUID;
+        }
+
+
+        if (moldPosition == MoldPosition.Left)
+        {
+            BarIceCreamManager.Instance.SetFisrtBarStatus(currentState);
+        } else
+        {
+            BarIceCreamManager.Instance.SetSecondBarStatus(currentState);
         }
 
         Debug.Log($"[{moldPosition}] Count: {count} ({count * 0.1f:F1}s) | State: {currentState}");

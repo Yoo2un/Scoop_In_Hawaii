@@ -20,8 +20,8 @@ public class EconomyManager : MonoBehaviour, IDataPersistence
 
     private Coroutine deltaTextCoroutine;
     private Vector2 originalDeltaTextPosition = new Vector2(200, -1);
-    [SerializeField] private float floatDistance = 50f; // À§·Î ¶°¿À¸¦ °Å¸®
-    [SerializeField] private float floatDuration = 1.0f; // ¾Ö´Ï¸ÞÀÌ¼Ç Áö¼Ó ½Ã°£
+    [SerializeField] private float floatDistance = 50f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
+    [SerializeField] private float floatDuration = 1.0f; // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
     public void LoadData(GameData data)
     {
@@ -89,7 +89,7 @@ public class EconomyManager : MonoBehaviour, IDataPersistence
             moneyText.text = money.ToString();
     }
 
-    private void ShowMoneyDelta(int deltaAmount) // µ· º¯È­·® Ç¥½Ã
+    private void ShowMoneyDelta(int deltaAmount) // ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ Ç¥ï¿½ï¿½
     {
         if (moneyDeltaText == null) return;
 
@@ -116,7 +116,7 @@ public class EconomyManager : MonoBehaviour, IDataPersistence
 
         RectTransform rectTransform = moneyDeltaText.GetComponent<RectTransform>();
 
-        // ¾Ö´Ï¸ÞÀÌ¼Ç ½ÃÀÛ Àü Ç×»ó (200, -1) À§Ä¡·Î ÃÊ±âÈ­
+        // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½×»ï¿½ (200, -1) ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ê±ï¿½È­
         rectTransform.anchoredPosition = originalDeltaTextPosition;
         moneyDeltaText.color = startColor;
         moneyDeltaText.gameObject.SetActive(true);
@@ -130,10 +130,10 @@ public class EconomyManager : MonoBehaviour, IDataPersistence
             elapsed += Time.deltaTime;
             float t = elapsed / floatDuration;
 
-            // À§Ä¡ ÀÌµ¿: (200, -1) -> (200, -1 + floatDistance)
+            // ï¿½ï¿½Ä¡ ï¿½Ìµï¿½: (200, -1) -> (200, -1 + floatDistance)
             rectTransform.anchoredPosition = Vector2.Lerp(originalDeltaTextPosition, targetPos, t);
 
-            // ¾ËÆÄ°ª ÆäÀÌµå¾Æ¿ô (1 -> 0)
+            // ï¿½ï¿½ï¿½Ä°ï¿½ ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ (1 -> 0)
             Color newColor = startColor;
             newColor.a = Mathf.Lerp(1f, 0f, t);
             moneyDeltaText.color = newColor;

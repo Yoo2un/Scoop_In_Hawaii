@@ -1862,7 +1862,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7718842864248422006, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
   m_PrefabInstance: {fileID: 2006558264}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 560281840}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaf90b9b3ba0c944387c3cfac5024baf, type: 3}
@@ -3795,7 +3795,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2966297747981391891, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
   m_PrefabInstance: {fileID: 2006558264}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 504249313}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaf90b9b3ba0c944387c3cfac5024baf, type: 3}
@@ -5641,6 +5641,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503257012}
   m_CullTransparentMesh: 1
+--- !u!1 &504249313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 286096289575383953, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
+  m_PrefabInstance: {fileID: 2006558264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519312494
 GameObject:
   m_ObjectHideFlags: 0
@@ -6267,6 +6272,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558638638}
   m_CullTransparentMesh: 1
+--- !u!1 &560281840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 782047412259659695, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
+  m_PrefabInstance: {fileID: 2006558264}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &565414192
 GameObject:
   m_ObjectHideFlags: 0
@@ -17624,6 +17634,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2073089642}
     - target: {fileID: 423081718686771753, guid: 6710e510c918e1046ae5aab2d59188ee, type: 3}
+      propertyPath: leftMoldSlotObject
+      value: 
+      objectReference: {fileID: 504249313}
+    - target: {fileID: 423081718686771753, guid: 6710e510c918e1046ae5aab2d59188ee, type: 3}
+      propertyPath: rightMoldSlotObject
+      value: 
+      objectReference: {fileID: 560281840}
+    - target: {fileID: 423081718686771753, guid: 6710e510c918e1046ae5aab2d59188ee, type: 3}
       propertyPath: smallRedSliderHandle
       value: 
       objectReference: {fileID: 866975304}
@@ -17695,6 +17713,14 @@ PrefabInstance:
       propertyPath: bigRedSliderHandle
       value: 
       objectReference: {fileID: 2006558269}
+    - target: {fileID: 5444760360508440529, guid: 6710e510c918e1046ae5aab2d59188ee, type: 3}
+      propertyPath: leftMoldSlotObject
+      value: 
+      objectReference: {fileID: 504249313}
+    - target: {fileID: 5444760360508440529, guid: 6710e510c918e1046ae5aab2d59188ee, type: 3}
+      propertyPath: rightMoldSlotObject
+      value: 
+      objectReference: {fileID: 560281840}
     - target: {fileID: 5444760360508440529, guid: 6710e510c918e1046ae5aab2d59188ee, type: 3}
       propertyPath: smallRedSliderHandle
       value: 
@@ -18986,6 +19012,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4637800375619539685, guid: 0f033630d0c3e864da37eff96b5f12bb, type: 3}
+      propertyPath: barMoldLeft
+      value: 
+      objectReference: {fileID: 504249313}
+    - target: {fileID: 4637800375619539685, guid: 0f033630d0c3e864da37eff96b5f12bb, type: 3}
+      propertyPath: barMoldRight
+      value: 
+      objectReference: {fileID: 560281840}
+    - target: {fileID: 4637800375619539685, guid: 0f033630d0c3e864da37eff96b5f12bb, type: 3}
       propertyPath: barMachineBtn
       value: 
       objectReference: {fileID: 1054161607}
@@ -19329,7 +19363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222791761625722207, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6222791761625722207, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -19346,11 +19380,11 @@ PrefabInstance:
     - target: {fileID: 6222791761625722207, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 255306861}
+      objectReference: {fileID: 914394474}
     - target: {fileID: 6222791761625722207, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1788922846}
+      objectReference: {fileID: 155911921}
     - target: {fileID: 6222791761625722207, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -19369,11 +19403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222791761625722207, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TakeOutSecondBar
+      value: RightHeldBar
       objectReference: {fileID: 0}
     - target: {fileID: 6222791761625722207, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ResetTimer
+      value: ResetMold
       objectReference: {fileID: 0}
     - target: {fileID: 6222791761625722207, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -19421,7 +19455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8473436645652078894, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8473436645652078894, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -19438,11 +19472,11 @@ PrefabInstance:
     - target: {fileID: 8473436645652078894, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 255306861}
+      objectReference: {fileID: 914394474}
     - target: {fileID: 8473436645652078894, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1788922847}
+      objectReference: {fileID: 313373853}
     - target: {fileID: 8473436645652078894, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -19461,11 +19495,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8473436645652078894, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TakeOutFirstBar
+      value: LeftHeldBar
       objectReference: {fileID: 0}
     - target: {fileID: 8473436645652078894, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ResetTimer
+      value: ResetMold
       objectReference: {fileID: 0}
     - target: {fileID: 8473436645652078894, guid: 9343a1d21429c214ca8283f25ce1ebb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
