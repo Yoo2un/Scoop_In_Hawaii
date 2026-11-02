@@ -128,11 +128,24 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("하루 종료");
 
-            //테스트용
-            SceneManager.LoadScene("StroyScene");
+            EffectManager.Instance.FadeOut(() =>
+            {
+                SceneManager.LoadScene("StoryScene");
+
+                EffectManager.Instance.FadeIn();
+            });
 
             //SceneManager.LoadScene("Result");
         }
+    }
+
+    public void StoryEnd()
+    {
+        EffectManager.Instance.FadeOut(() =>
+        {
+            SceneManager.LoadScene("Result");
+            EffectManager.Instance.FadeIn();
+        });
     }
 
     /// <summary>

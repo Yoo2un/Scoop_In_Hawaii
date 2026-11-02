@@ -78,6 +78,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialogueBox.SetActive(false);
+        EffectManager.Instance.FadeIn();
+        GameManager.Instance.StoryEnd();
     }
 
     public IEnumerator TypeDialog(string dialog)
