@@ -71,10 +71,15 @@ public class DialogueManager : MonoBehaviour
         {
             yield return StartCoroutine(TypeDialog(line));
 
-            yield return new WaitUntil(
-                () => Keyboard.current != null &&
-                      Mouse.current.leftButton.wasPressedThisFrame
+            if (line.Contains("°¥¸Å±â"))
+            {
+                EffectManager.Instance.StartShakeText(dialogText);
+            }
+
+            yield return new WaitUntil(() => Keyboard.current != null && Mouse.current.leftButton.wasPressedThisFrame
             );
+
+            EffectManager.Instance.StopShakeText(dialogText);
         }
 
         dialogueBox.SetActive(false);
