@@ -25,6 +25,8 @@ public class BarIceCreamManager : MonoBehaviour
     private FrozenTimer rightFrozenTimer;
     private FrozenTimer leftFrozenTimer;
 
+    public event System.Action<Bar> OnBarTaken; //새로 추가함, 바 이미지 생성
+
     private void Awake()
     {
         Instance = this;
@@ -178,28 +180,48 @@ public class BarIceCreamManager : MonoBehaviour
 
     public void LeftHeldBar()
     {
+        if (firstBar == null) return;
+
         if (((Bar)firstBar).status == Bar.Frozen.LIQUID)
         {
             ToastManager.Instance.Toast("아직 아이스크림이 얼지 않았습니다.");
             return;
         }
 
-        TakeOutFirstBar();
+        if (IceCreamSlots.Instance.IsFull)
+        {
+            ToastManager.Instance.Toast("더 이상 들 수 없습니다.");
+            return;
+        }
+
+        Bar bar = TakeOutFirstBar();
         leftFrozenTimer.ResetTimer();
         moldslotLeft.ResetMold();
+
+        OnBarTaken?.Invoke(bar);
     }
 
     public void RightHeldBar()
     {
+        if (secondBar == null) return;
+
         if (((Bar)secondBar).status == Bar.Frozen.LIQUID)
         {
             ToastManager.Instance.Toast("아직 아이스크림이 얼지 않았습니다.");
             return;
         }
 
-        TakeOutSecondBar();
+        if (IceCreamSlots.Instance.IsFull)
+        {
+            ToastManager.Instance.Toast("더 이상 들 수 없습니다.");
+            return;
+        }
+
+        Bar bar = TakeOutSecondBar();
         rightFrozenTimer.ResetTimer();
         moldslotRight.ResetMold();
+
+        OnBarTaken?.Invoke(bar);
     }
 
     public void SetFisrtBarStatus(Bar.Frozen status)
