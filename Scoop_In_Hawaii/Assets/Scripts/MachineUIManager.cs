@@ -10,7 +10,6 @@ public class MachineUIManager : MonoBehaviour
     public GameObject chocolatePanel;
     public GameObject vanillaPanel;
 
-
     public TMP_Text titleText;
     [SerializeField] private GameObject RepairPanel;
     [SerializeField] private GameObject RepairMiniGamePanel;
@@ -101,5 +100,4 @@ public class MachineUIManager : MonoBehaviour
         if (showcaseCollider != null)
             showcaseCollider.enabled = true;
     }
-
 }
