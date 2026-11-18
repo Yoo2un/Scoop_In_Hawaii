@@ -16419,6 +16419,7 @@ MonoBehaviour:
   - {fileID: 1225273387}
   - {fileID: 1764863415}
   barDisplayPrefab: {fileID: 921416095515346751, guid: 4f8076a53ff4551408165f2fc3651c7b, type: 3}
+  coneDisplayPrefab: {fileID: 5821916965427520502, guid: 0eb89b887b1d38c4aae72c4adb429132, type: 3}
 --- !u!1 &1595563355
 GameObject:
   m_ObjectHideFlags: 0
@@ -20102,7 +20103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a50d1f3363fecb4b848561632b58cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  soda: {fileID: 0}
+  soda: {fileID: 8741200204027867326, guid: 1ae8f819a331b0a449f92b01865e51be, type: 3}
   mango: {fileID: 0}
 --- !u!1001 &2006558264
 PrefabInstance:

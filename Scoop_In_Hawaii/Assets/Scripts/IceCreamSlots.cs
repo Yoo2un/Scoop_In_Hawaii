@@ -6,6 +6,7 @@ public class IceCreamSlots : MonoBehaviour
 
     [SerializeField] private Transform[] slots;               // Slot_1~3
     [SerializeField] private IceCreamDisplay barDisplayPrefab;
+    [SerializeField] private IceCreamDisplay coneDisplayPrefab;
 
     private IceCreamDisplay[] displays;                       // 배열로 생성, 리스트로 수정 필요
 
@@ -44,8 +45,14 @@ public class IceCreamSlots : MonoBehaviour
         {
             if (displays[i] != null) continue;
 
-            displays[i] = Instantiate(barDisplayPrefab, slots[i], false);
+            IceCreamDisplay prefab = item.Type == IceCreamType.Bar
+                ? barDisplayPrefab
+                : coneDisplayPrefab;
+
+            displays[i] = Instantiate(prefab, slots[i], false);
             displays[i].Show(item);
+            Debug.Log($"[IceCreamSlots] {item.Type} 등록 성공! 슬롯 번호: {i + 1}");
+
             return true;
         }
 
