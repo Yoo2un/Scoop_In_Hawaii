@@ -2167,6 +2167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1444cdb70ecf9d4478754a45a5ca2edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Guideline
+  selectedFlavor: 2
+  coneMaking: {fileID: 621347511}
   machinePanel: {fileID: 729530576}
   guidelineImage: {fileID: 779689729}
   userLine: {fileID: 192118045}
@@ -7093,6 +7095,50 @@ RectTransform:
   m_AnchoredPosition: {x: 225, y: -30}
   m_SizeDelta: {x: 10, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &594064345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 594064347}
+  - component: {fileID: 594064346}
+  m_Layer: 0
+  m_Name: IceCreamManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &594064346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594064345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ecd154b7873014293ad7cdf7a27e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IceCreamManager
+--- !u!4 &594064347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594064345}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &595035919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7428,6 +7474,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &621347509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 621347510}
+  - component: {fileID: 621347511}
+  m_Layer: 0
+  m_Name: ConeMaking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &621347510
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621347509}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &621347511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621347509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13432c32d1204634cb5fb39e98e3d6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConeMaking
 --- !u!1 &625528782
 GameObject:
   m_ObjectHideFlags: 0
@@ -10358,6 +10448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1444cdb70ecf9d4478754a45a5ca2edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Guideline
+  selectedFlavor: 1
+  coneMaking: {fileID: 621347511}
   machinePanel: {fileID: 729530576}
   guidelineImage: {fileID: 729976655}
   userLine: {fileID: 1893611823}
@@ -15001,6 +15093,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 621347511}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: CompleteCone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1438166336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16315,9 +16419,6 @@ MonoBehaviour:
   - {fileID: 1225273387}
   - {fileID: 1764863415}
   barDisplayPrefab: {fileID: 921416095515346751, guid: 4f8076a53ff4551408165f2fc3651c7b, type: 3}
-  coneDisplayPrefab: {fileID: 0}
-  iceCreamMaking: {fileID: 0}
-  machineUI: {fileID: 0}
 --- !u!1 &1595563355
 GameObject:
   m_ObjectHideFlags: 0
@@ -21795,19 +21896,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1550157422}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 255306861}
-        m_TargetAssemblyTypeName: MachineUIManager, Assembly-CSharp
-        m_MethodName: SelectType
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!61 &2086901143
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21867,7 +21956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShowCaseClick
   machineUIManager: {fileID: 177053741}
-  iceCreamMaking: {fileID: 255306861}
+  coneMaking: {fileID: 621347511}
 --- !u!1 &2092659200
 GameObject:
   m_ObjectHideFlags: 0
@@ -22371,3 +22460,5 @@ SceneRoots:
   - {fileID: 2086901141}
   - {fileID: 1738174626}
   - {fileID: 774691931}
+  - {fileID: 594064347}
+  - {fileID: 621347510}
