@@ -15,24 +15,24 @@ public class IceCreamManager : MonoBehaviour
         Instance = this;
     }
 
-    // Á¦ÀÛÀÌ ¿Ï·áµÈ ¾ÆÀÌ½ºÅ©¸²À» Àü´Þ¹Þ´Â ÇÔ¼ö
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Þ¹Þ´ï¿½ ï¿½Ô¼ï¿½
     public void CompleteIceCream(IceCream iceCream)
     {
         if (iceCream == null)
         {
-            Debug.LogWarning("¿Ï¼ºµÈ ¾ÆÀÌ½ºÅ©¸²ÀÌ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("ï¿½Ï¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
-        // ½½·Ô¿¡ ¾ÆÀÌ½ºÅ©¸² µî·Ï
+        // ï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½
         bool success = IceCreamSlots.Instance.Add(iceCream);
 
         if (!success)
         {
-            Debug.LogWarning("¾ÆÀÌ½ºÅ©¸² ½½·Ô µî·Ï ½ÇÆÐ!");
+            Debug.LogWarning("ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
             return;
         }
 
-        Debug.Log($"¾ÆÀÌ½ºÅ©¸² Á¦ÀÛ ¿Ï·á: {iceCream.Type}");
+        Debug.Log($"ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½: {iceCream.Type}");
     }
 }

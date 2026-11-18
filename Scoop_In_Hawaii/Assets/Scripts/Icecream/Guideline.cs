@@ -7,6 +7,10 @@ using System.Collections;
 public class Guideline : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
+    [Header("선택할 아이스크림 맛")]
+    [SerializeField] private Flavor selectedFlavor;
+    [SerializeField] private ConeMaking coneMaking;
+    
     [System.Serializable]
     public struct GuidelineData
     {
@@ -44,7 +48,7 @@ public class Guideline : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
         }
 
         activeGuidelinePanel = this;
-        Debug.Log($"선택한 맛(임시 확인용): {gameObject.name}");
+        Debug.Log($"선택한 맛: {selectedFlavor}");
 
         ActivateGuideline();
     }
@@ -124,15 +128,34 @@ public class Guideline : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
         isDrawing = false;
         Debug.Log("그리기 완료");
 
-        // 3. 가이드 라인 좌표값과  비교
-        if (currentGuidelineData.pathPoints != null && currentGuidelineData.pathPoints.Count > 0)
-        {
-            float similarity = ComparePaths(currentGuidelineData.pathPoints, userPoints);
-            Debug.Log($"유사도 오차 점수: {similarity}");
-        }
+        //테스트용
+        coneMaking.AddFlavor((int)selectedFlavor);
+
+        Debug.Log($"맛 추가 요청: {selectedFlavor}");
+
+        //if (currentGuidelineData.pathPoints != null && currentGuidelineData.pathPoints.Count > 0)
+        //{
+        //    float similarity = ComparePaths(
+        //        currentGuidelineData.pathPoints,
+        //        userPoints
+        //    );
+
+        //    Debug.Log($"유사도 오차 점수: {similarity}");
+
+        //    // 임시 성공 기준
+        //    if (similarity < 20f)
+        //    {
+        //        coneMaking.AddFlavor((int)selectedFlavor);
+        //        Debug.Log($"{selectedFlavor} 맛 추가 성공!");
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("가이드라인 그리기 실패!");
+        //    }
+        //}
 
         // 1초 후 패널 닫기
-        StartCoroutine(ClosePanelAfterDelay(1.0f));
+        // StartCoroutine(ClosePanelAfterDelay(1.0f));
     }
 
     private float ComparePaths(List<Vector3> targetPath, List<Vector3> inputPath)
@@ -187,4 +210,5 @@ public class Guideline : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
 
         ResetPanel();
     }
+
 }
